@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- =========== Declaration of different Services =========== -->
+    <bean id="memberService" class="com.racic.lib.business.service.impl.MemberServiceImpl"/>
+    <bean id="bookService" class="com.racic.lib.business.service.impl.BookServiceImpl"/>
+    <bean id="worksService" class="com.racic.lib.business.service.impl.WorksServiceImpl"/>
+    <bean id="libraryService" class="com.racic.lib.business.service.impl.LibraryServiceImpl"/>
+    <bean id="managerService" class="com.racic.lib.business.service.impl.ManagerServiceImpl">
+        <property name="worksService" ref="worksService"/>
+        <property name="memberService" ref="memberService"/>
+        <property name="libraryService" ref="libraryService"/>
+        <property name="bookService" ref="bookService"/>
+    </bean>
+
+
+
+</beans>

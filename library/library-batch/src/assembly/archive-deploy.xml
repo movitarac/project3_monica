@@ -1,0 +1,38 @@
+<assembly xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+
+<!-- Assemblage ID -->
+   <id>archive-deploy</id>
+
+    <!-- file format expected-->
+    <formats>
+        <format>tar.gz</format>
+        <format>zip</format>
+    </formats>
+    <!-- lib : dependencies + JAR library-batch -->
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>lib</outputDirectory>
+            <scope>runtime</scope>
+        </dependencySet>
+    </dependencySets>
+
+
+    <fileSets>
+    <!-- Shell script used to launch-->
+        <fileSet>
+            <directory>src/data/scripts</directory>
+            <outputDirectory>bin</outputDirectory>
+            <!-- =right-permission unix= -->
+            <fileMode>0755</fileMode>
+        </fileSet>
+
+        <!-- configuration file-->
+        <fileSet>
+            <directory>src/data/conf</directory>
+            <outputDirectory>conf</outputDirectory>
+        </fileSet>
+    </fileSets>
+
+</assembly>
