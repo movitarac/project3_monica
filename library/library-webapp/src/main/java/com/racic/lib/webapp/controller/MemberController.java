@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.Optional;
 
 
 @Controller
@@ -20,15 +21,18 @@ public class MemberController {
 
     @RequestMapping(value="/")
     public String home() {
-    	System.out.println("Member controller passing through to index.jsp");
-    	return "index";
+    	System.out.println("Member controller passing through to header.jsp outside the web inf");
+    	//return "/_include/header";
+    	return "home";
     }
 
     @RequestMapping(value="/member/{id}",method= RequestMethod.GET)
-    public @ResponseBody Member sayHello(@PathVariable int id){
+    public @ResponseBody String sayHello(@PathVariable int id){
 
         System.out.println("member found");
-        return this.memberService.getMemberById(id);
+       String firstname= memberService.findMemberById(id).getFirstName();
+       String lastname= memberService.findMemberById(id).getLastName();
+        return "Hello " + firstname + " " + lastname;
     }
     //TEST with model (to pass values from controller to view)
     @RequestMapping(value="members/{id}" ,method=RequestMethod.GET)

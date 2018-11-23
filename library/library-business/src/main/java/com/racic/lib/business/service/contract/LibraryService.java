@@ -8,9 +8,12 @@ import java.util.List;
 
 public interface LibraryService {
 
+	List<Works> getWorkList(Works works);
 
-    Library find(String libraryName);
+	Library getLibraryByName(String libraryName);
 
-    Library getLibraryById(int id);
+	Library getLibraryById(int id);
+	
+	Library getLibraryByCity(String city);
 
 }

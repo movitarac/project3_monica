@@ -2,15 +2,24 @@ package com.racic.lib.model;
 
 import java.util.Date;
 
-public class Borrowing {
+import javax.persistence.*;
+import com.racic.lib.model.Member;
 
-    private int idborrow;
-    private int memberid;
+@Entity(name="Borrowing")
+public class Borrowing {
+	@Id
+	private int idborrow;
+	@ManyToOne
+   	@JoinColumn(name="idmember")
     private Member member;
-    private String bookid;
+   	@ManyToOne
+   	@JoinColumn(name="idbook")
     private Book book;
+    @Column
     private Date issueDate;
+    @Column
     private Date returnDate;
+    @Column
     private boolean isExtended;
 
     public Borrowing() {
@@ -26,13 +35,7 @@ public class Borrowing {
         this.idborrow = idborrow;
     }
 
-    public int getMemberid() {
-        return memberid;
-    }
-
-    public void setMemberid(int memberid) {
-        this.memberid = memberid;
-    }
+  
 
     public Member getMember() {
         return member;
@@ -42,13 +45,6 @@ public class Borrowing {
         this.member = member;
     }
 
-    public String getBookid() {
-        return bookid;
-    }
-
-    public void setBookid(String bookid) {
-        this.bookid = bookid;
-    }
 
     public Book getBook() {
         return book;
@@ -82,11 +78,9 @@ public class Borrowing {
         isExtended = extended;
     }
 
-    public Borrowing(int idborrow, int memberid, Member member, String bookid, Book book, Date issueDate, Date returnDate, boolean isExtended) {
+    public Borrowing(int idborrow, Member member, Book book, Date issueDate, Date returnDate, boolean isExtended) {
         this.idborrow = idborrow;
-        this.memberid = memberid;
         this.member = member;
-        this.bookid = bookid;
         this.book = book;
         this.issueDate = issueDate;
         this.returnDate = returnDate;

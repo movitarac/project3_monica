@@ -3,34 +3,46 @@ package com.racic.lib.model;
 import java.sql.Date;
 import java.util.List;
 
+import javax.persistence.*;
 
 
+
+@Entity(name="Works")
 public class Works {
-
+	@Id
+	@Column
     private int worksId;
-
+	@Column
     private String title;
-
+	@Column
     private String author;
-
+	@Column
     private int publicationYear;
-
+	@Column
     private String bookDescription;
-
+	@Column
     private int copies;
-
+	@ManyToOne
+	@JoinColumn(name="idlibrary")
     private Library library;
+	@OneToMany(mappedBy="works")
+	private List<Book> books;
 
-    public Works(int worksId, String title, String author, int publicationYear, String bookDescription, int copies, Library library) {
-        this.worksId = worksId;
-        this.title = title;
-        this.author = author;
-        this.publicationYear = publicationYear;
-        this.bookDescription = bookDescription;
-        this.copies = copies;
-        this.library = library;
-    }
-    //default constructor
+   
+    public Works(int worksId, String title, String author, int publicationYear, String bookDescription, int copies,
+			Library library, List<Book> books) {
+		super();
+		this.worksId = worksId;
+		this.title = title;
+		this.author = author;
+		this.publicationYear = publicationYear;
+		this.bookDescription = bookDescription;
+		this.copies = copies;
+		this.library = library;
+		this.books = books;
+	}
+
+	//default constructor
 
     public Works() {
     }
@@ -90,4 +102,13 @@ public class Works {
     public void setLibrary(Library library) {
         this.library = library;
     }
+
+	public List<Book> getBooks() {
+		return books;
+	}
+
+	public void setBooks(List<Book> books) {
+		this.books = books;
+	}
+    
 }

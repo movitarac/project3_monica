@@ -1,20 +1,34 @@
 package com.racic.lib.model;
 
+import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
+@Entity(name="Member")
 public class Member {
-
+	@Id
+	@GeneratedValue
+	@Column
     private int memberId;
-
+	@Column
     private String firstName;
-
+	@Column
     private String lastName;
-
+	@Column
     private String email;
-
+	@Column
     private String password;
-
+	@Column
     private String address;
+	@OneToMany(mappedBy="member")
+	private List<Borrowing> borrowing;
+	
+	
 
     public Member(int memberId, String firstName, String lastName, String email, String password, String address) {
         this.memberId = memberId;

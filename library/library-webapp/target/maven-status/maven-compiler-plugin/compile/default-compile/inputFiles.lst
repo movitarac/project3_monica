@@ -1,7 +1,5 @@
-/Users/Vita/Documents/OC/projet3monica/projet-/library/library-webapp/src/main/java/com/racic/lib/webapp/WebInitializer.java
-/Users/Vita/Documents/OC/projet3monica/projet-/library/library-webapp/src/main/java/com/racic/lib/webapp/controller/LibraryController.java
-/Users/Vita/Documents/OC/projet3monica/projet-/library/library-webapp/src/main/java/com/racic/lib/webapp/conf/SpringWebConfig.java
-/Users/Vita/Documents/OC/projet3monica/projet-/library/library-webapp/src/main/java/com/racic/lib/webapp/controller/WorksController.java
-/Users/Vita/Documents/OC/projet3monica/projet-/library/library-webapp/src/main/java/com/racic/lib/webapp/controller/BorrowingController.java
-/Users/Vita/Documents/OC/projet3monica/projet-/library/library-webapp/src/main/java/com/racic/lib/webapp/controller/BookController.java
-/Users/Vita/Documents/OC/projet3monica/projet-/library/library-webapp/src/main/java/com/racic/lib/webapp/controller/MemberController.java
+/Users/Vita/Documents/OC/projet-/library/library-webapp/src/main/java/com/racic/lib/webapp/controller/BorrowingController.java
+/Users/Vita/Documents/OC/projet-/library/library-webapp/src/main/java/com/racic/lib/webapp/controller/MemberController.java
+/Users/Vita/Documents/OC/projet-/library/library-webapp/src/main/java/com/racic/lib/webapp/controller/LibraryController.java
+/Users/Vita/Documents/OC/projet-/library/library-webapp/src/main/java/com/racic/lib/webapp/controller/WorksController.java
+/Users/Vita/Documents/OC/projet-/library/library-webapp/src/main/java/com/racic/lib/webapp/controller/BookController.java

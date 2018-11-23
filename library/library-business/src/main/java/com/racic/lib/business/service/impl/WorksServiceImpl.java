@@ -1,7 +1,7 @@
 package com.racic.lib.business.service.impl;
 
 import com.racic.lib.business.service.contract.WorksService;
-import com.racic.lib.consumer.repository.contract.WorksRepository;
+import com.racic.lib.consumer.repository.WorksRepository;
 import com.racic.lib.model.Book;
 import com.racic.lib.model.Works;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,16 +1,22 @@
 package com.racic.lib.model;
 
+import java.util.List;
 
+import javax.persistence.*;
+import com.racic.lib.model.Works;
 
-
+@Entity(name="Book")    
 public class Book {
-
+	@Id
     private String bookId;
-
+	@Column
     private boolean isAvailable;
-
+	@ManyToOne
+	@JoinColumn(name="idworks")
     private Works works;
-
+	@OneToMany(mappedBy="book")
+	private List<Borrowing> borrowing;
+	
     public Book(String bookId, boolean isAvailable) {
         this.bookId = bookId;
         this.isAvailable = isAvailable;
