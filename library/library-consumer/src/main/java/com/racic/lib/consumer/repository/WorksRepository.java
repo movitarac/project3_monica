@@ -16,5 +16,6 @@ public interface WorksRepository extends CrudRepository <Works, String>{
 	Works findByAuthor(String author);
 	Works findByCopies(int copies);
 	Works findByPublicationYear (int pubyear);
+	List<Works> findAll();
 	
 }

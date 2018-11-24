@@ -47,4 +47,24 @@ public class MemberServiceImpl implements MemberService {
     public Member findMemberByEmail (String email) {
     	return memberRepository.findByEmail(email);
     }
+
+	@Override
+	public String addMember(Member member) {
+		memberRepository.save(member);
+		return member.getFirstName() + " one of our loyal member. Welcome!";
+	}
+
+	@Override
+	public String deleteMember(Member member) {
+		memberRepository.delete(member);
+		return "Member with id " + member.getMemberId()  + " is deleted";
+	}
+
+	@Override
+	public String updateMember(Member member) {
+		memberRepository.save(member);
+		return "Member with id " + member.getMemberId() + " is updated";
+	}
+    
+    
 }

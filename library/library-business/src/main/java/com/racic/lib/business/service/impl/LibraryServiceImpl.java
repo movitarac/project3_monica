@@ -14,10 +14,8 @@ public class LibraryServiceImpl implements LibraryService {
    @Autowired
    LibraryRepository libraryRepository;
 
-    public List<Works> getWorkList(Works works) {
-    	List<Works> worklist = libraryRepository.findByWorks(works);
-    	
-        return worklist;
+    public Library getByWorkList(Works works) {
+    	return libraryRepository.findByWorks(works);
     }
 
     public Library getLibraryByName(String libraryName) {

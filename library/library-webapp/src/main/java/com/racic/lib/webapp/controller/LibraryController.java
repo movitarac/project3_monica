@@ -8,12 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class LibraryController {
 
-   // @Autowired
-    //LibraryService libraryService;
+   @Autowired
+    LibraryService libraryService;
 	
 	 @RequestMapping(value="/home")
 	    public String home() {
 	    	System.out.println("we are in librarycontroller");
+	    	//libraryService.getWorkList(works)
 	    	return "header";
 	    }
 	 

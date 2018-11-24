@@ -5,13 +5,15 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 
 @Entity(name="Works")
 public class Works {
 	@Id
 	@Column
-    private int worksId;
+    private String worksId;
 	@Column
     private String title;
 	@Column
@@ -26,10 +28,11 @@ public class Works {
 	@JoinColumn(name="idlibrary")
     private Library library;
 	@OneToMany(mappedBy="works")
+	@JsonIgnore
 	private List<Book> books;
 
    
-    public Works(int worksId, String title, String author, int publicationYear, String bookDescription, int copies,
+    public Works(String worksId, String title, String author, int publicationYear, String bookDescription, int copies,
 			Library library, List<Book> books) {
 		super();
 		this.worksId = worksId;
@@ -47,11 +50,11 @@ public class Works {
     public Works() {
     }
 
-    public int getWorksId() {
+    public String getWorksId() {
         return worksId;
     }
 
-    public void setWorksId(int worksId) {
+    public void setWorksId(String worksId) {
         this.worksId = worksId;
     }
 

@@ -12,7 +12,9 @@ import java.util.List;
 
 public interface LibraryRepository extends CrudRepository<Library, Integer>{
 
-	List<Works> findByWorks(Works works);
+	Library findByWorks(Works works);
 	Library findByLibraryName(String libraryname);
-	Library findByCity(String city);   
+	Library findByCity(String city);  
+	
+	//List<Works> findByLibraryName(String libraryname);
 }

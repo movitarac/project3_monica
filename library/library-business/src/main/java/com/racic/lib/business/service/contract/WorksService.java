@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface WorksService {
 
+   // List<Works> getAllByLibraryId(int libraryid);
     List<Works> getAll();
     Works findWorksById(String worksid);
     Works findWorksByAuthor(String author);

@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity(name="Member")
 public class Member {
 	@Id
@@ -26,6 +28,7 @@ public class Member {
 	@Column
     private String address;
 	@OneToMany(mappedBy="member")
+	@JsonIgnore
 	private List<Borrowing> borrowing;
 	
 	

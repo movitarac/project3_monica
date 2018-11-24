@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity(name="Library")
 public class Library {
@@ -23,6 +25,7 @@ public class Library {
 	@Column
     private String city;
 	@OneToMany(mappedBy="library", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<Works> works;
 	
 	

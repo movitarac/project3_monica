@@ -1,6 +1,6 @@
 package com.racic.lib.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.*;
 import com.racic.lib.model.Member;
@@ -20,6 +20,8 @@ public class Borrowing {
     @Column
     private Date returnDate;
     @Column
+    private String status;
+    @Column
     private boolean isExtended;
 
     public Borrowing() {
@@ -35,9 +37,20 @@ public class Borrowing {
         this.idborrow = idborrow;
     }
 
-  
 
-    public Member getMember() {
+    public String getStatus() {
+		return status;
+	}
+
+
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+
+
+	public Member getMember() {
         return member;
     }
 
@@ -78,12 +91,19 @@ public class Borrowing {
         isExtended = extended;
     }
 
-    public Borrowing(int idborrow, Member member, Book book, Date issueDate, Date returnDate, boolean isExtended) {
-        this.idborrow = idborrow;
-        this.member = member;
-        this.book = book;
-        this.issueDate = issueDate;
-        this.returnDate = returnDate;
-        this.isExtended = isExtended;
-    }
+
+
+	public Borrowing(int idborrow, Member member, Book book, Date issueDate, Date returnDate, String status,
+			boolean isExtended) {
+		super();
+		this.idborrow = idborrow;
+		this.member = member;
+		this.book = book;
+		this.issueDate = issueDate;
+		this.returnDate = returnDate;
+		this.status = status;
+		this.isExtended = isExtended;
+	}
+
+   
 }

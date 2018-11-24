@@ -11,33 +11,36 @@ import java.util.List;
 @Service
 public class WorksServiceImpl implements WorksService {
 
-  
+	@Autowired
+	WorksRepository worksRepository;
 
-    public List<Works> getAll() {
-        return null;
-    }
-
+	public List<Works> getAll(){
+		return worksRepository.findAll();
+	}
     public Works findWorksById(String worksid) {
-        return null;
+        return worksRepository.findById(worksid).get();
     }
 
     public Works findWorksByAuthor(String author) {
-        return null;
+        return worksRepository.findByAuthor(author);
     }
 
     public Works findWorksByTitle(String title) {
-        return null;
+        return worksRepository.findByAuthor(title);
     }
 
     public String addWorks(Works works) {
-        return null;
+        worksRepository.save(works);
+        return "save works";
     }
 
     public String deleteWorks(Works works) {
-        return null;
+    	worksRepository.delete(works);
+        return works.getTitle() + " is deleted.";
     }
 
     public String updateWorks(Works works) {
-        return null;
+    	worksRepository.save(works);
+        return "work is updated!";
     }
 }

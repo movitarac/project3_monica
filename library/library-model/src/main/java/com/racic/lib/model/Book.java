@@ -3,6 +3,8 @@ package com.racic.lib.model;
 import java.util.List;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.*;
 import com.racic.lib.model.Works;
 
 @Entity(name="Book")    
@@ -15,6 +17,7 @@ public class Book {
 	@JoinColumn(name="idworks")
     private Works works;
 	@OneToMany(mappedBy="book")
+	@JsonIgnore
 	private List<Borrowing> borrowing;
 	
     public Book(String bookId, boolean isAvailable) {

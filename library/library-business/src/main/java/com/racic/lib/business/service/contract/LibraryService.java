@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface LibraryService {
 
-	List<Works> getWorkList(Works works);
+	Library getByWorkList(Works works);
 
 	Library getLibraryByName(String libraryName);
 

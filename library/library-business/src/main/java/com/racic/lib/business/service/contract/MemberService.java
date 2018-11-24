@@ -21,5 +21,10 @@ public interface MemberService {
     
     Member findMemberByEmail(String email);
     
+    String addMember(Member member);
+    
+    String deleteMember(Member member);
+    
+    String updateMember(Member member);
 
 }
