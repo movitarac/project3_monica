@@ -61,4 +61,14 @@ public class Library {
     public void setCity(String city) {
         this.city = city;
     }
+
+	public List<Works> getWorks() {
+		return works;
+	}
+
+	public void setWorks(List<Works> works) {
+		this.works = works;
+	}
+    
+    
 }

@@ -11,5 +11,4 @@ import java.util.List;
 public interface BookRepository extends CrudRepository<Book, String>{
     
 	List<Book> findAll();
-	Works findByWorks(Works works);
 }

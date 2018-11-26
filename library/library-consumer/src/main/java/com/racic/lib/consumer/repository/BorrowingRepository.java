@@ -17,4 +17,5 @@ public interface BorrowingRepository extends CrudRepository<Borrowing, Integer>{
 	Borrowing findByBook(Book book);
 	List<Borrowing> findByReturnDate(Date returnDate);
 	List<Borrowing> findByStatus(String status);
+	
 }

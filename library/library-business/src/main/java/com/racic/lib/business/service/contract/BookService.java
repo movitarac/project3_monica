@@ -1,6 +1,9 @@
 package com.racic.lib.business.service.contract;
 
+import java.util.List;
+
 import com.racic.lib.model.Book;
+import com.racic.lib.model.Borrowing;
 import com.racic.lib.model.Works;
 
 public interface BookService {
@@ -9,7 +12,7 @@ public interface BookService {
 
    String findBookAvailability(Book book,String bookid);
 
-   Works findBookWorks(Works works);
+   Works findWorksByBookId(String bookid);
   
-   
+   Borrowing findBorrowingByBookId(String bookid);
 }

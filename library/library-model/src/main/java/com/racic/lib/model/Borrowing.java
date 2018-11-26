@@ -12,7 +12,7 @@ public class Borrowing {
 	@ManyToOne
    	@JoinColumn(name="idmember")
     private Member member;
-   	@ManyToOne
+   	@OneToOne
    	@JoinColumn(name="idbook")
     private Book book;
     @Column
@@ -26,8 +26,6 @@ public class Borrowing {
 
     public Borrowing() {
     }
-
-
 
     public int getIdborrow() {
         return idborrow;

@@ -12,7 +12,9 @@ public interface MemberRepository extends CrudRepository <Member,Integer>{
 
 	Member findByLastName(String lastname);
 	Member findByFirstName(String firstname);
+	Member findByUsername(String username);
 	Member findByEmail(String email);
 	List<Borrowing> findByBorrowing(Borrowing borrowing);
+	//List<Borrowing> findById(int memberid);
 	List<Member> findAll();
 }

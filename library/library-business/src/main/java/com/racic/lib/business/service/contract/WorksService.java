@@ -1,5 +1,6 @@
 package com.racic.lib.business.service.contract;
 
+import com.racic.lib.model.Book;
 import com.racic.lib.model.Works;
 
 import java.util.List;
@@ -14,5 +15,7 @@ public interface WorksService {
     String addWorks(Works works);
     String deleteWorks(Works works);
     String updateWorks(Works works);
-
+    List<Book> findByWorksId(String worksid);
+    String findLibraryNameByWorksId(String worksid);
+    
 }

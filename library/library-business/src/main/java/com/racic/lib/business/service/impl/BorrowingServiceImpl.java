@@ -73,4 +73,17 @@ public class BorrowingServiceImpl implements BorrowingService {
 	public List<Borrowing> findByReturnDate(Date returnDate) {
 		return borrowingRepository.findByReturnDate(returnDate);
 	}
+
+	@Override
+	public Borrowing findByMemberId(int memberid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Borrowing findByBookId(String bookid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

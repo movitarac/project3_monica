@@ -82,6 +82,16 @@
 			<artifactId>spring-orm</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+		</dependency>
+
 		<!-- Hibernate -->
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
 		<dependency>
@@ -98,7 +108,10 @@
 			<groupId>org.hibernate.common</groupId>
 			<artifactId>hibernate-commons-annotations</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator</artifactId>
+		</dependency>
 
 		<!-- JSR 250 -->
 		<dependency>
@@ -128,8 +141,8 @@
 		</dependency>
 	</dependencies>
 
-<build>
-<finalName>library</finalName>
-</build>
+	<build>
+		<finalName>library</finalName>
+	</build>
 
 </project>

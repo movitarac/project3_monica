@@ -16,9 +16,9 @@ public class Book {
 	@ManyToOne
 	@JoinColumn(name="idworks")
     private Works works;
-	@OneToMany(mappedBy="book")
+	@OneToOne(mappedBy="book")
 	@JsonIgnore
-	private List<Borrowing> borrowing;
+	private Borrowing borrowing;
 	
     public Book(String bookId, boolean isAvailable) {
         this.bookId = bookId;
@@ -57,4 +57,13 @@ public class Book {
     public void setWorks(Works works) {
         this.works = works;
     }
+
+	public Borrowing getBorrowing() {
+		return borrowing;
+	}
+
+	public void setBorrowing(Borrowing borrowing) {
+		this.borrowing = borrowing;
+	}
+    
 }

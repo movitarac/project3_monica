@@ -75,7 +75,30 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+			<!-- Spring core -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>5.1.2.RELEASE</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>5.1.2.RELEASE</version>
+			</dependency>
 
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-web</artifactId>
+				<version>5.1.1.RELEASE</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-config</artifactId>
+				<version>5.1.1.RELEASE</version>
+			</dependency>
 
 			<dependency>
 				<groupId>javax.servlet</groupId>
@@ -111,18 +134,7 @@
 				<version>1.2</version>
 				<scope>provided</scope>
 			</dependency>
-			<!-- Spring core -->
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-core</artifactId>
-				<version>5.1.2.RELEASE</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-orm</artifactId>
-				<version>5.1.2.RELEASE</version>
-			</dependency>
+
 
 			<!-- Hibernate -->
 			<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
@@ -145,6 +157,11 @@
 				<version>5.1.0.Final</version>
 			</dependency>
 
+			<dependency>
+				<groupId>org.hibernate.validator</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<version>6.0.13.Final</version>
+			</dependency>
 
 			<!-- JSR 250 -->
 			<dependency>

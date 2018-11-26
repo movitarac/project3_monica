@@ -5,8 +5,8 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -22,6 +22,8 @@ public class Member {
 	@Column
     private String lastName;
 	@Column
+	private String username;
+	@Column
     private String email;
 	@Column
     private String password;
@@ -30,19 +32,24 @@ public class Member {
 	@OneToMany(mappedBy="member")
 	@JsonIgnore
 	private List<Borrowing> borrowing;
+	@ManyToMany(mappedBy="members")
+	@JsonIgnore
+	private List<Roles> roles;
 	
-	
+    public Member(int memberId, String firstName, String lastName, String username, String email, String password,
+			String address, List<Borrowing> borrowing) {
+		super();
+		this.memberId = memberId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.username = username;
+		this.email = email;
+		this.password = password;
+		this.address = address;
+		this.borrowing = borrowing;
+	}
 
-    public Member(int memberId, String firstName, String lastName, String email, String password, String address) {
-        this.memberId = memberId;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.address = address;
-    }
-
-    //default constructor
+	//default constructor
 
     public Member() {
     }
@@ -94,6 +101,22 @@ public class Member {
     public void setAddress(String address) {
         this.address = address;
     }
+
+	public List<Borrowing> getBorrowing() {
+		return borrowing;
+	}
+
+	public void setBorrowing(List<Borrowing> borrowing) {
+		this.borrowing = borrowing;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
 
 }

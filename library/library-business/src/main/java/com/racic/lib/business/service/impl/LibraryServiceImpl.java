@@ -29,4 +29,8 @@ public class LibraryServiceImpl implements LibraryService {
     public Library getLibraryByCity(String city) {
     	return libraryRepository.findByCity(city);
     }
+    public List<Works> findByLibraryId(int libraryid) {
+    	List<Works> workslist = libraryRepository.findById(libraryid).get().getWorks();
+    	return workslist;
+    }
 }

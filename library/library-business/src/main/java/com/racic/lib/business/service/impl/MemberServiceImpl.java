@@ -2,31 +2,29 @@ package com.racic.lib.business.service.impl;
 
 import com.racic.lib.business.service.contract.MemberService;
 import com.racic.lib.consumer.repository.MemberRepository;
+import com.racic.lib.model.Borrowing;
 import com.racic.lib.model.Member;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
-public class MemberServiceImpl implements MemberService {
+public class MemberServiceImpl implements MemberService, UserDetailsService {
 
 	@Autowired
 	MemberRepository memberRepository;
     
-  
-	//for test
-    public Member getMemberById(int id)  {
-
-        //return memberRepository.getMemberbyMemberId(id);
-        Member member1= new Member(1,"George","Lukas","george.lulu@gmail.com","lulu123","51 r carnot");
-       System.out.println("on est dans le service, ca marche");
-    	return member1;
-    	
-    }
-
+ 
     public Member findMemberById(int id) {
     	return memberRepository.findById(id).get();
     }
@@ -65,6 +63,23 @@ public class MemberServiceImpl implements MemberService {
 		memberRepository.save(member);
 		return "Member with id " + member.getMemberId() + " is updated";
 	}
-    
+	
+	public List<Borrowing> findByMemberId(int memberid){
+		List<Borrowing> borrowlist = memberRepository.findById(memberid).get().getBorrowing();
+		return borrowlist;
+	}
+	
+	@Override
+	public Member findByUsername(String username) {
+		
+		return memberRepository.findByUsername(username);
+	}
+	@Override
+	@Transactional 
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		Member member = memberRepository.findByUsername(username);
+		return null;
+	}
+
     
 }

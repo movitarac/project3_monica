@@ -3,6 +3,7 @@ package com.racic.lib.business.service.impl;
 import com.racic.lib.business.service.contract.BookService;
 import com.racic.lib.consumer.repository.BookRepository;
 import com.racic.lib.model.Book;
+import com.racic.lib.model.Borrowing;
 import com.racic.lib.model.Works;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,11 +33,13 @@ public class BookServiceImpl implements BookService {
 
 
 	@Override
-	public Works findBookWorks(Works works) {
-		return bookRepository.findByWorks(works);
+	public Works findWorksByBookId(String bookid) {
+		return bookRepository.findById(bookid).get().getWorks();
 	}
 
-	
+	public Borrowing findBorrowingByBookId(String bookid) {
+		return bookRepository.findById(bookid).get().getBorrowing();
+	}
 
 
 }

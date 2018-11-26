@@ -3,6 +3,7 @@ package com.racic.lib.business.service.impl;
 import com.racic.lib.business.service.contract.WorksService;
 import com.racic.lib.consumer.repository.WorksRepository;
 import com.racic.lib.model.Book;
+import com.racic.lib.model.Library;
 import com.racic.lib.model.Works;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,5 +43,12 @@ public class WorksServiceImpl implements WorksService {
     public String updateWorks(Works works) {
     	worksRepository.save(works);
         return "work is updated!";
+    }
+    public List<Book> findByWorksId(String worksid){
+    	return worksRepository.findById(worksid).get().getBooks();
+    }
+    
+    public String findLibraryNameByWorksId(String worksid) {
+    	return worksRepository.findById(worksid).get().getLibrary().getLibraryName();
     }
 }

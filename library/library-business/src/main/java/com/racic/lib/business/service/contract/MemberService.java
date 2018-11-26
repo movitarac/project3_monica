@@ -17,8 +17,6 @@ public interface MemberService {
 
     Member findMemberByFirstName(String firstname);
     
-    Member getMemberById(int memberid);
-    
     Member findMemberByEmail(String email);
     
     String addMember(Member member);
@@ -26,5 +24,8 @@ public interface MemberService {
     String deleteMember(Member member);
     
     String updateMember(Member member);
+    
+    List<Borrowing> findByMemberId(int memberid);
+    Member findByUsername(String username);
 
 }

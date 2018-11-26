@@ -25,6 +25,15 @@ public class WorksController {
 		String title = worksService.findWorksById(id).getTitle();
 		return "The book is " + title;
 	}
+	
+	@RequestMapping(value = "/works/library/{id}", method = RequestMethod.GET)
+	public @ResponseBody String libraryName(@PathVariable String id) {
+
+		System.out.println("works found");
+		String title = worksService.findWorksById(id).getTitle();
+		String libraryname = worksService.findLibraryNameByWorksId(id);
+		return "The book " + title + " can be found in " + libraryname;
+	}
 
 	@RequestMapping(value = "/allworks", method = RequestMethod.GET)
 	public @ResponseBody String getWorksList() {
