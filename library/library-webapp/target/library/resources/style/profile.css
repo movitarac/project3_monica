@@ -1,10 +1,17 @@
 .lead{
     /*background-color :#b3ffb3;*/
-    color:  #c2f0c2;
+    color: #17625A;
     padding-left: 150px;
-    padding-top: 5px;
+  margin-top: 4%;
     padding-bottom: 5px;
 }
 .cover-heading {
     text-align: center;
+}
+.worksdesc{
+
+    color: #17625A;
+    padding-left: 150px;
+    padding-top: 5px;
+    margin-top: 4%;
 }

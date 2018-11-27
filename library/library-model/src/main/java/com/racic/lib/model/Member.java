@@ -32,9 +32,7 @@ public class Member {
 	@OneToMany(mappedBy="member")
 	@JsonIgnore
 	private List<Borrowing> borrowing;
-	@ManyToMany(mappedBy="members")
-	@JsonIgnore
-	private List<Roles> roles;
+	
 	
     public Member(int memberId, String firstName, String lastName, String username, String email, String password,
 			String address, List<Borrowing> borrowing) {

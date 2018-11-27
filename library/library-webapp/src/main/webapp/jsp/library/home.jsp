@@ -1,17 +1,10 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false" %>
-<%@ page pageEncoding="UTF-8" %>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <link href="<c:url value="/resources/style/bootstrap.min.css" />" rel="stylesheet" type="text/css">
-        
-        <%@ include file="../_include/header.jsp" %>
-    </head>
+
     <body>
-        <h1>City Library of Saint Herblain</h1>
-        
+    <%@ include file="../_include/header.jsp" %>
+        <h1 class="titlelibrary">City Library of Saint Herblain</h1>
+        <p>
+            <%@include file="about.jsp"%>
+        </p>
          <%@ include file="../_include/footer.jsp" %>
     </body>
 </html>

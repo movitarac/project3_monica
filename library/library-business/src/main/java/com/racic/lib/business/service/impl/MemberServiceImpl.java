@@ -5,11 +5,7 @@ import com.racic.lib.consumer.repository.MemberRepository;
 import com.racic.lib.model.Borrowing;
 import com.racic.lib.model.Member;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,7 +15,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @Service
-public class MemberServiceImpl implements MemberService, UserDetailsService {
+public class MemberServiceImpl implements MemberService {
 
 	@Autowired
 	MemberRepository memberRepository;
@@ -74,12 +70,13 @@ public class MemberServiceImpl implements MemberService, UserDetailsService {
 		
 		return memberRepository.findByUsername(username);
 	}
-	@Override
+	/*
 	@Transactional 
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Member member = memberRepository.findByUsername(username);
 		return null;
 	}
+	*/
 
     
 }

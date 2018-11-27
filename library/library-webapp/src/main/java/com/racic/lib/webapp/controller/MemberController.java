@@ -32,12 +32,14 @@ public class MemberController {
 		String firstname = memberService.findMemberById(id).getFirstName();
 		String lastname = memberService.findMemberById(id).getLastName();
 		String email = memberService.findMemberById(id).getEmail();
+		String username = memberService.findMemberById(id).getUsername();
 		String address = memberService.findMemberById(id).getAddress();
 		model.addAttribute("lastname", lastname);
 		model.addAttribute("firstname", firstname);
+		model.addAttribute("username",username);
 		model.addAttribute("email", email);
 		model.addAttribute("address", address);
-		return "profile";
+		return "member/profile";
 	}
 
 	// TEST with model (to pass values from controller to view)
@@ -50,7 +52,7 @@ public class MemberController {
 		model.addAttribute("lastname", lastname);
 		model.addAttribute("firstname", firstname);
 		System.out.println("with model add atribute");
-		return "home";
+		return "library/home";
 	}
 
 	public MemberService getMemberService() {

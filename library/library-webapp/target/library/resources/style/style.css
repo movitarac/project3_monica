@@ -1,4 +1,7 @@
 
+.citylibrary {
+    color: #d7ebe9 !important;
+}
 .explainHeader {
     font-size: 20px;
     color: #003300;
@@ -62,7 +65,13 @@ a:hover{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     position:relative;
-    right: 0;
     bottom: 0;
-    left: 0;
+    text-align: center;
+}
+
+.aboutwho{
+    color: #dc3545;
+}
+.titlelibrary{
+    margin-top: 5%;
 }

@@ -14,13 +14,33 @@ public class LibraryController {
 	 @RequestMapping(value="/")
 	    public String home() {
 	    	System.out.println("we are in librarycontroller");
-	    	//libraryService.getWorkList(works)
 	    	return "library/home";
 	    }
 	 @RequestMapping(value="/connection")
 	    public String login() {
 	    	System.out.println("we are in librarycontroller");
 	    	//libraryService.getWorkList(works)
-	    	return "member/connection";
+	    	return "member/login";
 	    }
+
+	@RequestMapping(value="/registration")
+	public String registration() {
+		System.out.println("we are in librarycontroller");
+		//libraryService.getWorkList(works)
+		return "member/registration";
+	}
+
+	@RequestMapping(value="/information")
+	public String information() {
+		System.out.println("we are in librarycontroller");
+		//libraryService.getWorkList(works)
+		return "library/information";
+	}
+
+	@RequestMapping(value="/condition")
+	public String condition() {
+		System.out.println("we are in librarycontroller");
+		//libraryService.getWorkList(works)
+		return "library/condition";
+	}
 }
