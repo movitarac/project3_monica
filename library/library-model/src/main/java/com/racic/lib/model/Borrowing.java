@@ -1,9 +1,11 @@
 package com.racic.lib.model;
 
-import java.sql.Date;
+
 
 import javax.persistence.*;
 import com.racic.lib.model.Member;
+
+import java.util.Date;
 
 @Entity(name="Borrowing")
 public class Borrowing {

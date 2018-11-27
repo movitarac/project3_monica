@@ -1,5 +1,5 @@
 <%@ include file="../_include/taglib.jsp" %>
-<header>
+<header class="header">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand"><span class="citylibrary">City Library</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"

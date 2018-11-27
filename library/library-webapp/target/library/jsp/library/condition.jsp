@@ -1,6 +1,7 @@
 
-<body>
+<body class="condition">
 <%@ include file="../_include/header.jsp" %>
+
 <h1>Library terms and condition</h1>
 <h2>General conditions</h2>
 <ul>

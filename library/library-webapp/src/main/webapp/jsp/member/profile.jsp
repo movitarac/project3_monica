@@ -1,5 +1,5 @@
 
-<body>
+<body class="profile">
 <%@ include file="../_include/header.jsp" %>
 <main role="main" class="inner cover">
     <h1 class="cover-heading">Your personal information</h1>

@@ -2,39 +2,31 @@
 .citylibrary {
     color: #d7ebe9 !important;
 }
-.explainHeader {
-    font-size: 20px;
-    color: #003300;
-    margin-left: 20px;
-    margin-top:30px;
-    text-align: left;
+.titlelibrary{
+    margin-top: 10%;
+    margin-left: 10%;
+    padding-left: 15%;
+    padding-top: 5%;
 }
-.cam{
-    height: 25px;
-    width: 25px;
-    margin-left: 10px;
-    margin-right: 10px;
+.information, .condition{
+    margin-top: 35% !important;
+    padding-top:25% !important;
+    margin-left:25% !important;
+    color: #062c33 !important;
 }
+
+
 .row{
     margin-top: 150px; 
 }
 .container{
     margin-top: 50px;
 }
-.searchPart{
-    margin-left: 800px;
-    margin-top: 150px;
-    font-size: 15px;
-    
-}
+
 .lead{
     text-align: center;
 }
 
-.searchLink{
-    font-size: 15px; 
-    color:#009900;
-}
 a:hover{
     color:#ff1a1a;
     text-decoration: none;
@@ -53,25 +45,22 @@ a:hover{
 #menuS0:hover{
     color:#ccffcc !important;
 }
-.information{
-	margin-top: 5%;
-	padding-top:5%;
-	margin-left:5%;
-	
+
+
+
+.profile{
+    color: #17625A;
+    padding-left: 150px;
+    margin-top: 4%;
+    padding-bottom: 5px;
 }
+
 .footer {
     font-size: 15px;
     color: #004d00;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    position:relative;
+    position:absolute;
     bottom: 0;
     text-align: center;
-}
-
-.aboutwho{
-    color: #dc3545;
-}
-.titlelibrary{
-    margin-top: 5%;
 }

@@ -4,7 +4,8 @@
 <main role="main" class="inner cover">
     <h1 class="cover-heading">Works detail</h1>
     <p class="worksdesc">
-        <span class="worksDetail">Title </span> <span class="worksInfo">${title}</span> <br>
+
+        <span class="worksDetail">Title: </span> <span class="worksInfo">${title}</span> <br>
         <span class="worksDetail">Author: </span> <span class="worksInfo">${author}</span> <br>
         <span class="worksDetail">Publication Year: </span> <span class="worksInfo">${publicationyear}</span> <br>
         <span class="worksDetail">Description: </span> <span class="worksInfo">${description}</span> <br>
