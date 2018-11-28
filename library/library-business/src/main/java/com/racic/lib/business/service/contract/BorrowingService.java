@@ -11,8 +11,6 @@ public interface BorrowingService {
     boolean addBorrowing (List<String> booksid);
     String deleteBorrowing (Borrowing borrowing);
     String updateBorrowing (Borrowing borrowing);
-    Borrowing findByMemberId(int memberid);
-    Borrowing findByBookId (String bookid);
     Borrowing findByBorrowingId(int borrowingid);
     List<Borrowing> findByReturnDate(Date returnDate);
     List<Borrowing> findByStatus(String status);

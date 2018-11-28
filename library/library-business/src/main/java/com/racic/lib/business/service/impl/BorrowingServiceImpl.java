@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -40,13 +41,16 @@ public class BorrowingServiceImpl implements BorrowingService {
 		return "borrowing is updated";
 	}
 
+
 	public Borrowing findByMember(Member member) {
 		return borrowingRepository.findByMember(member);
 	}
 
+
 	public List<Borrowing> borrowingList(Borrowing borrowing) {
 		return borrowingRepository.findAll();
 	}
+
 
 	public Borrowing findByBorrowingId(int borrowingid) {
 		return borrowingRepository.findById(borrowingid).get();
@@ -68,7 +72,7 @@ public class BorrowingServiceImpl implements BorrowingService {
 			return "Your borrowing is not extended";
 		}
 
-	} 
+	}
 
 	public List<Borrowing> findByStatus(String status) {
 		return borrowingRepository.findByStatus(status);
@@ -80,17 +84,6 @@ public class BorrowingServiceImpl implements BorrowingService {
 	}
 
 
-	public Borrowing findByMemberId(int memberid) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	public Borrowing findByBookId(String bookid) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 
 	/**
 	 * Create a borrowing list from several books
@@ -99,24 +92,36 @@ public class BorrowingServiceImpl implements BorrowingService {
 	 */
 	public boolean addBorrowing (List<String> booksid){
 		boolean toReturn;
-		for ( String bookid : booksid )
-		{
+		for ( String bookid : booksid ) {
 			Book bookToBorrow = bookRepository.findById(bookid).get();
 			Borrowing borrowToSave = new Borrowing();
-			borrowToSave.setBook(bookToBorrow);
-
-			//to do replace by connected member
-			Member m1 = new Member ();
+			Member m1 = new Member();
 			m1.setMemberId(1);
 			m1.setFirstName("Lukas");
 			m1.setLastName("George");
-			borrowToSave.setMember(m1);
 
-			borrowToSave.setIssueDate(new Date());
-			// calculate the return date!
+			boolean availability = bookToBorrow.isAvailable();
+			if (availability) {
+				borrowToSave.setBook(bookToBorrow);
+				//to do replace by connected member
+				borrowToSave.setMember(m1);
 
-			//save the newest borrowing
-			borrowingRepository.save(borrowToSave);
+				borrowToSave.setIssueDate(new Date());
+				// calculation of the return date!
+				Date returndate= new Date();
+				Calendar calendar = Calendar.getInstance();
+				calendar.setTime(returndate);
+				calendar.add(Calendar.WEEK_OF_MONTH,4);
+				returndate =calendar.getTime();
+				borrowToSave.setReturnDate(returndate);
+				borrowToSave.setStatus("ongoing");
+				//save the newest borrowing
+				borrowingRepository.save(borrowToSave);
+				availability = false;
+			} else {
+				String errormessage = "Cannot borrow";
+			}
+
 		}
 
 		toReturn = true;

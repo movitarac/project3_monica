@@ -25,7 +25,7 @@ public class BorrowingController {
     @Autowired
     BorrowingService borrowingService;
     
-    @RequestMapping(value="/borrowings/{id}",method= RequestMethod.GET)
+    @RequestMapping(value="/library/borrowings/{id}",method= RequestMethod.GET)
     public @ResponseBody
     Borrowing sayHello(@PathVariable int id){
 
@@ -34,7 +34,7 @@ public class BorrowingController {
     }
 
     /*
-    @RequestMapping(value = "/borrowing/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/library/borrowing/{id}", method = RequestMethod.GET)
 
     public String getBorrowing(@PathVariable int id, Model model) {
 
@@ -53,7 +53,7 @@ public class BorrowingController {
     }
      */
 
-    @RequestMapping(value = "/borrowing/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/library/borrowing/{id}", method = RequestMethod.GET)
     public String getBorrowingByMember(@PathVariable int id, Model model) {
 
         System.out.println("works found");
@@ -70,7 +70,7 @@ public class BorrowingController {
         return "works/works-detail";
     }
 
-    @RequestMapping(value="/borrowingbymember/{booksIds}",method = RequestMethod.GET)
+    @RequestMapping(value="/library/borrowingbymember/{booksIds}",method = RequestMethod.GET)
     public @ResponseBody String getBorrowingsByMember(@PathVariable String booksIds) {
         String[] arraybookid = booksIds.split("-");
         List<String> listbooktoborrow = new ArrayList<>();

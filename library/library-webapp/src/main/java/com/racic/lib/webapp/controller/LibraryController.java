@@ -11,33 +11,33 @@ public class LibraryController {
    @Autowired
     LibraryService libraryService;
 	
-	 @RequestMapping(value="/")
+	 @RequestMapping(value="/library")
 	    public String home() {
 	    	System.out.println("we are in librarycontroller");
 	    	return "library/home";
 	    }
-	 @RequestMapping(value="/connection")
+	 @RequestMapping(value="/library/connections")
 	    public String login() {
 	    	System.out.println("we are in librarycontroller");
 	    	//libraryService.getWorkList(works)
 	    	return "member/login";
 	    }
 
-	@RequestMapping(value="/registration")
+	@RequestMapping(value="/library/registration")
 	public String registration() {
 		System.out.println("we are in librarycontroller");
 		//libraryService.getWorkList(works)
 		return "member/registration";
 	}
 
-	@RequestMapping(value="/information")
+	@RequestMapping(value="/library/information")
 	public String information() {
 		System.out.println("we are in librarycontroller");
 		//libraryService.getWorkList(works)
 		return "library/information";
 	}
 
-	@RequestMapping(value="/condition")
+	@RequestMapping(value="/library/condition")
 	public String condition() {
 		System.out.println("we are in librarycontroller");
 		//libraryService.getWorkList(works)

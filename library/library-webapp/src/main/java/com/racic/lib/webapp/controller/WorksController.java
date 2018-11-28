@@ -19,24 +19,16 @@ public class WorksController {
 	@Autowired
 	WorksService worksService;
 
-	@RequestMapping(value = "/work/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/library/work/{id}", method = RequestMethod.GET)
 	public @ResponseBody String sayHello(@PathVariable String id) {
 
 		System.out.println("works found");
 		String title = worksService.findWorksById(id).getTitle();
 		return "The book is " + title;
 	}
-	
-	@RequestMapping(value = "/works/library/{id}", method = RequestMethod.GET)
-	public @ResponseBody String libraryName(@PathVariable String id) {
 
-		System.out.println("works found");
-		String title = worksService.findWorksById(id).getTitle();
-		String libraryname = worksService.findLibraryNameByWorksId(id);
-		return "The book " + title + " can be found in " + libraryname;
-	}
 
-	@RequestMapping(value = "/works/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/library/works/{id}", method = RequestMethod.GET)
 	public String getWorks(@PathVariable String id, Model model) {
 
 		System.out.println("works found");

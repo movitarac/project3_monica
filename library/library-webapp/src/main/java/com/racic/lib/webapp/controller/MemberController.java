@@ -18,14 +18,50 @@ public class MemberController {
 	@Autowired
 	MemberService memberService;
 
-	@RequestMapping(value = "/member")
+
+	///LOGIN///
+	@RequestMapping(value = "/library/connection", method = RequestMethod.GET)
+	public String initial(Model model) {
+		model.addAttribute("message","Please enter your login details");
+		return "member/logins";
+	}
+
+	@RequestMapping (method = RequestMethod.POST)
+	public String submitlogin(Model model, @ModelAttribute("member") Member member) {
+		if(member != null && member.getUsername() !=null & member.getPassword() !=null) {
+			if (member.getUsername().equals("georgelulu")
+					&& member.getPassword().equals("1234lulu")) {
+
+				String firstname =member.getFirstName();
+				String lastname = member.getLastName();
+				String email = member.getEmail();
+				String username = member.getUsername();
+				String address = member.getAddress();
+				model.addAttribute("lastname", lastname);
+				model.addAttribute("firstname", firstname);
+				model.addAttribute("username",username);
+				model.addAttribute("email", email);
+				model.addAttribute("address", address);
+				return "member/profile";
+			} else {
+				model.addAttribute("error","Invalid details");
+				return "member/logins";
+			}
+		} else {
+			model.addAttribute("error","Please enter details");
+			return "member/logins";
+		}
+
+	}
+
+	@RequestMapping(value = "/library/member")
 	public String home() {
 		System.out.println("Member controller passing through to header.jsp outside the web inf");
 		// return "/_include/header";
 		return "home";
 	}
 
-	@RequestMapping(value = "/member/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/library/member/{id}", method = RequestMethod.GET)
 	public String sayHello(@PathVariable int id, Model model) {
 
 		System.out.println("member found");
@@ -43,7 +79,7 @@ public class MemberController {
 	}
 
 	// TEST with model (to pass values from controller to view)
-	@RequestMapping(value = "members/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/library/members/{id}", method = RequestMethod.GET)
 	public String members(@PathVariable("id") int id, Model model) {
 		System.out.println("try to go home jsp");
 		Member member = this.memberService.findMemberById(id);
