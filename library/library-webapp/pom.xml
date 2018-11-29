@@ -112,6 +112,17 @@
 			<artifactId>spring-data-jpa</artifactId>
 		</dependency>
 
+		<!-- SPRING SECURITY -->
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+		</dependency>
 		<!-- pour le test -->
 
 		<dependency>

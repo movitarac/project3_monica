@@ -80,4 +80,15 @@ public class BorrowingController {
 
         return "add borrowing list";
     }
+
+    /*@RequestMapping(method = RequestMethod.POST)
+    public @ResponseBody String getBorrowingListByMember(@PathVariable String booksIds) {
+        String[] arraybookid = booksIds.split("-");
+        List<String> listbookstoborrow = new ArrayList<>();
+        Collections.addAll(listbookstoborrow,arraybookid);
+
+        borrowingService.addBorrowing(listbookstoborrow);
+
+        return "add borrowing list for a member";
+    }*/
 }

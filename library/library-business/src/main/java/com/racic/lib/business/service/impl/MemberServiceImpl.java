@@ -70,6 +70,28 @@ public class MemberServiceImpl implements MemberService {
 		
 		return memberRepository.findByUsername(username);
 	}
+
+	@Override
+	public Member findByUsernameAndPassword(String username, String password){
+
+    return memberRepository.findByUsernameAndPassword(username,password);
+	}
+
+	@Override
+	public boolean isValidUser(String userName, String passWord) {
+
+    	Member validMember = memberRepository.findByUsernameAndPassword(userName, passWord);
+
+    	List<Member> validMembers = new ArrayList<Member>();
+    	validMembers.add(validMember);
+    	boolean toReturn;
+    	if (validMembers.size()== 1 && validMember !=null) {
+    		toReturn = true;
+		} else{
+    		toReturn = false;
+		}
+    	return toReturn;
+	}
 	/*
 	@Transactional 
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

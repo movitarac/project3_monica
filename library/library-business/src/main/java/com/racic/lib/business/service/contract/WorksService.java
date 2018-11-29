@@ -17,5 +17,8 @@ public interface WorksService {
     String updateWorks(Works works);
     List<Book> findByWorksId(String worksid);
     String findLibraryNameByWorksId(String worksid);
-    
+
+    Works findWorksByAuthorIgnoreCase(String author);
+
+    Works findWorksByTitleIgnoreCase(String title);
 }

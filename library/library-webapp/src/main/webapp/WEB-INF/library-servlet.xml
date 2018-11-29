@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns="http://www.springframework.org/schema/beans"
-	xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
-	xmlns:jee="http://www.springframework.org/schema/jee"
-	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
+			 xmlns:context="http://www.springframework.org/schema/context"
+			 xmlns="http://www.springframework.org/schema/beans"
+			 xmlns:aop="http://www.springframework.org/schema/aop"
+			 xmlns:p="http://www.springframework.org/schema/p"
+			 xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+			 xmlns:jee="http://www.springframework.org/schema/jee"
+			 xmlns:mvc="http://www.springframework.org/schema/mvc"
+			 xmlns:tx="http://www.springframework.org/schema/tx"
+			 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.springframework.org/schema/data/jpa
 http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
@@ -21,7 +21,7 @@ http://www.springframework.org/schema/tx/spring-tx.xsd
 http://www.springframework.org/schema/aop
 http://www.springframework.org/schema/aop/spring-aop.xsd
 http://www.springframework.org/schema/mvc
-http://www.springframework.org/schema/mvc/spring-mvc.xsd ">
+http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	<!-- Spring container scans the base package of the applications to configure 
 		as beans -->
@@ -32,7 +32,7 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd ">
 	<!--enables the spring mvc to @Controller programming model -->
 	<mvc:annotation-driven />
 
-	
+
 	<!-- Data Source -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -89,6 +89,11 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd ">
 	<property name="prefix" value="/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+
+
+	<!--Spring security-->
+	<!--<bean class="org.springframework.security.data.repository.query.SecurityEvaluationContextExtension"/>-->
+
 
 	<!-- mapping for css -->
 	<mvc:resources mapping="/resources/**"

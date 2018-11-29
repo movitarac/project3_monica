@@ -4,5 +4,10 @@
         <h1 class="titlelibrary">City Library of Saint Herblain</h1>
         <p>
             <%@include file="about.jsp"%>
+            
         </p>
+    <br>
+    <p>
+        <%@include file="../works/workssearch.jsp"%>
+    </p>
     </body>

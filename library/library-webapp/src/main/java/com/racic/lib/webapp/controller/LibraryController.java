@@ -20,7 +20,7 @@ public class LibraryController {
 	    public String login() {
 	    	System.out.println("we are in librarycontroller");
 	    	//libraryService.getWorkList(works)
-	    	return "member/login";
+	    	return "member/logins";
 	    }
 
 	@RequestMapping(value="/library/registration")
@@ -42,5 +42,12 @@ public class LibraryController {
 		System.out.println("we are in librarycontroller");
 		//libraryService.getWorkList(works)
 		return "library/condition";
+	}
+
+	@RequestMapping(value="/library/browse")
+	public String brose() {
+		System.out.println("we are in librarycontroller");
+		//libraryService.getWorkList(works)
+		return "borrowing/browse";
 	}
 }

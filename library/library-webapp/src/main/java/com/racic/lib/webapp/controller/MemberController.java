@@ -8,7 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.Optional;
 
@@ -19,14 +21,60 @@ public class MemberController {
 	MemberService memberService;
 
 
-	///LOGIN///
+	//other login test//
+	@RequestMapping(value = "/library/login", method = RequestMethod.GET)
+	public String login(Model model) {
+		model.addAttribute("message","Please enter your login details");
+		return "member/login";
+	}
+
+	@RequestMapping(value="/library/login", method=RequestMethod.POST)
+	public ModelAndView Login(HttpServletRequest request, @ModelAttribute("member")
+							  Member member){
+
+		boolean result;
+		ModelAndView modelAndView = null;
+		String username=member.getUsername();
+		String password=member.getPassword();
+
+		String firstname = memberService.findByUsername(username).getFirstName();
+		String lastname = memberService.findByUsername(username).getLastName();
+		String email = memberService.findByUsername(username).getEmail();
+		String address = memberService.findByUsername(username).getAddress();
+
+		if(member !=null && username !=null & password !=null) {
+
+			result = memberService.isValidUser(username,password);
+			if (result == true) {
+				modelAndView = new ModelAndView("member/profile");
+				/*
+				modelAndView.addObject("lastname", lastname);
+				modelAndView.addObject("firstname", firstname);
+				modelAndView.addObject("username",username);
+				modelAndView.addObject("email", email);
+				modelAndView.addObject("address", address);
+				*/
+			} else {
+				modelAndView = new ModelAndView("member/login");
+				modelAndView.addObject("msg","Wrong username and or password");
+			}
+		} else {
+			modelAndView = new ModelAndView("member/login");
+			modelAndView.addObject("msg","Error occured while processing");
+		}
+
+		return modelAndView;
+	}
+
+
+	///LOGIN TEST///
 	@RequestMapping(value = "/library/connection", method = RequestMethod.GET)
 	public String initial(Model model) {
 		model.addAttribute("message","Please enter your login details");
 		return "member/logins";
 	}
 
-	@RequestMapping (method = RequestMethod.POST)
+	@RequestMapping (value = "/library/connection", method = RequestMethod.POST)
 	public String submitlogin(Model model, @ModelAttribute("member") Member member) {
 		if(member != null && member.getUsername() !=null & member.getPassword() !=null) {
 			if (member.getUsername().equals("georgelulu")
@@ -54,11 +102,11 @@ public class MemberController {
 
 	}
 
-	@RequestMapping(value = "/library/member")
+	@RequestMapping(value = "/library/hello")
 	public String home() {
 		System.out.println("Member controller passing through to header.jsp outside the web inf");
 		// return "/_include/header";
-		return "home";
+		return "member/profile";
 	}
 
 	@RequestMapping(value = "/library/member/{id}", method = RequestMethod.GET)

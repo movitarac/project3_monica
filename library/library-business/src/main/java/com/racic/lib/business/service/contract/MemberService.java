@@ -28,4 +28,7 @@ public interface MemberService {
     List<Borrowing> findByMemberId(int memberid);
     Member findByUsername(String username);
 
+    Member findByUsernameAndPassword(String username, String password);
+
+    boolean isValidUser(String userName, String passWord);
 }

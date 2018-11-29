@@ -1,5 +1,5 @@
 
-.aboutwho{
+.aboutwho, .searchbook{
     margin-left: 5%;
 }
 .row{
@@ -7,6 +7,11 @@
 }
 .container{
     margin-top: 50px;
+}
+
+.browsebook{
+    margin-top: 4%;
+    margin-left: 5%;
 }
 
 .lead{
@@ -32,6 +37,10 @@ a:hover{
     color:#ccffcc !important;
 }
 
+#menuS3:hover{
+    color:#ccffcc !important;
+}
+
 .citylibrary {
     color: #d7ebe9 !important;
 }
@@ -48,7 +57,7 @@ a:hover{
     color: #0b2e13 !important;
 }
 
-.loginelement{
+.loginelement, .signupnelement{
     text-align: center;
     margin-top: 10%;
 }
