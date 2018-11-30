@@ -1,38 +1,31 @@
 package com.racic.lib.model;
 
-import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.*;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 
-@Entity(name="Works")
+
+@Entity
+@Table(name="Works")
 public class Works {
-	@Id
-	@Column
-    private String worksId;
-	@Column
+    @Id @GeneratedValue(generator="gen_works", strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name="gen_works", sequenceName="seq_works", allocationSize=1)
+    private Integer worksId;
     private String title;
-	@Column
     private String author;
-	@Column
     private int publicationYear;
-	@Column
     private String bookDescription;
-	@Column
-    private int copies;
 	@ManyToOne
 	@JoinColumn(name="idlibrary")
     private Library library;
-	@OneToMany(mappedBy="works")
-	@JsonIgnore
+	@OneToMany
 	private List<Book> books;
 
    
-    public Works(String worksId, String title, String author, int publicationYear, String bookDescription, int copies,
+    public Works(Integer worksId, String title, String author, int publicationYear, String bookDescription,
 			Library library, List<Book> books) {
 		super();
 		this.worksId = worksId;
@@ -40,7 +33,6 @@ public class Works {
 		this.author = author;
 		this.publicationYear = publicationYear;
 		this.bookDescription = bookDescription;
-		this.copies = copies;
 		this.library = library;
 		this.books = books;
 	}
@@ -48,13 +40,14 @@ public class Works {
 	//default constructor
 
     public Works() {
+        super();
     }
 
-    public String getWorksId() {
+    public Integer getWorksId() {
         return worksId;
     }
 
-    public void setWorksId(String worksId) {
+    public void setWorksId(Integer worksId) {
         this.worksId = worksId;
     }
 
@@ -90,13 +83,6 @@ public class Works {
         this.bookDescription = bookDescription;
     }
 
-    public int getCopies() {
-        return copies;
-    }
-
-    public void setCopies(int copies) {
-        this.copies = copies;
-    }
 
     public Library getLibrary() {
         return library;

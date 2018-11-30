@@ -10,7 +10,7 @@ public interface BookService {
 
    Book findBookbyId(String bookid);
 
-   String findBookAvailability(Book book,String bookid);
+   String findBookAvailability(String bookid);
 
    Works findWorksByBookId(String bookid);
   

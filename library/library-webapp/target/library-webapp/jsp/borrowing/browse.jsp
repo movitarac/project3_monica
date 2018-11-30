@@ -1,16 +1,21 @@
 
-
 <body>
 
-<div class="book carousel-item">
-    <div class="book-cover">
-        <img class="bookcover" title="Harry Potter and the Philosopher's Stone by J.K Rowling"
-             src="/resources/assets/harpot1.jpg">
+<%@ include file="../_include/header.jsp"%>
+    <div class="browsebook">
+
+
+            <c:forEach items="${worksList}" var="work">
+                <ul>
+                <li>${work.title} by ${work.author}
+                    <li id="borrowbutton"><input type="submit" value="Borrow" /></li>
+                </ul>
+            </c:forEach>
+
+
+
     </div>
-    <div class="book-cta">
-    <a class="btn primary borrow-link" href="#">Borrow</a>
-    </div>
-</div>
+
 
 
 

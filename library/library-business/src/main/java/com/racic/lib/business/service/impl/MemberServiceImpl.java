@@ -33,8 +33,13 @@ public class MemberServiceImpl implements MemberService {
         return memberRepository.findByLastName(lastname);
     }
 
+	@Override
+	public Member findMemberById(Integer id) {
+		return memberRepository.findByIduser(id);
+	}
 
-    public Member findMemberByFirstName(String firstname) {
+
+	public Member findMemberByFirstName(String firstname) {
         return memberRepository.findByFirstName(firstname);
     }
     
@@ -51,17 +56,17 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public String deleteMember(Member member) {
 		memberRepository.delete(member);
-		return "Member with id " + member.getMemberId()  + " is deleted";
+		return "Member with id " + member.getIduser()  + " is deleted";
 	}
 
 	@Override
 	public String updateMember(Member member) {
 		memberRepository.save(member);
-		return "Member with id " + member.getMemberId() + " is updated";
+		return "Member with id " + member.getIduser() + " is updated";
 	}
 	
-	public List<Borrowing> findByMemberId(int memberid){
-		List<Borrowing> borrowlist = memberRepository.findById(memberid).get().getBorrowing();
+	public List<Borrowing> findByIdUser(Integer iduser){
+		List<Borrowing> borrowlist = memberRepository.findById(iduser).get().getBorrowing();
 		return borrowlist;
 	}
 	
@@ -82,7 +87,7 @@ public class MemberServiceImpl implements MemberService {
 
     	Member validMember = memberRepository.findByUsernameAndPassword(userName, passWord);
 
-    	List<Member> validMembers = new ArrayList<Member>();
+    	List<Member> validMembers = new ArrayList<>();
     	validMembers.add(validMember);
     	boolean toReturn;
     	if (validMembers.size()== 1 && validMember !=null) {
@@ -92,13 +97,6 @@ public class MemberServiceImpl implements MemberService {
 		}
     	return toReturn;
 	}
-	/*
-	@Transactional 
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		Member member = memberRepository.findByUsername(username);
-		return null;
-	}
-	*/
 
     
 }

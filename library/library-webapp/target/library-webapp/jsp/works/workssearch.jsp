@@ -1,7 +1,7 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <h2 class="searchbook">Find your book</h2>
 <hr>
-<form:form name="searchWork" method="GET">
+<form:form method="POST" action="workssearch">
 
     <table class="searchbook">
     <tr>
@@ -11,7 +11,7 @@
     </tr>
     <tr>
     <label for="inputTitle" class="sr-only"><td>Title</td></label>
-    <td> <input type="password" id="inputTitle" placeholder="title"
+    <td> <input type="text" id="inputTitle" placeholder="title"
     class="form-control" name="title" /></td>
     </tr>
     <tr>

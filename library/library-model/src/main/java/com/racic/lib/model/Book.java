@@ -7,17 +7,15 @@ import javax.persistence.*;
 import com.fasterxml.jackson.annotation.*;
 import com.racic.lib.model.Works;
 
-@Entity(name="Book")    
+@Entity
+@Table(name="Book")
 public class Book {
 	@Id
     private String bookId;
-	@Column
     private boolean isAvailable;
 	@ManyToOne
-	@JoinColumn(name="idworks")
     private Works works;
-	@OneToOne(mappedBy="book")
-	@JsonIgnore
+	@OneToOne
 	private Borrowing borrowing;
 	
     public Book(String bookId, boolean isAvailable) {

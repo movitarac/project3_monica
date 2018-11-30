@@ -96,7 +96,7 @@ public class BorrowingServiceImpl implements BorrowingService {
 			Book bookToBorrow = bookRepository.findById(bookid).get();
 			Borrowing borrowToSave = new Borrowing();
 			Member m1 = new Member();
-			m1.setMemberId(1);
+			m1.setIduser(1);
 			m1.setFirstName("Lukas");
 			m1.setLastName("George");
 

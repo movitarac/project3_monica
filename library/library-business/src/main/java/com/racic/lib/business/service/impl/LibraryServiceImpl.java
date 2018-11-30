@@ -22,14 +22,14 @@ public class LibraryServiceImpl implements LibraryService {
         return libraryRepository.findByLibraryName(libraryName);
     }
 
-    public Library getLibraryById(int id) {
+    public Library getLibraryById(Integer id) {
         return libraryRepository.findById(id).get();
     }
 
     public Library getLibraryByCity(String city) {
     	return libraryRepository.findByCity(city);
     }
-    public List<Works> findByLibraryId(int libraryid) {
+    public List<Works> findByLibraryId(Integer libraryid) {
     	List<Works> workslist = libraryRepository.findById(libraryid).get().getWorks();
     	return workslist;
     }

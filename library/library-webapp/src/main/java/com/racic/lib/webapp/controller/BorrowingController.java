@@ -4,15 +4,15 @@ import com.racic.lib.business.service.contract.BorrowingService;
 import com.racic.lib.model.Book;
 import com.racic.lib.model.Borrowing;
 
+import com.racic.lib.model.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,34 +27,14 @@ public class BorrowingController {
     
     @RequestMapping(value="/library/borrowings/{id}",method= RequestMethod.GET)
     public @ResponseBody
-    Borrowing sayHello(@PathVariable int id){
+    Borrowing sayHello(@PathVariable Integer id){
 
         System.out.println("borrowing found");
         return this.borrowingService.findByBorrowingId(id);
     }
 
-    /*
     @RequestMapping(value = "/library/borrowing/{id}", method = RequestMethod.GET)
-
-    public String getBorrowing(@PathVariable int id, Model model) {
-
-        System.out.println("works found");
-        String status = borrowingService.findByBorrowingId(id).getStatus();
-        Date issueDate = borrowingService.findByBorrowingId(id).getIssueDate();
-        Date returnDate = borrowingService.findByBorrowingId(id).getReturnDate();
-        String workstitle = borrowingService.findByBorrowingId(id).getBook().getWorks().getTitle();
-        boolean isextend = borrowingService.findByBorrowingId(id).isExtended();
-        model.addAttribute("status",status);
-        model.addAttribute("issueDate",issueDate);
-        model.addAttribute("returnDate",returnDate);
-        model.addAttribute("workstitle",workstitle);
-        model.addAttribute("isextend",isextend);
-        return "works/works-detail";
-    }
-     */
-
-    @RequestMapping(value = "/library/borrowing/{id}", method = RequestMethod.GET)
-    public String getBorrowingByMember(@PathVariable int id, Model model) {
+    public String getBorrowingByMember(@PathVariable Integer id, Model model) {
 
         System.out.println("works found");
         String status = borrowingService.findByBorrowingId(id).getStatus();
@@ -81,14 +61,5 @@ public class BorrowingController {
         return "add borrowing list";
     }
 
-    /*@RequestMapping(method = RequestMethod.POST)
-    public @ResponseBody String getBorrowingListByMember(@PathVariable String booksIds) {
-        String[] arraybookid = booksIds.split("-");
-        List<String> listbookstoborrow = new ArrayList<>();
-        Collections.addAll(listbookstoborrow,arraybookid);
 
-        borrowingService.addBorrowing(listbookstoborrow);
-
-        return "add borrowing list for a member";
-    }*/
 }

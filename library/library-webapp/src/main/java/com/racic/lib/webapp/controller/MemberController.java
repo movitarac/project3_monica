@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -32,6 +34,7 @@ public class MemberController {
 	public ModelAndView Login(HttpServletRequest request, @ModelAttribute("member")
 							  Member member){
 
+
 		boolean result;
 		ModelAndView modelAndView = null;
 		String username=member.getUsername();
@@ -47,13 +50,17 @@ public class MemberController {
 			result = memberService.isValidUser(username,password);
 			if (result == true) {
 				modelAndView = new ModelAndView("member/profile");
-				/*
-				modelAndView.addObject("lastname", lastname);
-				modelAndView.addObject("firstname", firstname);
-				modelAndView.addObject("username",username);
-				modelAndView.addObject("email", email);
-				modelAndView.addObject("address", address);
-				*/
+
+				List<String> list = new ArrayList<String>();
+				list.add(firstname);
+				list.add(lastname);
+				list.add(username);
+				list.add(email);
+				list.add(address);
+
+				modelAndView.addObject("lists",list);
+
+
 			} else {
 				modelAndView = new ModelAndView("member/login");
 				modelAndView.addObject("msg","Wrong username and or password");
@@ -102,12 +109,6 @@ public class MemberController {
 
 	}
 
-	@RequestMapping(value = "/library/hello")
-	public String home() {
-		System.out.println("Member controller passing through to header.jsp outside the web inf");
-		// return "/_include/header";
-		return "member/profile";
-	}
 
 	@RequestMapping(value = "/library/member/{id}", method = RequestMethod.GET)
 	public String sayHello(@PathVariable int id, Model model) {
@@ -146,4 +147,5 @@ public class MemberController {
 	public void setMemberService(MemberService memberService) {
 		this.memberService = memberService;
 	}
+
 }

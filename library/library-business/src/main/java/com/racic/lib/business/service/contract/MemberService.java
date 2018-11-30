@@ -13,7 +13,7 @@ public interface MemberService {
 
     Member findMemberByLastName(String lastname);
 
-    Member findMemberById(int id);
+    Member findMemberById(Integer id);
 
     Member findMemberByFirstName(String firstname);
     
@@ -25,7 +25,7 @@ public interface MemberService {
     
     String updateMember(Member member);
     
-    List<Borrowing> findByMemberId(int memberid);
+    List<Borrowing> findByIdUser(Integer iduser);
     Member findByUsername(String username);
 
     Member findByUsernameAndPassword(String username, String password);

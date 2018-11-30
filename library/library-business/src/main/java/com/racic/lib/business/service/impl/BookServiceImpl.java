@@ -23,7 +23,7 @@ public class BookServiceImpl implements BookService {
 
 
 	@Override
-	public String findBookAvailability(Book book, String bookid) {
+	public String findBookAvailability(String bookid) {
 		
 		
 		boolean availability = bookRepository.findById(bookid).get().isAvailable();

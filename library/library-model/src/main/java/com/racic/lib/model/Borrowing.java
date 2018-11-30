@@ -7,23 +7,20 @@ import com.racic.lib.model.Member;
 
 import java.util.Date;
 
-@Entity(name="Borrowing")
+@Entity
+@Table(name="Borrowing")
 public class Borrowing {
-	@Id
-	private int idborrow;
+    @Id
+    @GeneratedValue(generator="gen_borrow", strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name="gen_borrow", sequenceName="seq_borrow", allocationSize=1)
+	private Integer idborrow;
 	@ManyToOne
-   	@JoinColumn(name="idmember")
     private Member member;
    	@OneToOne
-   	@JoinColumn(name="idbook")
     private Book book;
-    @Column
     private Date issueDate;
-    @Column
     private Date returnDate;
-    @Column
     private String status;
-    @Column
     private boolean isExtended;
 
     public Borrowing() {
@@ -33,7 +30,7 @@ public class Borrowing {
         return idborrow;
     }
 
-    public void setIdborrow(int idborrow) {
+    public void setIdborrow(Integer idborrow) {
         this.idborrow = idborrow;
     }
 
@@ -90,7 +87,7 @@ public class Borrowing {
 
 
 
-	public Borrowing(int idborrow, Member member, Book book, Date issueDate, Date returnDate, String status,
+	public Borrowing(Integer idborrow, Member member, Book book, Date issueDate, Date returnDate, String status,
 			boolean isExtended) {
 		super();
 		this.idborrow = idborrow;

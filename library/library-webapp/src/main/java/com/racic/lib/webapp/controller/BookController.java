@@ -26,14 +26,4 @@ public class BookController {
         return this.bookService.findBookbyId(id);
     }
 
-
-    /*
-     public String searchBook(ModelMap modelMap) {
-     
-       bookService.findBookbyId("nar1");
-
-        modelMap.addAttribute("message", "mvc");
-    System.out.println("helo");
-        return "hello";
-    }*/
 }

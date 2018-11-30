@@ -19,30 +19,29 @@ public class Library {
 	@Id
 	@GeneratedValue
 	@Column
-    private int libId;
+    private Integer libId;
 	@Column
     private String libraryName;
 	@Column
     private String city;
-	@OneToMany(mappedBy="library", cascade = CascadeType.ALL)
-	@JsonIgnore
+	@OneToMany
 	private List<Works> works;
 	
 	
     public Library() {
     }
 
-    public Library(int libId, String libraryName, String city) {
+    public Library(Integer libId, String libraryName, String city) {
         this.libId = libId;
         this.libraryName = libraryName;
         this.city = city;
     }
 
-    public int getLibId() {
+    public Integer getLibId() {
         return libId;
     }
 
-    public void setLibId(int libId) {
+    public void setLibId(Integer libId) {
         this.libId = libId;
     }
 

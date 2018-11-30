@@ -9,12 +9,11 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface WorksRepository extends CrudRepository <Works, String>{
-	Library findByLibrary(Library library);
+public interface WorksRepository extends CrudRepository <Works, Integer>{
+
    
 	Works findByTitle(String title);
 	Works findByAuthor(String author);
-	Works findByCopies(int copies);
 	Works findByPublicationYear (int pubyear);
 	List<Works> findAll();
 

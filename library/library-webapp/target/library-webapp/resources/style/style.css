@@ -10,10 +10,15 @@
 }
 
 .browsebook{
-    margin-top: 4%;
+    margin-top: 10%;
     margin-left: 5%;
 }
 
+
+#borrowbutton{
+
+    list-style: none;
+}
 .lead{
     text-align: center;
 }

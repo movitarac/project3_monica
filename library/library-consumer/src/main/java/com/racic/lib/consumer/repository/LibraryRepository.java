@@ -15,6 +15,5 @@ public interface LibraryRepository extends CrudRepository<Library, Integer>{
 	Library findByWorks(Works works);
 	Library findByLibraryName(String libraryname);
 	Library findByCity(String city);  
-	
-	//List<Works> findByLibraryName(String libraryname);
+
 }

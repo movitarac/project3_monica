@@ -13,9 +13,9 @@ public interface LibraryService {
 
 	Library getLibraryByName(String libraryName);
 
-	Library getLibraryById(int id);
+	Library getLibraryById(Integer id);
 	
 	Library getLibraryByCity(String city);
 
-	List<Works> findByLibraryId(int libraryid);
+	List<Works> findByLibraryId(Integer libraryid);
 }

@@ -2,47 +2,32 @@ package com.racic.lib.model;
 
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@Entity(name="Member")
-public class Member {
-	@Id
-	@GeneratedValue
-	@Column
-    private int memberId;
-	@Column
+@Entity
+@Table(name="Member")
+@PrimaryKeyJoinColumn(name = "iduser")
+public class Member extends User{
+
     private String firstName;
-	@Column
     private String lastName;
-	@Column
-	private String username;
-	@Column
     private String email;
-	@Column
-    private String password;
-	@Column
     private String address;
-	@OneToMany(mappedBy="member")
-	@JsonIgnore
+	@OneToMany
 	private List<Borrowing> borrowing;
 	
 	
-    public Member(int memberId, String firstName, String lastName, String username, String email, String password,
+    public Member(String firstName, String lastName, String email,
 			String address, List<Borrowing> borrowing) {
 		super();
-		this.memberId = memberId;
+
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.username = username;
+
 		this.email = email;
-		this.password = password;
+
 		this.address = address;
 		this.borrowing = borrowing;
 	}
@@ -52,13 +37,6 @@ public class Member {
     public Member() {
     }
 
-    public int getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(int memberId) {
-        this.memberId = memberId;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -84,14 +62,6 @@ public class Member {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -106,14 +76,6 @@ public class Member {
 
 	public void setBorrowing(List<Borrowing> borrowing) {
 		this.borrowing = borrowing;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
 	}
 
 
