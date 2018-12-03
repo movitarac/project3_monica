@@ -8,7 +8,10 @@ import java.util.List;
 
 public interface BorrowingService {
     String addBorrowing (Borrowing borrowing);
-    boolean addBorrowing (List<String> booksid);
+
+    boolean borrowBook(Integer worksId, Member member);
+
+    boolean addBorrowing (List<String> booksids);
     String deleteBorrowing (Borrowing borrowing);
     String updateBorrowing (Borrowing borrowing);
     Borrowing findByBorrowingId(int borrowingid);

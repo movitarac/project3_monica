@@ -10,7 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -23,7 +25,7 @@ public class MemberController {
 	MemberService memberService;
 
 
-	//other login test//
+	// login test without spring security//
 	@RequestMapping(value = "/library/login", method = RequestMethod.GET)
 	public String login(Model model) {
 		model.addAttribute("message","Please enter your login details");
@@ -50,15 +52,21 @@ public class MemberController {
 			result = memberService.isValidUser(username,password);
 			if (result == true) {
 				modelAndView = new ModelAndView("member/profile");
+				Boolean connected =true;
 
-				List<String> list = new ArrayList<String>();
-				list.add(firstname);
-				list.add(lastname);
-				list.add(username);
-				list.add(email);
-				list.add(address);
+				List<String> details = new ArrayList<>();
+				details.add(firstname);
+				details.add(lastname);
+				details.add(username);
+				details.add(email);
+				details.add(address);
+				modelAndView.addObject("details",details);
 
-				modelAndView.addObject("lists",list);
+				HttpSession session = request.getSession();
+
+
+				session.setAttribute("member",member);
+				session.setAttribute("connected", true);
 
 
 			} else {
@@ -79,34 +87,6 @@ public class MemberController {
 	public String initial(Model model) {
 		model.addAttribute("message","Please enter your login details");
 		return "member/logins";
-	}
-
-	@RequestMapping (value = "/library/connection", method = RequestMethod.POST)
-	public String submitlogin(Model model, @ModelAttribute("member") Member member) {
-		if(member != null && member.getUsername() !=null & member.getPassword() !=null) {
-			if (member.getUsername().equals("georgelulu")
-					&& member.getPassword().equals("1234lulu")) {
-
-				String firstname =member.getFirstName();
-				String lastname = member.getLastName();
-				String email = member.getEmail();
-				String username = member.getUsername();
-				String address = member.getAddress();
-				model.addAttribute("lastname", lastname);
-				model.addAttribute("firstname", firstname);
-				model.addAttribute("username",username);
-				model.addAttribute("email", email);
-				model.addAttribute("address", address);
-				return "member/profile";
-			} else {
-				model.addAttribute("error","Invalid details");
-				return "member/logins";
-			}
-		} else {
-			model.addAttribute("error","Please enter details");
-			return "member/logins";
-		}
-
 	}
 
 

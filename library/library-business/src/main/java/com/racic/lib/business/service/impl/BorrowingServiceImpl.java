@@ -3,6 +3,7 @@ package com.racic.lib.business.service.impl;
 import com.racic.lib.business.service.contract.BorrowingService;
 import com.racic.lib.consumer.repository.BookRepository;
 import com.racic.lib.consumer.repository.BorrowingRepository;
+import com.racic.lib.consumer.repository.WorksRepository;
 import com.racic.lib.model.Book;
 import com.racic.lib.model.Borrowing;
 import com.racic.lib.model.Member;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -22,6 +24,8 @@ public class BorrowingServiceImpl implements BorrowingService {
 	BorrowingRepository borrowingRepository;
 	@Autowired
 	BookRepository bookRepository;
+	@Autowired
+	WorksRepository worksRepository;
 
 	public String addBorrowing(Borrowing borrowing) {
 		borrowingRepository.save(borrowing);
@@ -84,15 +88,50 @@ public class BorrowingServiceImpl implements BorrowingService {
 	}
 
 
+	@Override
+	public boolean borrowBook(Integer worksId, Member member) {
+		boolean toReturn;
+
+		List<Book> bookslist = bookRepository.findBooksByWorksWorksId(worksId);
+		List<Book> booksAvailable = new ArrayList<>();
+		for (Book book : bookslist) {
+			boolean bookIsAvailable = book.isAvailable();
+			if (bookIsAvailable==true) {
+				booksAvailable.add(book);
+			} else {
+				String errormessage = "not ok";
+			}
+		}
+
+		Borrowing borrowToBeSaved = new Borrowing();
+
+		if (booksAvailable.size()>0) {
+			Book bookToBeBorrowed = booksAvailable.get(0);
+			borrowToBeSaved.setBook(bookToBeBorrowed);
+			borrowToBeSaved.setMember(member);
+			borrowToBeSaved.setIssueDate(new Date());
+			Date returndate = new Date();
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(returndate);
+			calendar.add(Calendar.WEEK_OF_MONTH, 4);
+			returndate = calendar.getTime();
+			borrowToBeSaved.setReturnDate(returndate);
+			borrowToBeSaved.setStatus("ongoing");
+
+			bookToBeBorrowed.setAvailable(false);
+		}
+		toReturn= true;
+		return toReturn;
+	}
 
 	/**
 	 * Create a borrowing list from several books
-	 * @param booksid
+	 * @param booksids
 	 * @return
 	 */
-	public boolean addBorrowing (List<String> booksid){
+	public boolean addBorrowing (List<String> booksids){
 		boolean toReturn;
-		for ( String bookid : booksid ) {
+		for ( String bookid : booksids ) {
 			Book bookToBorrow = bookRepository.findById(bookid).get();
 			Borrowing borrowToSave = new Borrowing();
 			Member m1 = new Member();

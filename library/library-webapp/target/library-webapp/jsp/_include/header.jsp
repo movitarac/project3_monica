@@ -1,4 +1,3 @@
-
 <%@ include file="../_include/taglib.jsp" %>
 <style> <%@include file="/resources/style/style.css" %>
 <%@include file="/resources/style/bootstrap.min.css" %>
@@ -33,8 +32,11 @@
             </ul>
             <form class="form-inline mt-2 mt-md-0">
 
-                <button class="btn btn-outline-success my-2 my-sm-0" type="l">
-                    <a href="/library/login">Log in</a></button>
+
+
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="l"><a href="/library/login">Log in</a></button>
+
+
             </form>
 
         </div>

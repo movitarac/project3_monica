@@ -15,4 +15,7 @@ public interface BookService {
    Works findWorksByBookId(String bookid);
   
    Borrowing findBorrowingByBookId(String bookid);
+
+   //List<Book> findBooksByWorks(Works works);
+   List<Book> findBooksByWorksWorksId(Integer worksid);
 }
