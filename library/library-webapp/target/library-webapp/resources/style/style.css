@@ -67,6 +67,14 @@ a:hover{
     margin-top: 10%;
 }
 
+.worksFound{
+    margin-top: 5%;
+    text-align: left;
+    margin-left: 5%;
+}
+.worksfounddetail{
+    list-style: none;
+}
 
 .profile{
     color: #17625A;

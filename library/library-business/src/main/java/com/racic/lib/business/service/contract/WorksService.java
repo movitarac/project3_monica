@@ -9,16 +9,11 @@ public interface WorksService {
 
     List<Works> getAll();
     Works findWorksById(Integer worksid);
-    Works findWorksByAuthor(String author);
+    List<Works> findWorksByAuthor(String author);
     Works findWorksByTitle(String title);
-    String addWorks(Works works);
-    String deleteWorks(Works works);
-    String updateWorks(Works works);
-    List<Book> findByWorksId(Integer worksid);
 
-    Works findWorksByAuthorIgnoreCase(String author);
+    List<Works> findWorksByAuthorIgnoreCase(String author);
 
-    Works findWorksByTitleIgnoreCase(String title);
+    boolean isValidWork(String author);
 
-    boolean isValidWork(String author, String title);
 }

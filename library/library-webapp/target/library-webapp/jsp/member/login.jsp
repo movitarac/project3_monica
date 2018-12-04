@@ -2,7 +2,7 @@
 <body class="loginelement">
 <%@ include file="../_include/header.jsp" %>
 
-<form:form name="login" method="POST" action="login" modelAttribute="member">
+<form:form action="/library/login" method="POST">
     <div align="center">
         <h1 class="h3 mb-3 font-weight-normal">Are you a member? Please sign in</h1>
         <table>
@@ -22,6 +22,7 @@
             </tr>
         </table>
         <div style="color: red">${msg}</div>
+        <input type="hidden" name="{_csrf.parameterName}" value="{_csrf.token}">
 
     </div>
 </form:form>

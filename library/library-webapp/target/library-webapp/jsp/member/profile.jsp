@@ -11,12 +11,12 @@
         <span class="profDetail">Email: </span> <span class="profInfo">${details.get(3)}</span> <br>
         <span class="profDetail">Address: </span> <span class="profInfo">${details.get(4)}</span> <br>
         <span class="profDetail"></span>
-        <button class="btn btn-lg btn-primary btn-block butSignIn" type="submit"> Borrowing list</button>
+        <button class="btn btn-lg btn-primary btn-block butBorrowList" type="submit"> Borrowing list</button>
         <span class="profInfo"></span> <br>
 
         </p>
         </c:if>
-
+        <a href="/library/logout"> log out </a>
         </main>
     <%@ include file="../_include/footer.jsp" %>
     </body>

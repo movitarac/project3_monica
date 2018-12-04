@@ -1,11 +1,14 @@
 package com.racic.lib.model;
 
+
+
 import javax.persistence.*;
+
 
 @Entity
 @Table(name="User")
 @Inheritance(strategy = InheritanceType.JOINED)
-public class User{
+public class User {
 
     @Id
     @GeneratedValue(generator="gen_user", strategy = GenerationType.IDENTITY)
@@ -13,6 +16,8 @@ public class User{
     private Integer iduser;
     private String username;
     private String password;
+
+
 
     public Integer getIduser() {
         return iduser;
@@ -26,9 +31,12 @@ public class User{
         return username;
     }
 
+
     public void setUsername(String username) {
         this.username = username;
     }
+
+
 
     public String getPassword() {
         return password;
@@ -42,6 +50,7 @@ public class User{
         this.username = username;
         this.password = password;
     }
+
 
     public User() {
     }

@@ -18,6 +18,7 @@ public class Works {
     private String author;
     private int publicationYear;
     private String bookDescription;
+    private int copiesAvailable;
 	@ManyToOne
 	@JoinColumn(name="idlibrary")
     private Library library;
@@ -26,7 +27,7 @@ public class Works {
 
    
     public Works(Integer worksId, String title, String author, int publicationYear, String bookDescription,
-			Library library, List<Book> books) {
+                 Library library, List<Book> books) {
 		super();
 		this.worksId = worksId;
 		this.title = title;
@@ -99,5 +100,12 @@ public class Works {
 	public void setBooks(List<Book> books) {
 		this.books = books;
 	}
-    
+
+    public int getCopiesvailable() {
+        return copiesAvailable;
+    }
+
+    public void setCopiesAvailable(int copies) {
+        this.copiesAvailable = copies;
+    }
 }

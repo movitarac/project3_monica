@@ -12,6 +12,8 @@ public interface BorrowingService {
     boolean borrowBook(Integer worksId, Member member);
 
     boolean addBorrowing (List<String> booksids);
+    boolean extendBorrowing (Integer borrowingId, Member member);
+
     String deleteBorrowing (Borrowing borrowing);
     String updateBorrowing (Borrowing borrowing);
     Borrowing findByBorrowingId(int borrowingid);

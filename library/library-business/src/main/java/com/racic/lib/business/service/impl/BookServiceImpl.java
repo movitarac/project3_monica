@@ -7,9 +7,9 @@ import com.racic.lib.model.Borrowing;
 import com.racic.lib.model.Works;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -19,7 +19,6 @@ public class BookServiceImpl implements BookService {
 	BookRepository bookRepository;
 
     public Book findBookbyId(String bookid) {
-        System.out.println("tout est ok dans le service book ");
         return bookRepository.findById(bookid).get();
     }
 
@@ -48,6 +47,23 @@ public class BookServiceImpl implements BookService {
 	public List<Book> findBooksByWorksWorksId(Integer worksid) {
 		return bookRepository.findBooksByWorksWorksId(worksid);
 	}
+
+	@Override
+	public List<Book> findAvailability(Integer worksId) {
+
+		List<Book> allBookForOneWork = bookRepository.findBooksByWorksWorksId(worksId);
+		List<Book> bookAvailable = new ArrayList<>();
+		boolean isAvailable;
+
+		for (Book book : allBookForOneWork) {
+			if (book.isAvailable() == true) {
+				bookAvailable.add(book);
+
+			}
+		}
+		return bookAvailable;
+	}
+
 
 
 }

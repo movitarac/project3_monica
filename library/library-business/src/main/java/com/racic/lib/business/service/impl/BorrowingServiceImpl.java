@@ -88,6 +88,21 @@ public class BorrowingServiceImpl implements BorrowingService {
 	}
 
 
+	public boolean extendBorrowing (Integer borrowingId, Member member) {
+		boolean toreturn;
+		Borrowing borrowingtoBeExtended = borrowingRepository.findById(borrowingId).get();
+		Date newReturnDate = borrowingtoBeExtended.getReturnDate();
+
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(newReturnDate);
+		calendar.add(Calendar.WEEK_OF_MONTH,4);
+		newReturnDate =calendar.getTime();
+		borrowingtoBeExtended.setReturnDate(newReturnDate);
+
+		toreturn=true;
+		return  toreturn;
+	}
+
 	@Override
 	public boolean borrowBook(Integer worksId, Member member) {
 		boolean toReturn;

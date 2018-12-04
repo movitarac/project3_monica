@@ -87,10 +87,8 @@ public class MemberServiceImpl implements MemberService {
 
     	Member validMember = memberRepository.findByUsernameAndPassword(userName, passWord);
 
-    	List<Member> validMembers = new ArrayList<>();
-    	validMembers.add(validMember);
     	boolean toReturn;
-    	if (validMembers.size()== 1 && validMember !=null) {
+    	if (validMember !=null) {
     		toReturn = true;
 		} else{
     		toReturn = false;
