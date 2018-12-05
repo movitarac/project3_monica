@@ -1,9 +1,6 @@
 <%@ include file="../_include/taglib.jsp" %>
-<style> <%@include file="/resources/style/style.css" %>
-<%@include file="/resources/style/bootstrap.min.css" %>
 
-</style>
-<header class="header">
+<header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand"><span class="citylibrary">City Library</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -30,14 +27,19 @@
                     <a class="nav-link" id="menuS3" href="/library/browse">Browse</a>
                 </li>
             </ul>
-            <form class="form-inline mt-2 mt-md-0">
 
+            <c:choose>
+                <c:when test="${memberConnected eq null}">
+                    <form class="form-inline mt-2 mt-md-0">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="l"><a href="/library/login">Log in</a>
+                        </button>
+                    </form>
+                </c:when>
+                <c:otherwise>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="l"><a href="/library/logout">Log out</a>
+                </c:otherwise>
+            </c:choose>
 
-
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="l"><a href="/library/login">Log in</a></button>
-
-
-            </form>
 
         </div>
     </nav>

@@ -6,14 +6,16 @@
 
     <div class="browsebook">
 
-        <form:form method="POST" action="/library/browse/borrow/" modelAttribute="works">
+
             <c:forEach items="${worksList}" var="works">
+                <form:form method="GET" action="/library/browse/borrow/${works.worksId}">
                 <ul>
                 <li>${works.title} by ${works.author}
                     <li id="borrowbutton"><input type="submit" value="Borrow" /></li>
                 </ul>
+                </form:form>
             </c:forEach>
-        </form:form>
+
 
 
     </div>

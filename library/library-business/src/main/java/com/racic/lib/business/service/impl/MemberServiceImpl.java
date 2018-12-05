@@ -2,24 +2,24 @@ package com.racic.lib.business.service.impl;
 
 import com.racic.lib.business.service.contract.MemberService;
 import com.racic.lib.consumer.repository.MemberRepository;
+import com.racic.lib.consumer.repository.UserRepository;
 import com.racic.lib.model.Borrowing;
 import com.racic.lib.model.Member;
+import com.racic.lib.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.Set;
 
 @Service
 public class MemberServiceImpl implements MemberService {
 
 	@Autowired
 	MemberRepository memberRepository;
-    
+
+	@Autowired
+	UserRepository userRepository;
  
     public Member findMemberById(int id) {
     	return memberRepository.findById(id).get();
@@ -46,6 +46,20 @@ public class MemberServiceImpl implements MemberService {
     public Member findMemberByEmail (String email) {
     	return memberRepository.findByEmail(email);
     }
+
+    @Override
+	public String addUserMember(User user, Member member) {
+    userRepository.save(user);
+    memberRepository.save(member);
+    	return "Member " + member.getFirstName() + " with username " + member.getUsername() + " is added!";
+
+	}
+
+	@Override
+	public String addUser(User user) {
+    	userRepository.save(user);
+		return "user with " + user.getUsername() + " is added!";
+	}
 
 	@Override
 	public String addMember(Member member) {

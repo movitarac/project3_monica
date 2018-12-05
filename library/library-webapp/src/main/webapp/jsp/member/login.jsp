@@ -2,7 +2,7 @@
 <body class="loginelement">
 <%@ include file="../_include/header.jsp" %>
 
-<form:form action="/library/login" method="POST">
+<form:form action="/library/profile" method="POST">
     <div align="center">
         <h1 class="h3 mb-3 font-weight-normal">Are you a member? Please sign in</h1>
         <table>

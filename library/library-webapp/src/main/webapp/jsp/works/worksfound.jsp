@@ -1,6 +1,6 @@
-<body class="worksFound">
+<body >
 <%@ include file="../_include/header.jsp" %>
-<div>
+<div class="worksFound">
 
     <c:if test="${not empty worksListFound}">
 
@@ -8,11 +8,8 @@
 
             <ul class="worksfounddetail">
 
-                <li><h4>${work.title}</h4> by ${work.author}</li>
-
-                    <span class="profDetail">Book description: </span> <span class="profInfo">${work.bookDescription}</span> <br>
-                    <span class="profDetail">Publication year: </span> <span class="profInfo">${work.publicationYear}</span> <br>
-                <span class="profDetail">Available copies: </span> <span class="profInfo">${work.copiesvailable}</span> <br>
+                <li><a href="/library/workinfo/${work.worksId}"> <h4>${work.title}</h4> by ${work.author}</a></li>
+                <span class="profDetail">Available copies: </span> <span class="profInfo">${work.copiesvailable}</span><br>
 
             </ul>
 

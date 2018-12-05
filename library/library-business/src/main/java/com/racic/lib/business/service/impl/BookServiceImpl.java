@@ -48,17 +48,17 @@ public class BookServiceImpl implements BookService {
 		return bookRepository.findBooksByWorksWorksId(worksid);
 	}
 
+
+
 	@Override
 	public List<Book> findAvailability(Integer worksId) {
 
 		List<Book> allBookForOneWork = bookRepository.findBooksByWorksWorksId(worksId);
 		List<Book> bookAvailable = new ArrayList<>();
-		boolean isAvailable;
 
 		for (Book book : allBookForOneWork) {
 			if (book.isAvailable() == true) {
 				bookAvailable.add(book);
-
 			}
 		}
 		return bookAvailable;

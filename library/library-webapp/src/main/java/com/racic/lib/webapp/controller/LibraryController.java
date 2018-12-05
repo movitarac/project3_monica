@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.DispatcherServlet;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -24,9 +24,8 @@ public class LibraryController {
 	WorksService worksService;
 
 	
-	 @RequestMapping(value="/library")
+   @RequestMapping(value="/library")
 	    public String home() {
-
 	    	return "library/home";
 	    }
 
@@ -39,33 +38,34 @@ public class LibraryController {
 	@RequestMapping(value="/library/information")
 	public String information() {
 
-		return "library/information";
+   	return "library/information";
 	}
 
 	@RequestMapping(value="/library/condition")
-	public String condition() {
+	public String condition () {
 		return "library/condition";
 	}
 
 	@RequestMapping(value="/library/browse", method = RequestMethod.GET)
 	public String works(HttpServletRequest request, Model model) {
-
 			List<Works> worksList = worksService.getAll();
 			model.addAttribute("worksList", worksList);
-
-			Member memberConnected = (Member)request.getSession().getAttribute("memberConnected");
-		System.out.println(memberConnected.getFirstName());
-			for (Works works : worksList)
-			{
-				System.out.println(works.getTitle());
-				System.out.println(works.getAuthor());
-			}
 			return "borrowing/browse";
-
-
-
-
 	}
 
+	/*
+	@RequestMapping(value="/library/condition")
+	public String condition (HttpServletRequest request) {
+		if(request != null && request.getSession().getAttribute("memberConnected") != null) {
 
+			Member m1 =(Member)request.getSession().getAttribute("memberConnected");
+			System.out.println("we can see the logged in member " + m1.getFirstName());
+		} else {
+			return "member/login";
+		}
+
+
+   	return "library/condition";
+	}
+	*/
 }

@@ -1,11 +1,11 @@
 package com.racic.lib.business.service.contract;
 
-import com.racic.lib.model.Book;
 import com.racic.lib.model.Borrowing;
 import com.racic.lib.model.Member;
+import com.racic.lib.model.User;
 
 import java.util.List;
-import java.util.Optional;
+
 
 public interface MemberService {
 
@@ -18,7 +18,10 @@ public interface MemberService {
     Member findMemberByFirstName(String firstname);
     
     Member findMemberByEmail(String email);
-    
+
+    String addUserMember (User user, Member member);
+    String addUser (User user);
+
     String addMember(Member member);
     
     String deleteMember(Member member);

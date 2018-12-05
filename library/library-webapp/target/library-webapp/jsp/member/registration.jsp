@@ -2,20 +2,20 @@
 <body class="signupnelement">
 <%@ include file="../_include/header.jsp" %>
 
-<form:form name="submitForm" method="POST">
+<form:form name="register" method="POST" action="/library/register/">
     <div align="center">
         <h1 class="h3 mb-3 font-weight-normal">Not a member? You can sign up</h1>
         <table>
             <tr>
                 <label for="inputFirstname" class="sr-only"><td>First name</td></label>
                 <td><input type="firstname" id="inputFirstname"
-                           class="form-control" placeholder="firstname" name="firstName" /></td>
+                           class="form-control" placeholder="firstname" name="firstname" /></td>
             </tr>
 
             <tr>
                 <label for="inputLastname" class="sr-only"><td>Last name</td></label>
                 <td><input type="lastname" id="inputLastname"
-                           class="form-control" placeholder="lastname" name="lastName" /></td>
+                           class="form-control" placeholder="lastname" name="lastname" /></td>
             </tr>
 
             <tr>

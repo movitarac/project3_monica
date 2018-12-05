@@ -16,7 +16,6 @@
 
         </p>
         </c:if>
-        <a href="/library/logout"> log out </a>
         </main>
     <%@ include file="../_include/footer.jsp" %>
     </body>

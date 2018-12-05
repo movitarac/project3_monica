@@ -27,23 +27,24 @@ public class BorrowingController {
     MemberService memberService;
 
 
-    @RequestMapping(value="/library/browse/borrow/",method = RequestMethod.POST)
-    public ModelAndView borrowbook(HttpServletRequest request, @ModelAttribute("works") Works works,
-                                   Member member, Integer worksid) {
-
-
-        Member loggedInMember = (Member)request.getAttribute("memberConnected");
-        System.out.println(loggedInMember.getFirstName());
+    @RequestMapping(value="/library/browse/borrow/{worksId}",method = RequestMethod.GET)
+    public ModelAndView borrowbook(HttpServletRequest request,@PathVariable Integer worksId) {
         ModelAndView modelAndView = null;
 
-        if (loggedInMember != null) {
-            borrowingService.borrowBook(worksid, loggedInMember);
-            modelAndView = new ModelAndView("borrowing/browse");
+        if(request != null && request.getSession().getAttribute("connected")==null) {
+
+            modelAndView = new ModelAndView("member/login");
+
+        } else if(request != null && request.getSession().getAttribute("memberConnected") != null) {
+
+           // Member loggedInMember = (Member)request.getAttribute("memberConnected");
+            //System.out.println(loggedInMember.getFirstName());
+            System.out.print(request.getAttribute("memberConnected"));
+           // borrowingService.borrowBook(worksId,loggedInMember);
             modelAndView.addObject("msg", "Book is added to your borrow list!");
 
-            System.out.println(loggedInMember.getFirstName());
         } else {
-            modelAndView = new ModelAndView("member/login");
+            modelAndView = new ModelAndView("library/error");
         }
 
         return modelAndView;

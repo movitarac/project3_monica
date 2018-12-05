@@ -1,10 +1,12 @@
 com/racic/lib/business/service/contract/WorksService.class
-com/racic/lib/business/service/contract/BorrowingService.class
-com/racic/lib/business/service/contract/BookService.class
-com/racic/lib/business/service/impl/WorksServiceImpl.class
 com/racic/lib/business/service/impl/MemberServiceImpl.class
 com/racic/lib/business/service/contract/MemberService.class
 com/racic/lib/business/service/impl/LibraryServiceImpl.class
-com/racic/lib/business/service/impl/BookServiceImpl.class
 com/racic/lib/business/service/impl/BorrowingServiceImpl.class
+com/racic/lib/business/service/impl/UserServiceImpl.class
+com/racic/lib/business/service/contract/BorrowingService.class
+com/racic/lib/business/service/contract/BookService.class
+com/racic/lib/business/service/impl/WorksServiceImpl.class
+com/racic/lib/business/service/contract/UserService.class
+com/racic/lib/business/service/impl/BookServiceImpl.class
 com/racic/lib/business/service/contract/LibraryService.class

@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="Works")
 public class Works {
-    @Id @GeneratedValue(generator="gen_works", strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(generator="gen_works", strategy = GenerationType.AUTO)
     @SequenceGenerator(name="gen_works", sequenceName="seq_works", allocationSize=1)
     private Integer worksId;
     private String title;

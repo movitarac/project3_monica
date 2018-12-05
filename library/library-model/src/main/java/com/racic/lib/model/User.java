@@ -11,13 +11,20 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @GeneratedValue(generator="gen_user", strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator="gen_user", strategy = GenerationType.AUTO)
     @SequenceGenerator(name="gen_user", sequenceName="seq_user", allocationSize=1)
     private Integer iduser;
     private String username;
     private String password;
 
 
+    public User() {
+    }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
     public Integer getIduser() {
         return iduser;
@@ -31,12 +38,9 @@ public class User {
         return username;
     }
 
-
     public void setUsername(String username) {
         this.username = username;
     }
-
-
 
     public String getPassword() {
         return password;
@@ -44,14 +48,5 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
-
-
-    public User() {
     }
 }

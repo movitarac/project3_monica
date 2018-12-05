@@ -11,7 +11,7 @@ import java.util.Date;
 @Table(name="Borrowing")
 public class Borrowing {
     @Id
-    @GeneratedValue(generator="gen_borrow", strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator="gen_borrow", strategy = GenerationType.AUTO)
     @SequenceGenerator(name="gen_borrow", sequenceName="seq_borrow", allocationSize=1)
 	private Integer idborrow;
 	@ManyToOne
