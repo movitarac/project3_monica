@@ -47,24 +47,27 @@ public class MemberServiceImpl implements MemberService {
     	return memberRepository.findByEmail(email);
     }
 
-    @Override
-	public String addUserMember(User user, Member member) {
-    userRepository.save(user);
-    memberRepository.save(member);
-    	return "Member " + member.getFirstName() + " with username " + member.getUsername() + " is added!";
-
-	}
 
 	@Override
-	public String addUser(User user) {
-    	userRepository.save(user);
-		return "user with " + user.getUsername() + " is added!";
+	public String addUser(String username, String password) {
+    	User userToBeAdded = new User();
+    	userToBeAdded.setUsername(username);
+    	userToBeAdded.setPassword(password);
+    	userRepository.save(userToBeAdded);
+		return "user with " + userToBeAdded.getUsername() + " is added!";
 	}
 
+
 	@Override
-	public String addMember(Member member) {
-		memberRepository.save(member);
-		return member.getFirstName() + " one of our loyal member. Welcome!";
+	public String addMember(String firstname, String lastname,
+							String email, String address) {
+		Member memberToBeAdded = new Member();
+		memberToBeAdded.setFirstName(firstname);
+		memberToBeAdded.setLastName(lastname);
+		memberToBeAdded.setAddress(address);
+		memberToBeAdded.setEmail(email);
+    	memberRepository.save(memberToBeAdded);
+		return memberToBeAdded.getFirstName() + " one of our loyal member. Welcome!";
 	}
 
 	@Override

@@ -7,7 +7,8 @@ import java.util.Date;
 import java.util.List;
 
 public interface BorrowingService {
-    String addBorrowing (Borrowing borrowing);
+
+    boolean verifyListAvailableBooksSize(Integer workid);
 
     boolean borrowBook(Integer worksId, Member member);
 
@@ -21,4 +22,6 @@ public interface BorrowingService {
     List<Borrowing> findByStatus(String status);
     String borrowingStatus (Borrowing borrowing, int borrowingid);
     String isExtended(Borrowing borrowing, int borrowingid);
+
+    List<Borrowing> findByMember(Member member);
 }

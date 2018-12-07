@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="Works")
 public class Works {
-    @Id @GeneratedValue(generator="gen_works", strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(generator="gen_works", strategy = GenerationType.IDENTITY)
     @SequenceGenerator(name="gen_works", sequenceName="seq_works", allocationSize=1)
     private Integer worksId;
     private String title;
@@ -19,26 +19,26 @@ public class Works {
     private int publicationYear;
     private String bookDescription;
     private int copiesAvailable;
+    private String imageUrl;
 	@ManyToOne
 	@JoinColumn(name="idlibrary")
     private Library library;
 	@OneToMany
 	private List<Book> books;
 
-   
-    public Works(Integer worksId, String title, String author, int publicationYear, String bookDescription,
-                 Library library, List<Book> books) {
-		super();
-		this.worksId = worksId;
-		this.title = title;
-		this.author = author;
-		this.publicationYear = publicationYear;
-		this.bookDescription = bookDescription;
-		this.library = library;
-		this.books = books;
-	}
 
-	//default constructor
+
+    public Works(String title, String author, int publicationYear, String bookDescription, int copiesAvailable, String imageUrl, Library library, List<Book> books) {
+        this.title = title;
+        this.author = author;
+        this.publicationYear = publicationYear;
+        this.bookDescription = bookDescription;
+        this.copiesAvailable = copiesAvailable;
+        this.imageUrl = imageUrl;
+        this.library = library;
+        this.books = books;
+    }
+//default constructor
 
     public Works() {
         super();
@@ -107,5 +107,13 @@ public class Works {
 
     public void setCopiesAvailable(int copies) {
         this.copiesAvailable = copies;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

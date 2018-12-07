@@ -1,8 +1,11 @@
 package com.racic.lib.webapp.controller;
 
+import com.racic.lib.business.service.contract.BookService;
 import com.racic.lib.business.service.contract.BorrowingService;
 import com.racic.lib.business.service.contract.MemberService;
 
+import com.racic.lib.business.service.contract.WorksService;
+import com.racic.lib.model.Borrowing;
 import com.racic.lib.model.Member;
 import com.racic.lib.model.Works;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,47 +25,86 @@ public class BorrowingController {
 
     @Autowired
     BorrowingService borrowingService;
-    
+
     @Autowired
     MemberService memberService;
 
+    @Autowired
+    WorksService workService;
 
-    @RequestMapping(value="/library/browse/borrow/{worksId}",method = RequestMethod.GET)
-    public ModelAndView borrowbook(HttpServletRequest request,@PathVariable Integer worksId) {
+    @Autowired
+    BookService bookService;
+
+    @RequestMapping(value = "/library/borrow", method = RequestMethod.POST)
+    public ModelAndView borrowbook(HttpServletRequest request, @RequestParam("worksId") Integer worksId) {
         ModelAndView modelAndView = null;
 
-        if(request != null && request.getSession().getAttribute("connected")==null) {
-
+        if (request != null && request.getSession().getAttribute("connected") == null) {
             modelAndView = new ModelAndView("member/login");
+            System.out.println("the member connected is null");
 
-        } else if(request != null && request.getSession().getAttribute("memberConnected") != null) {
+        } else if (request != null && request.getSession().getAttribute("connected") != null) {
+            //get the connected member
+            Member loggedInMember = (Member) request.getSession().getAttribute("memberConnected");
+            System.out.print(loggedInMember.getFirstName() + " is connected " +
+                    "and the clicked works id is " + worksId);
 
-           // Member loggedInMember = (Member)request.getAttribute("memberConnected");
-            //System.out.println(loggedInMember.getFirstName());
-            System.out.print(request.getAttribute("memberConnected"));
-           // borrowingService.borrowBook(worksId,loggedInMember);
-            modelAndView.addObject("msg", "Book is added to your borrow list!");
+            Works borrowedWork = workService.findWorksById(worksId);
+            //call the method from borrowing service to verify the size is ok or not
+            if (borrowingService.verifyListAvailableBooksSize(worksId) == true) {
+                //call the method borrowbook from borrowing service
+                borrowingService.borrowBook(worksId, loggedInMember);
+                modelAndView = new ModelAndView("borrowing/borrowsuccess");
+                modelAndView.addObject("loggedInMember", loggedInMember);
+                modelAndView.addObject("borrowedWork", borrowedWork);
+            } else {
+                modelAndView = new ModelAndView("borrowing/borrowerror");
+            }
 
         } else {
             modelAndView = new ModelAndView("library/error");
         }
-
         return modelAndView;
     }
 
 
-////////////////////////TEST/////////////////////////////
+    @RequestMapping(value = "/library/borrowinglist", method = RequestMethod.POST)
+    public ModelAndView getMemberBorrowingList(HttpServletRequest request) {
+        ModelAndView mv = null;
 
-    @RequestMapping(value="/library/borrowingbymember/{booksIds}",method = RequestMethod.GET)
-    public @ResponseBody String getBorrowingsByMember(@PathVariable String booksIds) {
+        if (request == null && request.getSession().getAttribute("memberConnected") == null) {
+            mv = new ModelAndView("member/login");
+
+        } else if (request != null && request.getSession().getAttribute("memberConnected") != null) {
+            mv = new ModelAndView("borrowing/borrowinginfo");
+            Member loggedInMember = (Member)request.getSession().getAttribute("memberConnected");
+            List<Borrowing> borrowingList = borrowingService.findByMember(loggedInMember);
+            List<Works> worksBorrowed = new ArrayList<>();
+
+            for (Borrowing borrow : borrowingList) {
+                Works work = bookService.findWorksByBookId(borrow.getBook().getBookId());
+                worksBorrowed.add(work);
+            }
+            mv.addObject("borrowingList", borrowingList);
+            mv.addObject("worksBorrowed", worksBorrowed);
+        } else {
+            mv = new ModelAndView("library/error");
+        }
+        return mv;
+    }
+
+
+    ////////////////////////TEST/////////////////////////////
+
+    @RequestMapping(value = "/library/borrowingbymember/{booksIds}", method = RequestMethod.GET)
+    public @ResponseBody
+    String getBorrowingsByMember(@PathVariable String booksIds) {
         String[] arraybookid = booksIds.split("-");
         List<String> listbooktoborrow = new ArrayList<>();
-        Collections.addAll(listbooktoborrow,arraybookid);
+        Collections.addAll(listbooktoborrow, arraybookid);
 
         borrowingService.addBorrowing(listbooktoborrow);
 
         return "add borrowing list";
     }
-
-
 }

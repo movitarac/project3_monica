@@ -13,7 +13,7 @@ import java.util.List;
 public interface BorrowingRepository extends CrudRepository<Borrowing, Integer>{
     
 	List<Borrowing> findAll();
-	Borrowing findByMember(Member member);
+	List<Borrowing> findByMember(Member member);
 	Borrowing findByBook(Book book);
 	List<Borrowing> findByReturnDate(Date returnDate);
 	List<Borrowing> findByStatus(String status);

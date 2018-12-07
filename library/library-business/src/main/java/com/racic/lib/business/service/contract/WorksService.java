@@ -16,4 +16,5 @@ public interface WorksService {
 
     boolean isValidWork(String author);
 
+    List<Book> getOnlyAvailableBooksForWork(Integer workid);
 }

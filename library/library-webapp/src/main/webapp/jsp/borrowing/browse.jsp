@@ -8,15 +8,16 @@
 
 
             <c:forEach items="${worksList}" var="works">
-                <form:form method="GET" action="/library/browse/borrow/${works.worksId}">
+                <form:form method="POST" action="/library/borrow">
                 <ul>
                 <li>${works.title} by ${works.author}
-                    <li id="borrowbutton"><input type="submit" value="Borrow" /></li>
+                    <input hidden name="worksId" value="${works.worksId}"/>
+                    <li id="borrowbutton"><input type="submit" class="btn btn-success" value="Borrow" /></li>
                 </ul>
                 </form:form>
             </c:forEach>
 
-
+        <div class="message">${msg}</div>
 
     </div>
 

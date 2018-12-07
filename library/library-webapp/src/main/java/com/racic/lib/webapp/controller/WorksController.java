@@ -36,7 +36,7 @@ public class WorksController {
 
                 for (int i = 0; i < worksListFound.size(); i++) {
                     Integer worksid = worksListFound.get(i).getWorksId();
-                    booksListAvailableForOneWork = bookService.findAvailability(worksid);
+                    booksListAvailableForOneWork = worksService.getOnlyAvailableBooksForWork(worksid);
                     worksListFound.get(i).setCopiesAvailable(booksListAvailableForOneWork.size());
                     System.out.println("Copies available " + worksListFound.get(i).getCopiesvailable());
                 }
@@ -45,8 +45,8 @@ public class WorksController {
                 modelAndView.addObject("worksListFound", worksListFound);
 
             } else {
-                modelAndView = new ModelAndView("borrowing/browse");
-                modelAndView.addObject("msg", "Cannot find the book,please retype the author and the title");
+                modelAndView = new ModelAndView("library/error");
+                modelAndView.addObject("msg", "Error occured while processing");
             }
         } else {
             modelAndView = new ModelAndView("library/error");
@@ -56,10 +56,10 @@ public class WorksController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/library/workinfo/{workid}")
-    public ModelAndView getWorkInfo(@PathVariable Integer workid) {
+    @RequestMapping(value = "/library/workinfo/{worksId}")
+    public ModelAndView getWorkInfo(@PathVariable Integer worksId) {
         ModelAndView mv = new ModelAndView("works/works-detail");
-        Works work = worksService.findWorksById(workid);
+        Works work = worksService.findWorksById(worksId);
         mv.addObject("work", work);
         return mv;
     }

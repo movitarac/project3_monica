@@ -1,20 +1,21 @@
-
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <body>
 <%@ include file="../_include/header.jsp" %>
-<form:form action="/library/browse/borrow/" method="POST">
+
+
+<form:form method="POST" action="/library/borrow">
 <div class="browsebook">
+    <h1>${work.title}</h1>
+    <ul class="workdetail">
+        <li hidden><input hidden name="worksId" value="${work.worksId}"/></li>
+        <li> <img src="${work.imageUrl}" class="bookcover"/> </li>
+        <li id="bookdetail"> Author: ${work.author} <br>
+        Publication Year : ${work.publicationYear}<br>
+        Description : ${work.bookDescription}<br>
 
-    <p class="worksdesc">
+        <button type="submit" class="btn btn-success">Borrow</button></li>
 
-        <h1>${work.title}</h1> <br>
-        <span class="worksDetail">Author: </span> <span class="worksInfo">${work.author}</span> <br>
-        <span class="worksDetail">Publication Year:</span> <span class="worksInfo">${work.publicationYear}</span> <br>
-        <span class="worksDetail">Description: </span> <span class="worksInfo">${work.bookDescription}</span> <br>
-
-        <button class="butBorrow" type="submit">Borrow</button>
-       <br>
-
-    </p>
+    </ul>
 
 </div>
 </form:form>

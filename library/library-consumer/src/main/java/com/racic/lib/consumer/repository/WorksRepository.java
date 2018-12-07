@@ -18,5 +18,7 @@ public interface WorksRepository extends CrudRepository <Works, Integer>{
 
 	List<Works> findWorksByAuthorIgnoreCase(String author);
 
+	Works save(Works work);
+
 	
 }

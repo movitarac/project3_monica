@@ -2,6 +2,7 @@ package com.racic.lib.business.service.impl;
 
 import com.racic.lib.business.service.contract.BookService;
 import com.racic.lib.business.service.contract.BorrowingService;
+import com.racic.lib.business.service.contract.WorksService;
 import com.racic.lib.consumer.repository.BookRepository;
 import com.racic.lib.consumer.repository.BorrowingRepository;
 import com.racic.lib.consumer.repository.WorksRepository;
@@ -9,14 +10,12 @@ import com.racic.lib.model.Book;
 import com.racic.lib.model.Borrowing;
 import com.racic.lib.model.Member;
 
+import com.racic.lib.model.Works;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class BorrowingServiceImpl implements BorrowingService {
@@ -26,16 +25,11 @@ public class BorrowingServiceImpl implements BorrowingService {
     @Autowired
     BookRepository bookRepository;
     @Autowired
-    WorksRepository worksRepository;
+    WorksRepository workRepository;
     @Autowired
     BookService bookService;
-
-    public String addBorrowing(Borrowing borrowing) {
-        borrowingRepository.save(borrowing);
-
-        return "borrowing is saved";
-    }
-
+    @Autowired
+    WorksService worksService;
 
     public String deleteBorrowing(Borrowing borrowing) {
         borrowingRepository.delete(borrowing);
@@ -91,44 +85,96 @@ public class BorrowingServiceImpl implements BorrowingService {
         calendar.add(Calendar.WEEK_OF_MONTH, 4);
         newReturnDate = calendar.getTime();
         borrowingtoBeExtended.setReturnDate(newReturnDate);
+        borrowingRepository.save(borrowingtoBeExtended);
 
         toreturn = true;
         return toreturn;
     }
 
     @Override
+    public boolean verifyListAvailableBooksSize(Integer workid){
+       boolean toReturn = false;
+        List<Book> availableCopies = worksService.getOnlyAvailableBooksForWork(workid);
+       if(availableCopies.size()>0) {
+           toReturn = true;
+           System.out.println("the size of list is " + availableCopies.size());
+       } else {
+           toReturn = false;
+       }
+
+        return toReturn;
+    }
+
+
+
+    @Override
     public boolean borrowBook(Integer worksId, Member member) {
         boolean toReturn;
 
-        List<Book> bookslist = bookRepository.findBooksByWorksWorksId(worksId);
-        List<Book> booksAvailable = new ArrayList<>();
-        for (Book book : bookslist) {
-            boolean bookIsAvailable = book.isAvailable();
-            if (bookIsAvailable == true) {
-                booksAvailable.add(book);
-            } else {
-                String errormessage = "not ok";
-            }
-        }
-        Borrowing borrowToBeSaved = new Borrowing();
-        if (booksAvailable.size() > 0) {
-            Book bookToBeBorrowed = booksAvailable.get(0);
-            borrowToBeSaved.setBook(bookToBeBorrowed);
-            borrowToBeSaved.setMember(member);
-            borrowToBeSaved.setIssueDate(new Date());
+        Works workWithToBeBorrowed = workRepository.findById(worksId).get();
+        //make a book list from the same work (only available books on the list)
+        List<Book> booksAvailable = worksService.getOnlyAvailableBooksForWork(worksId);
+        //make a list of available books
+
+        Borrowing borrowToBeAdded = new Borrowing();
+
+
+        /**
+         * if a booksavailable list isn't null
+         * set new borrowing
+         */
+        if (booksAvailable.size()> 0) {
+            borrowToBeAdded.setMember(member);
+
+            //set Issue Date
+            borrowToBeAdded.setIssueDate(new Date());
+
+            //calculate the return date
             Date returndate = new Date();
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(returndate);
             calendar.add(Calendar.WEEK_OF_MONTH, 4);
             returndate = calendar.getTime();
-            borrowToBeSaved.setReturnDate(returndate);
-            borrowToBeSaved.setStatus("ongoing");
-            bookToBeBorrowed.setAvailable(false);
+            borrowToBeAdded.setReturnDate(returndate);
+
+
+            borrowToBeAdded.setStatus("ongoing");
+            borrowToBeAdded.setExtended(false);
+
+            //the latest book on the available list will be borrowed
+            Book bookToBeAdded = booksAvailable.get(booksAvailable.size()-1);
+            borrowToBeAdded.setBook(bookToBeAdded);
+
+            //save the borrowing
+            borrowingRepository.save(borrowToBeAdded);
+
+            //change the availability of this book and the borrowing
+            bookToBeAdded.setAvailable(false);
+           bookToBeAdded.setBorrowing(borrowToBeAdded);
+
+           System.out.println(bookToBeAdded.getBookId() + " is "
+                   + bookToBeAdded.isAvailable());
+            //update and save the modification for book in database
+          bookRepository.save(bookToBeAdded);
+
+            //remove the borrowed book from the list of available books
+            booksAvailable.remove(bookToBeAdded);
+
+            //update the total of available copy for the related work
+            workWithToBeBorrowed.setCopiesAvailable(booksAvailable.size());
+
+            //save the modification
+           workRepository.save(workWithToBeBorrowed);
+
+            System.out.println("book " + bookToBeAdded.getBookId() +" is succesfully borrowed by "
+                    + member.getFirstName());
+        } else {
+            System.out.println("problem occured");
         }
         toReturn = true;
         return toReturn;
     }
-
+////////////////////TEST////////////////////////
     /**
      * Create a borrowing list from several books
      *
@@ -175,14 +221,11 @@ public class BorrowingServiceImpl implements BorrowingService {
         return toReturn;
     }
 
-    public Borrowing findByMember(Member member) {
+    @Override
+    public List<Borrowing> findByMember(Member member) {
         return borrowingRepository.findByMember(member);
     }
 
-
-    public List<Borrowing> borrowingList(Borrowing borrowing) {
-        return borrowingRepository.findAll();
-    }
 
 
 

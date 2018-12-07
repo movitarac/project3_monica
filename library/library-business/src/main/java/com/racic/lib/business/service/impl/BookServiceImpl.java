@@ -23,6 +23,13 @@ public class BookServiceImpl implements BookService {
     }
 
 
+
+    @Override
+	public String updateBook(Book book) {
+    	bookRepository.save(book);
+    	return book.getBookId() + " is updated";
+	}
+
 	@Override
 	public String findBookAvailability(String bookid) {
 		
@@ -45,23 +52,26 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public List<Book> findBooksByWorksWorksId(Integer worksid) {
-		return bookRepository.findBooksByWorksWorksId(worksid);
+
+    	return bookRepository.findBooksByWorksWorksId(worksid);
 	}
 
 
 
 	@Override
-	public List<Book> findAvailability(Integer worksId) {
+	public List<Book> findAvailableBook(Integer worksId) {
 
 		List<Book> allBookForOneWork = bookRepository.findBooksByWorksWorksId(worksId);
-		List<Book> bookAvailable = new ArrayList<>();
 
 		for (Book book : allBookForOneWork) {
-			if (book.isAvailable() == true) {
-				bookAvailable.add(book);
+			if(book.isAvailable() == false) {
+				allBookForOneWork.remove(book);
+				System.out.println(" we are in method find available book");
+				System.out.println(book.getBookId() + " is remove from the list");
 			}
 		}
-		return bookAvailable;
+
+		return allBookForOneWork;
 	}
 
 

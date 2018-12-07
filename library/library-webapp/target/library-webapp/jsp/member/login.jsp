@@ -18,11 +18,11 @@
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" value="Login" /></td>
+                <td><input type="submit" value="Login" class="btn btn-secondary" /></td>
             </tr>
         </table>
         <div style="color: red">${msg}</div>
-        <input type="hidden" name="{_csrf.parameterName}" value="{_csrf.token}">
+
 
     </div>
 </form:form>

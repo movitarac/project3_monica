@@ -1,9 +1,6 @@
 package com.racic.lib.model;
 
-
-
 import javax.persistence.*;
-import com.racic.lib.model.Member;
 
 import java.util.Date;
 
@@ -11,7 +8,7 @@ import java.util.Date;
 @Table(name="Borrowing")
 public class Borrowing {
     @Id
-    @GeneratedValue(generator="gen_borrow", strategy = GenerationType.AUTO)
+    @GeneratedValue(generator="gen_borrow", strategy = GenerationType.IDENTITY)
     @SequenceGenerator(name="gen_borrow", sequenceName="seq_borrow", allocationSize=1)
 	private Integer idborrow;
 	@ManyToOne
@@ -26,7 +23,7 @@ public class Borrowing {
     public Borrowing() {
     }
 
-    public int getIdborrow() {
+    public Integer getIdborrow() {
         return idborrow;
     }
 
@@ -34,11 +31,9 @@ public class Borrowing {
         this.idborrow = idborrow;
     }
 
-
     public String getStatus() {
 		return status;
 	}
-
 
 	public void setStatus(String status) {
 		this.status = status;
@@ -51,7 +46,6 @@ public class Borrowing {
     public void setMember(Member member) {
         this.member = member;
     }
-
 
     public Book getBook() {
         return book;
@@ -85,8 +79,6 @@ public class Borrowing {
         isExtended = extended;
     }
 
-
-
 	public Borrowing(Integer idborrow, Member member, Book book, Date issueDate, Date returnDate, String status,
 			boolean isExtended) {
 		super();
@@ -98,6 +90,4 @@ public class Borrowing {
 		this.status = status;
 		this.isExtended = isExtended;
 	}
-
-   
 }

@@ -31,6 +31,7 @@ CREATE TABLE `Works` (
   `title` varchar(255) DEFAULT NULL,
   `idlibrary` int(11) DEFAULT NULL,
   `copiesAvailable` int(11) DEFAULT NULL ,
+  `imageUrl` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`worksId`),
   KEY `fk_work1` (`idlibrary`),
   CONSTRAINT `fk_work1` FOREIGN KEY (`idlibrary`) REFERENCES `library` (`libid`)
@@ -65,7 +66,9 @@ CREATE TABLE `Borrowing` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-INSERT INTO `citylibrary`.`Library` (`city`) VALUES ('Saint Herblain');
+INSERT INTO `citylibrary`.`Library` (`city`,) VALUES ('Saint Herblain');
+UPDATE `citylibrary`.`Library` SET `libraryName` = 'City' WHERE (`libId` = '1');
+
 
 INSERT INTO `citylibrary`.`Works` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Rowling', 'Fantasy', '1997', 'Harry Potter and the Philosopher\'s Stone', '1');
 INSERT INTO `citylibrary`.`Works` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Rowling', 'Fantasy', '1998', 'Harry Potter and the Chamber of Secret', '1');
@@ -162,3 +165,21 @@ INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALU
 INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('un1', '1', '15');
 INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('un1a', '1', '15');
 INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('un2', '1', '16');
+
+
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/1.jpeg' WHERE (`worksId` = '1');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/2.jpeg' WHERE (`worksId` = '2');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/3.jpeg' WHERE (`worksId` = '3');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/4.jpeg' WHERE (`worksId` = '4');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/5.jpeg' WHERE (`worksId` = '5');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/6.jpeg' WHERE (`worksId` = '6');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/7.jpeg' WHERE (`worksId` = '7');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/8.jpeg' WHERE (`worksId` = '8');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/16.jpeg' WHERE (`worksId` = '16');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/15.jpeg' WHERE (`worksId` = '15');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http:/localhost:80/resources/assets/14.jpeg' WHERE (`worksId` = '14');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/13.jpeg' WHERE (`worksId` = '13');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/12.jpeg' WHERE (`worksId` = '12');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/11.jpeg' WHERE (`worksId` = '11');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/10.jpeg' WHERE (`worksId` = '10');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/9.jpeg' WHERE (`worksId` = '9');

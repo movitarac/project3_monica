@@ -79,10 +79,8 @@ public class MemberController {
 				modelAndView.addObject("msg","Wrong username and or password");
 			}
 		} else {
-			modelAndView = new ModelAndView("member/login");
-			modelAndView.addObject("msg","Error occured while processing");
+			modelAndView = new ModelAndView("library/error");
 		}
-
 		return modelAndView;
 	}
 
@@ -93,17 +91,18 @@ public class MemberController {
 		ModelAndView modelAndView = new ModelAndView("member/login");
 		modelAndView.addObject("msg","You are successfully logged out!");
 		request.getSession().invalidate();
-
 		return modelAndView;
 	}
-
 
 	@RequestMapping(value = "/library/register/", method = RequestMethod.POST)
 	public ModelAndView register(HttpServletRequest request,
 								 @ModelAttribute("member") Member member, User user){
 
 		ModelAndView modelAndView = null;
-		memberService.addUserMember(user,member);
+		memberService.addUser(user.getUsername(),user.getPassword());
+		memberService.addMember(member.getFirstName(),member.getLastName(),
+				member.getEmail(),member.getAddress());
+
 		modelAndView = new ModelAndView("member/welcome");
 
 		System.out.println("new memmber" + member.getFirstName());
@@ -113,13 +112,11 @@ public class MemberController {
 
 	////////////////////////TEST/////////////////////////////
 
-	@RequestMapping(value="/library/addusermember/{details}",method = RequestMethod.GET)
-	public @ResponseBody String getBorrowingsByMember(@PathVariable String details, User user) {
-		String[] arraybookid = details.split("-");
+	@RequestMapping(value="/library/addusermember/{booksids}",method = RequestMethod.GET)
+	public @ResponseBody String getBorrowingsByMember(@PathVariable String booksids) {
+		String[] idsbooks = booksids.split("-");
 		List<String> listDetails = new ArrayList<>();
-		Collections.addAll(listDetails,arraybookid);
-
-		memberService.addUser(user);
+		Collections.addAll(listDetails,idsbooks);
 		return "add borrowing list";
 	}
 

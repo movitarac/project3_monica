@@ -19,11 +19,13 @@ public interface MemberService {
     
     Member findMemberByEmail(String email);
 
-    String addUserMember (User user, Member member);
-    String addUser (User user);
 
-    String addMember(Member member);
-    
+    String addUser(String username, String password);
+
+
+    String addMember(String firstname, String lastname,
+                     String email, String address);
+
     String deleteMember(Member member);
     
     String updateMember(Member member);

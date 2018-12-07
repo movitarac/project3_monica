@@ -16,6 +16,8 @@ public class WorksServiceImpl implements WorksService {
 	@Autowired
 	WorksRepository worksRepository;
 
+	@Autowired
+    BookService bookService;
 
     @Override
 	public List<Works> getAll(){
@@ -34,6 +36,7 @@ public class WorksServiceImpl implements WorksService {
     }
 
 
+
     @Override
     public Works findWorksByTitle(String title) {
         return worksRepository.findByTitle(title);
@@ -42,7 +45,7 @@ public class WorksServiceImpl implements WorksService {
 
     @Override
     public List<Works> findWorksByAuthorIgnoreCase(String author) {
-	    return null;
+	    return worksRepository.findWorksByAuthorIgnoreCase(author);
     }
 
 
@@ -57,4 +60,10 @@ public class WorksServiceImpl implements WorksService {
         return toReturn;
     }
 
+    @Override
+    public List<Book> getOnlyAvailableBooksForWork(Integer workid) {
+        List<Book> availableBooks = bookService.findAvailableBook(workid);
+        System.out.println("we are in method getonlyavailablebook in workservice");
+        return availableBooks;
+    }
 }
