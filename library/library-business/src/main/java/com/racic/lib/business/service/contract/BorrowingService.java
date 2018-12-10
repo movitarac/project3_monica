@@ -2,7 +2,6 @@ package com.racic.lib.business.service.contract;
 
 import com.racic.lib.model.Borrowing;
 import com.racic.lib.model.Member;
-import com.racic.lib.model.Book;
 import java.util.Date;
 import java.util.List;
 

@@ -5,12 +5,9 @@ import java.util.List;
 import javax.persistence.*;
 
 
-
-
-
 @Entity
-@Table(name="Works")
-public class Works {
+@Table(name="Work")
+public class Work {
     @Id @GeneratedValue(generator="gen_works", strategy = GenerationType.IDENTITY)
     @SequenceGenerator(name="gen_works", sequenceName="seq_works", allocationSize=1)
     private Integer worksId;
@@ -20,15 +17,15 @@ public class Works {
     private String bookDescription;
     private int copiesAvailable;
     private String imageUrl;
-	@ManyToOne
-	@JoinColumn(name="idlibrary")
+    @ManyToOne
+    @JoinColumn(name="idlibrary")
     private Library library;
-	@OneToMany
-	private List<Book> books;
+    @OneToMany
+    private List<Book> books;
 
 
 
-    public Works(String title, String author, int publicationYear, String bookDescription, int copiesAvailable, String imageUrl, Library library, List<Book> books) {
+    public Work(String title, String author, int publicationYear, String bookDescription, int copiesAvailable, String imageUrl, Library library, List<Book> books) {
         this.title = title;
         this.author = author;
         this.publicationYear = publicationYear;
@@ -40,7 +37,7 @@ public class Works {
     }
 //default constructor
 
-    public Works() {
+    public Work() {
         super();
     }
 
@@ -93,13 +90,13 @@ public class Works {
         this.library = library;
     }
 
-	public List<Book> getBooks() {
-		return books;
-	}
+    public List<Book> getBooks() {
+        return books;
+    }
 
-	public void setBooks(List<Book> books) {
-		this.books = books;
-	}
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
 
     public int getCopiesvailable() {
         return copiesAvailable;

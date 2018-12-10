@@ -8,6 +8,6 @@
         </p>
     <br>
     <p>
-        <%@include file="../works/workssearch.jsp"%>
+        <%@include file="../work/workssearch.jsp"%>
     </p>
     </body>

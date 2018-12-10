@@ -1,6 +1,6 @@
+com/racic/lib/model/Work.class
+com/racic/lib/model/User.class
 com/racic/lib/model/Member.class
-com/racic/lib/model/Works.class
 com/racic/lib/model/Library.class
 com/racic/lib/model/Book.class
 com/racic/lib/model/Borrowing.class
-com/racic/lib/model/User.class

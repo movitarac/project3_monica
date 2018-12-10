@@ -56,24 +56,12 @@ public class MemberController {
 			if (result == true) {
 				modelAndView = new ModelAndView("member/profile");
 				Member memberConnected = memberService.findByUsernameAndPassword(username,password);
-				String firstname = memberConnected.getFirstName();
-				String lastname = memberConnected.getLastName();
-				String email = memberConnected.getEmail();
-				String address = memberConnected.getAddress();
-
-				List<String> details = new ArrayList<>();
-				details.add(firstname);
-				details.add(lastname);
-				details.add(username);
-				details.add(email);
-				details.add(address);
-				modelAndView.addObject("details",details);
-
 				request.getSession().setAttribute("connected", true);
 				request.getSession().setAttribute("memberConnected",memberConnected);
-				Member m1 = (Member)request.getSession().getAttribute("memberConnected");
+				Member loggedInMember = (Member)request.getSession().getAttribute("memberConnected");
 				modelAndView.addObject("memberConnected",memberConnected);
-				System.out.println(m1.getFirstName());
+
+				System.out.println(loggedInMember.getFirstName());
 			} else {
 				modelAndView = new ModelAndView("member/login");
 				modelAndView.addObject("msg","Wrong username and or password");
@@ -82,6 +70,20 @@ public class MemberController {
 			modelAndView = new ModelAndView("library/error");
 		}
 		return modelAndView;
+	}
+
+	@RequestMapping(value="/library/profile")
+	public ModelAndView getprofile(HttpServletRequest request) {
+		ModelAndView mv = null;
+		if (request!=null && request.getSession().getAttribute("connected") != null) {
+			mv = new ModelAndView("member/profile");
+			Member memberConnected = (Member)request.getSession().getAttribute("memberConnected");
+			mv.addObject("memberConnected",memberConnected);
+		} else {
+			mv = new ModelAndView("library/error");
+		}
+
+		return mv;
 	}
 
 	@RequestMapping(value="/library/logout", method = RequestMethod.GET)

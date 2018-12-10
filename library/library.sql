@@ -23,7 +23,7 @@ CREATE TABLE `Member` (
   PRIMARY KEY (`iduser`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-CREATE TABLE `Works` (
+CREATE TABLE `Work` (
   `worksId` int(11) NOT NULL AUTO_INCREMENT,
   `author` varchar(255) DEFAULT NULL,
   `bookDescription` varchar(255) DEFAULT NULL,
@@ -42,11 +42,11 @@ CREATE TABLE `Book` (
   `bookId` varchar(255) NOT NULL,
   `isAvailable` tinyint(1) NOT NULL,
   `borrowing_idborrow` int(11) DEFAULT NULL,
-  `works_worksId` int(11) DEFAULT NULL,
+  `work_worksId` int(11) DEFAULT NULL,
   PRIMARY KEY (`bookId`),
   KEY `fk_borrow1` (`borrowing_idborrow`),
   KEY `fk_work2` (`works_worksId`),
-  CONSTRAINT `fk_work2` FOREIGN KEY (`works_worksId`) REFERENCES `works` (`worksid`),
+  CONSTRAINT `fk_work2` FOREIGN KEY (`work_worksId`) REFERENCES `work` (`worksid`),
   CONSTRAINT `fk_borrow1` FOREIGN KEY (`borrowing_idborrow`) REFERENCES `borrowing` (`idborrow`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -70,26 +70,46 @@ INSERT INTO `citylibrary`.`Library` (`city`,) VALUES ('Saint Herblain');
 UPDATE `citylibrary`.`Library` SET `libraryName` = 'City' WHERE (`libId` = '1');
 
 
-INSERT INTO `citylibrary`.`Works` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Rowling', 'Fantasy', '1997', 'Harry Potter and the Philosopher\'s Stone', '1');
-INSERT INTO `citylibrary`.`Works` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Rowling', 'Fantasy', '1998', 'Harry Potter and the Chamber of Secret', '1');
-INSERT INTO `citylibrary`.`Works` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Rowling', 'Fantasy', '1999', 'Harry Potter and the Prisoner of Azkaban', '1');
-INSERT INTO `citylibrary`.`Works` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Rowling', 'Fantasy', '2000', 'Harry Potter and the Goblet of Fire', '1');
-INSERT INTO `citylibrary`.`Works` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Rowling', 'Fantasy', '2003', 'Harry Potter and The Order of the Phoenix', '1');
-INSERT INTO `citylibrary`.`Works` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Rowling', 'Fantasy', '2005', 'Harry Potter and the Half-Blood Prince', '1');
-INSERT INTO `citylibrary`.`Works` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Rowling', 'Fantasy', '2007', 'Harry Potter and the Deathly Hallows','1');
+INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Rowling', 'Fantasy', '1997', 'Harry Potter and the Philosopher\'s Stone', '1');
+INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Rowling', 'Fantasy', '1998', 'Harry Potter and the Chamber of Secret', '1');
+INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Rowling', 'Fantasy', '1999', 'Harry Potter and the Prisoner of Azkaban', '1');
+INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Rowling', 'Fantasy', '2000', 'Harry Potter and the Goblet of Fire', '1');
+INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Rowling', 'Fantasy', '2003', 'Harry Potter and The Order of the Phoenix', '1');
+INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Rowling', 'Fantasy', '2005', 'Harry Potter and the Half-Blood Prince', '1');
+INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Rowling', 'Fantasy', '2007', 'Harry Potter and the Deathly Hallows','1');
 
 
-INSERT INTO `citylibrary`.`Works` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Lewis', 'Fantasy', '1950', 'The Lion, the Witch and the Wardrobe', '1');
-INSERT INTO `citylibrary`.`Works` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Lewis', 'Fantasy', '1951', 'Prince Caspian', '1');
-INSERT INTO `citylibrary`.`Works` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Lewis', 'Fantasy', '1952', 'The Voyage of the Dawn Treader', '1');
-INSERT INTO `citylibrary`.`Works` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Lewis', 'Fantasy', '1953', 'The Silver Chair', '1');
-INSERT INTO `citylibrary`.`Works` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Lewis', 'Fantasy', '1954', 'The Horse and his Boy', '1');
-INSERT INTO `citylibrary`.`Works` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Lewis', 'Fantasy', '1955', 'The Magician\'s Nephew', '1');
-INSERT INTO `citylibrary`.`Works` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Lewis', 'Fantasy', '1956', 'The Last Battle', '1');
+INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('C.S Lewis', 'Fantasy', '1950', 'The Lion, the Witch and the Wardrobe', '1');
+INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('C.S Lewis', 'Fantasy', '1951', 'Prince Caspian', '1');
+INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('C.S Lewis', 'Fantasy', '1952', 'The Voyage of the Dawn Treader', '1');
+INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('C.S Lewis', 'Fantasy', '1953', 'The Silver Chair', '1');
+INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('C.S Lewis', 'Fantasy', '1954', 'The Horse and his Boy', '1');
+INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('C.S Lewis', 'Fantasy', '1955', 'The Magician\'s Nephew', '1');
+INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('C.S Lewis', 'Fantasy', '1956', 'The Last Battle', '1');
+INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Lemony Snicket', 'Fantasy', '1999', 'The Bad Beginning', '1');
+INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Lemony Snicket', 'Fantasy', '1999', 'The Reptile Room', '1');
+INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`, `copiesAvailable`, `imageUrl`) VALUES ('Lemony Snicket', 'Fantasy', '2000', 'The Wide Window', '1', '5', 'http://localhost:80/resources/assets/17.jpeg');
+INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`, `copiesAvailable`, `imageUrl`) VALUES ('Lemony Snicket', 'Fantasy', '2000', 'The Miserable Mill', '1', '2', 'http://localhost:80/resources/assets/18.jpeg');
+INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`, `copiesAvailable`, `imageUrl`) VALUES ('Sir Arthur Conan Doyle', 'Detective', '1887', 'A Study in Scarlet', '1', '3', 'http://localhost:80/resources/assets/19.jpeg');
+INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`, `copiesAvailable`, `imageUrl`) VALUES ('Sir Arthur Conan Doyle', 'Detective', '1890', 'The Sign of Four', '1', '3', 'http://localhost:80/resources/assets/20.jpeg');
 
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/1.jpeg' WHERE (`worksId` = '1');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/2.jpeg' WHERE (`worksId` = '2');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/3.jpeg' WHERE (`worksId` = '3');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/4.jpeg' WHERE (`worksId` = '4');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/5.jpeg' WHERE (`worksId` = '5');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/6.jpeg' WHERE (`worksId` = '6');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/7.jpeg' WHERE (`worksId` = '7');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/8.jpeg' WHERE (`worksId` = '8');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/16.jpeg' WHERE (`worksId` = '16');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/15.jpeg' WHERE (`worksId` = '15');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/14.jpeg' WHERE (`worksId` = '14');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/13.jpeg' WHERE (`worksId` = '13');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/12.jpeg' WHERE (`worksId` = '12');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/11.jpeg' WHERE (`worksId` = '11');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/10.jpeg' WHERE (`worksId` = '10');
+UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/9.jpeg' WHERE (`worksId` = '9');
 
-INSERT INTO `citylibrary`.`Works` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Snicket', 'Fantasy', '1999', 'The Bad Beginning', '1');
-INSERT INTO `citylibrary`.`Works` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Snicket', 'Fantasy', '1999', 'The Reptile Room', '1');
 
 UPDATE `citylibrary`.`Works` SET `copiesAvailable` = '4' WHERE (`worksId` = '1');
 UPDATE `citylibrary`.`Works` SET `copiesAvailable` = '2' WHERE (`worksId` = '2');
@@ -165,21 +185,25 @@ INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALU
 INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('un1', '1', '15');
 INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('un1a', '1', '15');
 INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('un2', '1', '16');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`) VALUES ('un3a', '1');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`) VALUES ('un3b', '1');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`) VALUES ('un3c', '1');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`) VALUES ('un3d', '1');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`) VALUES ('un3e', '1');
+UPDATE `citylibrary`.`Book` SET `works_worksId` = '17' WHERE (`bookId` = 'un3a');
+UPDATE `citylibrary`.`Book` SET `works_worksId` = '17' WHERE (`bookId` = 'un3b');
+UPDATE `citylibrary`.`Book` SET `works_worksId` = '17' WHERE (`bookId` = 'un3c');
+UPDATE `citylibrary`.`Book` SET `works_worksId` = '17' WHERE (`bookId` = 'un3d');
+UPDATE `citylibrary`.`Book` SET `works_worksId` = '17' WHERE (`bookId` = 'un3e');
+
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('un4a', '1', '18');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('un4b', '1', '18');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('sh1a', '1', '19');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('sh1b', '1', '19');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('sh1c', '1', '19');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('sh2a', '1', '20');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('sh2b', '1', '20');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('sh2c', '1', '20');
 
 
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/1.jpeg' WHERE (`worksId` = '1');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/2.jpeg' WHERE (`worksId` = '2');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/3.jpeg' WHERE (`worksId` = '3');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/4.jpeg' WHERE (`worksId` = '4');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/5.jpeg' WHERE (`worksId` = '5');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/6.jpeg' WHERE (`worksId` = '6');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/7.jpeg' WHERE (`worksId` = '7');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/8.jpeg' WHERE (`worksId` = '8');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/16.jpeg' WHERE (`worksId` = '16');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/15.jpeg' WHERE (`worksId` = '15');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http:/localhost:80/resources/assets/14.jpeg' WHERE (`worksId` = '14');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/13.jpeg' WHERE (`worksId` = '13');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/12.jpeg' WHERE (`worksId` = '12');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/11.jpeg' WHERE (`worksId` = '11');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/10.jpeg' WHERE (`worksId` = '10');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/9.jpeg' WHERE (`worksId` = '9');
+

@@ -1,6 +1,6 @@
-com/racic/lib/consumer/repository/MemberRepository.class
 com/racic/lib/consumer/repository/BookRepository.class
-com/racic/lib/consumer/repository/WorksRepository.class
+com/racic/lib/consumer/repository/WorkRepository.class
+com/racic/lib/consumer/repository/UserRepository.class
+com/racic/lib/consumer/repository/MemberRepository.class
 com/racic/lib/consumer/repository/BorrowingRepository.class
 com/racic/lib/consumer/repository/LibraryRepository.class
-com/racic/lib/consumer/repository/UserRepository.class

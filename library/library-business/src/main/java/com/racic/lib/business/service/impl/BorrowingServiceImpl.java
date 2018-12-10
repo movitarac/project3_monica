@@ -2,17 +2,16 @@ package com.racic.lib.business.service.impl;
 
 import com.racic.lib.business.service.contract.BookService;
 import com.racic.lib.business.service.contract.BorrowingService;
-import com.racic.lib.business.service.contract.WorksService;
 import com.racic.lib.consumer.repository.BookRepository;
 import com.racic.lib.consumer.repository.BorrowingRepository;
-import com.racic.lib.consumer.repository.WorksRepository;
+import com.racic.lib.consumer.repository.WorkRepository;
 import com.racic.lib.model.Book;
 import com.racic.lib.model.Borrowing;
 import com.racic.lib.model.Member;
 
-import com.racic.lib.model.Works;
+import com.racic.lib.model.Work;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -25,11 +24,10 @@ public class BorrowingServiceImpl implements BorrowingService {
     @Autowired
     BookRepository bookRepository;
     @Autowired
-    WorksRepository workRepository;
+    WorkRepository workRepository;
     @Autowired
     BookService bookService;
-    @Autowired
-    WorksService worksService;
+
 
     public String deleteBorrowing(Borrowing borrowing) {
         borrowingRepository.delete(borrowing);
@@ -43,7 +41,7 @@ public class BorrowingServiceImpl implements BorrowingService {
     }
 
 
-       public Borrowing findByBorrowingId(int borrowingid) {
+    public Borrowing findByBorrowingId(int borrowingid) {
         return borrowingRepository.findById(borrowingid).get();
     }
 
@@ -78,14 +76,17 @@ public class BorrowingServiceImpl implements BorrowingService {
     public boolean extendBorrowing(Integer borrowingId, Member member) {
         boolean toreturn;
         Borrowing borrowingtoBeExtended = borrowingRepository.findById(borrowingId).get();
-        Date newReturnDate = borrowingtoBeExtended.getReturnDate();
-
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(newReturnDate);
-        calendar.add(Calendar.WEEK_OF_MONTH, 4);
-        newReturnDate = calendar.getTime();
-        borrowingtoBeExtended.setReturnDate(newReturnDate);
-        borrowingRepository.save(borrowingtoBeExtended);
+        Date returnDate = borrowingtoBeExtended.getReturnDate();
+        if(borrowingtoBeExtended.isExtended() == false){
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(returnDate);
+            calendar.add(Calendar.WEEK_OF_MONTH, 4);
+            returnDate = calendar.getTime();
+            borrowingtoBeExtended.setReturnDate(returnDate);
+            borrowingRepository.save(borrowingtoBeExtended);
+        } else {
+            System.out.println("cannot extend the borrowing");
+        }
 
         toreturn = true;
         return toreturn;
@@ -93,7 +94,7 @@ public class BorrowingServiceImpl implements BorrowingService {
 
     @Override
     public boolean verifyBoksListAvailableSize(Integer worksid) {
-       boolean toReturn = false;
+        boolean toReturn = false;
         List<Book> availableBooks = bookService.findAvailableBooksFromWork(worksid);
 
         if(availableBooks.size()>0)
@@ -112,10 +113,9 @@ public class BorrowingServiceImpl implements BorrowingService {
     public boolean borrowBook(Integer worksId, Member member) {
         boolean toReturn;
 
-        Works workWithToBeBorrowed = workRepository.findById(worksId).get();
+        Work workWithToBeBorrowed = workRepository.findById(worksId).get();
         //make a book list from the same work (only available books)
         List<Book> booksAvailable = bookService.findAvailableBooksFromWork(worksId);
-
 
         Borrowing borrowToBeAdded = new Borrowing();
 
@@ -150,12 +150,12 @@ public class BorrowingServiceImpl implements BorrowingService {
 
             //change the availability of this book and the borrowing
             bookToBeAdded.setAvailable(false);
-           bookToBeAdded.setBorrowing(borrowToBeAdded);
+            bookToBeAdded.setBorrowing(borrowToBeAdded);
 
-           System.out.println(bookToBeAdded.getBookId() + " is "
-                   + bookToBeAdded.isAvailable());
+            System.out.println(bookToBeAdded.getBookId() + " is "
+                    + bookToBeAdded.isAvailable());
             //update and save the modification for book in database
-          bookRepository.save(bookToBeAdded);
+            bookRepository.save(bookToBeAdded);
 
             //remove the borrowed book from the list of available books
             booksAvailable.remove(bookToBeAdded);
@@ -164,7 +164,7 @@ public class BorrowingServiceImpl implements BorrowingService {
             workWithToBeBorrowed.setCopiesAvailable(booksAvailable.size());
 
             //save the modification
-           workRepository.save(workWithToBeBorrowed);
+            workRepository.save(workWithToBeBorrowed);
 
             System.out.println("book " + bookToBeAdded.getBookId() +" is succesfully borrowed by "
                     + member.getFirstName());

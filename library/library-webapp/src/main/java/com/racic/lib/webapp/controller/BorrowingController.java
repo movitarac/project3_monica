@@ -4,18 +4,18 @@ import com.racic.lib.business.service.contract.BookService;
 import com.racic.lib.business.service.contract.BorrowingService;
 import com.racic.lib.business.service.contract.MemberService;
 
-import com.racic.lib.business.service.contract.WorksService;
+import com.racic.lib.business.service.contract.WorkService;
 import com.racic.lib.model.Borrowing;
 import com.racic.lib.model.Member;
-import com.racic.lib.model.Works;
+import com.racic.lib.model.Work;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -30,7 +30,7 @@ public class BorrowingController {
     MemberService memberService;
 
     @Autowired
-    WorksService workService;
+    WorkService workService;
 
     @Autowired
     BookService bookService;
@@ -50,7 +50,7 @@ public class BorrowingController {
                     "and the clicked works id is " + worksId);
 
             //get the borrowed work
-            Works borrowedWork = workService.findWorksById(worksId);
+            Work borrowedWork = workService.findWorksById(worksId);
 
             //call the method to verify if there are available copies for the work
             if (borrowingService.verifyBoksListAvailableSize(worksId) == true) {
@@ -83,7 +83,7 @@ public class BorrowingController {
             List<Borrowing> borrowingList = borrowingService.findByMember(loggedInMember);
 
             mv.addObject("borrowingList", borrowingList);
-           // mv.addObject("worksBorrowed", worksBorrowed);
+            // mv.addObject("worksBorrowed", worksBorrowed);
         } else {
             mv = new ModelAndView("library/error");
         }

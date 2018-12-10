@@ -9,7 +9,7 @@
     <!-- =========== Declaration of different Services =========== -->
     <bean id="memberService" class="com.racic.lib.business.service.impl.MemberServiceImpl"/>
     <bean id="bookService" class="com.racic.lib.business.service.impl.BookServiceImpl"/>
-    <bean id="worksService" class="com.racic.lib.business.service.impl.WorksServiceImpl"/>
+    <bean id="worksService" class="com.racic.lib.business.service.impl.WorkServiceImpl"/>
     <bean id="libraryService" class="com.racic.lib.business.service.impl.LibraryServiceImpl"/>
     <bean id="managerService" class="com.racic.lib.business.service.impl.ManagerServiceImpl">
         <property name="worksService" ref="worksService"/>

@@ -5,23 +5,23 @@ import javax.persistence.*;
 @Entity
 @Table(name="Book")
 public class Book {
-	@Id
+    @Id
     private String bookId;
     private boolean isAvailable;
-	@ManyToOne
-    private Works works;
-	@OneToOne
-	private Borrowing borrowing;
-	
+    @ManyToOne
+    private Work work;
+    @OneToOne
+    private Borrowing borrowing;
+
     public Book(String bookId, boolean isAvailable) {
         this.bookId = bookId;
         this.isAvailable = isAvailable;
     }
 
-    public Book(String bookId, boolean isAvailable, Works works) {
+    public Book(String bookId, boolean isAvailable, Work work) {
         this.bookId = bookId;
         this.isAvailable = isAvailable;
-        this.works = works;
+        this.work = work;
     }
 
     public Book() {
@@ -43,20 +43,20 @@ public class Book {
         isAvailable = available;
     }
 
-    public Works getWorks() {
-        return works;
+    public Work getWork() {
+        return work;
     }
 
-    public void setWorks(Works works) {
-        this.works = works;
+    public void setWork(Work work) {
+        this.work = work;
     }
 
-	public Borrowing getBorrowing() {
-		return borrowing;
-	}
+    public Borrowing getBorrowing() {
+        return borrowing;
+    }
 
-	public void setBorrowing(Borrowing borrowing) {
-		this.borrowing = borrowing;
-	}
-    
+    public void setBorrowing(Borrowing borrowing) {
+        this.borrowing = borrowing;
+    }
+
 }

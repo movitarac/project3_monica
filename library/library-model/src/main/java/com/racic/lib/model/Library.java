@@ -12,18 +12,18 @@ import javax.persistence.OneToMany;
 @Entity(name="Library")
 public class Library {
 
-	@Id
-	@GeneratedValue
-	@Column
+    @Id
+    @GeneratedValue
+    @Column
     private Integer libId;
-	@Column
+    @Column
     private String libraryName;
-	@Column
+    @Column
     private String city;
-	@OneToMany
-	private List<Works> works;
-	
-	
+    @OneToMany
+    private List<Work> works;
+
+
     public Library() {
     }
 
@@ -57,13 +57,13 @@ public class Library {
         this.city = city;
     }
 
-	public List<Works> getWorks() {
-		return works;
-	}
+    public List<Work> getWorks() {
+        return works;
+    }
 
-	public void setWorks(List<Works> works) {
-		this.works = works;
-	}
-    
-    
+    public void setWorks(List<Work> works) {
+        this.works = works;
+    }
+
+
 }
