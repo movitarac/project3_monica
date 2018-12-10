@@ -49,9 +49,11 @@ public class BorrowingController {
             System.out.print(loggedInMember.getFirstName() + " is connected " +
                     "and the clicked works id is " + worksId);
 
+            //get the borrowed work
             Works borrowedWork = workService.findWorksById(worksId);
-            //call the method from borrowing service to verify the size is ok or not
-            if (borrowingService.verifyListAvailableBooksSize(worksId) == true) {
+
+            //call the method to verify if there are available copies for the work
+            if (borrowingService.verifyBoksListAvailableSize(worksId) == true) {
                 //call the method borrowbook from borrowing service
                 borrowingService.borrowBook(worksId, loggedInMember);
                 modelAndView = new ModelAndView("borrowing/borrowsuccess");
@@ -72,21 +74,16 @@ public class BorrowingController {
     public ModelAndView getMemberBorrowingList(HttpServletRequest request) {
         ModelAndView mv = null;
 
-        if (request == null && request.getSession().getAttribute("memberConnected") == null) {
+        if (request == null && request.getSession().getAttribute("connected") == null) {
             mv = new ModelAndView("member/login");
 
-        } else if (request != null && request.getSession().getAttribute("memberConnected") != null) {
+        } else if (request != null && request.getSession().getAttribute("connected") != null) {
             mv = new ModelAndView("borrowing/borrowinginfo");
             Member loggedInMember = (Member)request.getSession().getAttribute("memberConnected");
             List<Borrowing> borrowingList = borrowingService.findByMember(loggedInMember);
-            List<Works> worksBorrowed = new ArrayList<>();
 
-            for (Borrowing borrow : borrowingList) {
-                Works work = bookService.findWorksByBookId(borrow.getBook().getBookId());
-                worksBorrowed.add(work);
-            }
             mv.addObject("borrowingList", borrowingList);
-            mv.addObject("worksBorrowed", worksBorrowed);
+           // mv.addObject("worksBorrowed", worksBorrowed);
         } else {
             mv = new ModelAndView("library/error");
         }

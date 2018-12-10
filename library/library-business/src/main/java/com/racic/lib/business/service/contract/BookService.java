@@ -19,6 +19,5 @@ public interface BookService {
    Borrowing findBorrowingByBookId(String bookid);
 
    List<Book> findBooksByWorksWorksId(Integer worksid);
-
-    List<Book> findAvailableBook(Integer worksId);
+    List<Book> findAvailableBooksFromWork(Integer worksid);
 }

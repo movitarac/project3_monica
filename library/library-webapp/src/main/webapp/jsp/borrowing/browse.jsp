@@ -7,11 +7,11 @@
     <div class="browsebook">
 
 
-            <c:forEach items="${worksList}" var="works">
+            <c:forEach items="${worksList}" var="work">
                 <form:form method="POST" action="/library/borrow">
                 <ul>
-                <li>${works.title} by ${works.author}
-                    <input hidden name="worksId" value="${works.worksId}"/>
+                    <li><a href="/library/workinfo/${work.worksId}">${work.title} by ${work.author}</a>
+                    <input hidden name="worksId" value="${work.worksId}"/>
                     <li id="borrowbutton"><input type="submit" class="btn btn-success" value="Borrow" /></li>
                 </ul>
                 </form:form>

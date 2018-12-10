@@ -25,22 +25,13 @@ public class WorksController {
 
         boolean result;
         ModelAndView modelAndView = null;
-        result = worksService.isValidWork(author);
+
         List<Works> worksListFound = worksService.findWorksByAuthor(author);
+        result = worksService.isValidWork(author);
 
-        List<Book> booksListAvailableForOneWork = null;
-
-        if (worksListFound.size() > 0 && author != null) {
+        if (author != null) {
 
             if (result == true) {
-
-                for (int i = 0; i < worksListFound.size(); i++) {
-                    Integer worksid = worksListFound.get(i).getWorksId();
-                    booksListAvailableForOneWork = worksService.getOnlyAvailableBooksForWork(worksid);
-                    worksListFound.get(i).setCopiesAvailable(booksListAvailableForOneWork.size());
-                    System.out.println("Copies available " + worksListFound.get(i).getCopiesvailable());
-                }
-
                 modelAndView = new ModelAndView("works/worksfound");
                 modelAndView.addObject("worksListFound", worksListFound);
 

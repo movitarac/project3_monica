@@ -60,10 +60,6 @@ public class WorksServiceImpl implements WorksService {
         return toReturn;
     }
 
-    @Override
-    public List<Book> getOnlyAvailableBooksForWork(Integer workid) {
-        List<Book> availableBooks = bookService.findAvailableBook(workid);
-        System.out.println("we are in method getonlyavailablebook in workservice");
-        return availableBooks;
-    }
+
+
 }

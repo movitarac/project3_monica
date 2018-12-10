@@ -92,19 +92,20 @@ public class BorrowingServiceImpl implements BorrowingService {
     }
 
     @Override
-    public boolean verifyListAvailableBooksSize(Integer workid){
+    public boolean verifyBoksListAvailableSize(Integer worksid) {
        boolean toReturn = false;
-        List<Book> availableCopies = worksService.getOnlyAvailableBooksForWork(workid);
-       if(availableCopies.size()>0) {
-           toReturn = true;
-           System.out.println("the size of list is " + availableCopies.size());
-       } else {
-           toReturn = false;
-       }
+        List<Book> availableBooks = bookService.findAvailableBooksFromWork(worksid);
+
+        if(availableBooks.size()>0)
+        {
+            System.out.println(availableBooks.size());
+            toReturn=true;
+        } else{
+            System.out.println("the size of this list is 0");
+        }
 
         return toReturn;
     }
-
 
 
     @Override
@@ -112,12 +113,11 @@ public class BorrowingServiceImpl implements BorrowingService {
         boolean toReturn;
 
         Works workWithToBeBorrowed = workRepository.findById(worksId).get();
-        //make a book list from the same work (only available books on the list)
-        List<Book> booksAvailable = worksService.getOnlyAvailableBooksForWork(worksId);
-        //make a list of available books
+        //make a book list from the same work (only available books)
+        List<Book> booksAvailable = bookService.findAvailableBooksFromWork(worksId);
+
 
         Borrowing borrowToBeAdded = new Borrowing();
-
 
         /**
          * if a booksavailable list isn't null

@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface BorrowingService {
 
-    boolean verifyListAvailableBooksSize(Integer workid);
+    boolean verifyBoksListAvailableSize(Integer worksid);
 
     boolean borrowBook(Integer worksId, Member member);
 

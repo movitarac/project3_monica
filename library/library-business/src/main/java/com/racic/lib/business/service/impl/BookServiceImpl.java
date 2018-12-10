@@ -7,6 +7,7 @@ import com.racic.lib.model.Borrowing;
 import com.racic.lib.model.Works;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -56,23 +57,26 @@ public class BookServiceImpl implements BookService {
     	return bookRepository.findBooksByWorksWorksId(worksid);
 	}
 
-
-
 	@Override
-	public List<Book> findAvailableBook(Integer worksId) {
+	public List<Book> findAvailableBooksFromWork(Integer worksid) {
 
-		List<Book> allBookForOneWork = bookRepository.findBooksByWorksWorksId(worksId);
 
-		for (Book book : allBookForOneWork) {
-			if(book.isAvailable() == false) {
-				allBookForOneWork.remove(book);
-				System.out.println(" we are in method find available book");
-				System.out.println(book.getBookId() + " is remove from the list");
+    	List<Book> booklist =bookRepository.findBooksByWorksWorksId(worksid);
+    	List<Book> availableBooks = new ArrayList<>();
+
+		for (Book b: booklist) {
+			if (b.isAvailable()==true) {
+				availableBooks.add(b);
+			} else {
+				System.out.println("no available book");
 			}
 		}
 
-		return allBookForOneWork;
+
+    	System.out.println(availableBooks.size());
+		return availableBooks;
 	}
+
 
 
 
