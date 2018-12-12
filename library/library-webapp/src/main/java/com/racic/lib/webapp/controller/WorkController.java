@@ -55,20 +55,4 @@ public class WorkController {
         return mv;
     }
 
-
-
-    //////////////////////////////FOR TEST//////////////////////////////
-    @RequestMapping(value = "/library/work/{author}", method = RequestMethod.GET)
-    public @ResponseBody
-    String sayHello(@PathVariable String author) {
-
-        List<Work> worksList = workService.findWorksByAuthorContain(author);
-
-        String detail = "";
-        for (Work work : worksList) {
-            detail += work.getTitle();
-            detail += "  ";
-        }
-        return detail;
-    }
 }

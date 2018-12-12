@@ -11,9 +11,9 @@ import com.racic.lib.model.Member;
 
 import com.racic.lib.model.Work;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Service
@@ -28,48 +28,44 @@ public class BorrowingServiceImpl implements BorrowingService {
     @Autowired
     BookService bookService;
 
+    public static final SimpleDateFormat FRENCH_DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
 
-    public String deleteBorrowing(Borrowing borrowing) {
-        borrowingRepository.delete(borrowing);
-        return "borrowing is deleted";
-    }
+    @Override
+    public boolean returnBorrowing(Integer borrowingid, Member member) {
+        boolean returnOk;
 
-    public String updateBorrowing(Borrowing borrowing) {
-        borrowingRepository.save(borrowing);
+        Borrowing borrowingToBeReturned = borrowingRepository.findById(borrowingid).get();
 
-        return "borrowing is updated";
-    }
+        if (borrowingToBeReturned.getStatus().equals("ongoing") || borrowingToBeReturned.getStatus().equals("extended")) {
+            //change the status
+            borrowingToBeReturned.setStatus("returned");
+            Book bookToBeReturned = borrowingToBeReturned.getBook();
+
+            //modify the book availability and the borrowing id
+            bookToBeReturned.setAvailable(true);
+            bookToBeReturned.setBorrowing(null);
+
+            //save the modification for book and borrowing
+            bookRepository.save(bookToBeReturned);
+            borrowingRepository.save(borrowingToBeReturned);
+
+            //update the copies available
+            Work bookFromWorkToBeReturned = bookToBeReturned.getWork();
+            List<Book> availableBooks = bookService.findAvailableBooksFromWork(bookFromWorkToBeReturned.getWorksId());
+
+            bookFromWorkToBeReturned.setCopiesAvailable(availableBooks.size());
+            workRepository.save(bookFromWorkToBeReturned);
 
 
-    public Borrowing findByBorrowingId(int borrowingid) {
-        return borrowingRepository.findById(borrowingid).get();
-    }
-
-
-    public String borrowingStatus(Borrowing borrowing, int borrowingid) {
-
-
-        String borrowStatus = borrowingRepository.findById(borrowingid).get().getStatus();
-        return "your borrowing status is " + borrowStatus;
-    }
-
-    public String isExtended(Borrowing borrowing, int borrowingid) {
-        boolean status = borrowingRepository.findById(borrowingid).get().isExtended();
-        if (status == true) {
-            return "Your borrowing is extended ";
+            System.out.println(bookToBeReturned.getBookId() + " is being returned");
+            returnOk = true;
         } else {
-            return "Your borrowing is not extended";
+
+            System.out.println("Book has been already returned");
+            returnOk = false;
         }
 
-    }
-
-    public List<Borrowing> findByStatus(String status) {
-        return borrowingRepository.findByStatus(status);
-    }
-
-
-    public List<Borrowing> findByReturnDate(Date returnDate) {
-        return borrowingRepository.findByReturnDate(returnDate);
+        return returnOk;
     }
 
 
@@ -77,32 +73,40 @@ public class BorrowingServiceImpl implements BorrowingService {
         boolean toreturn;
         Borrowing borrowingtoBeExtended = borrowingRepository.findById(borrowingId).get();
         Date returnDate = borrowingtoBeExtended.getReturnDate();
-        if(borrowingtoBeExtended.isExtended() == false){
+
+        if (!borrowingtoBeExtended.isExtended()) {
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(returnDate);
             calendar.add(Calendar.WEEK_OF_MONTH, 4);
             returnDate = calendar.getTime();
+            System.out.println("new date : " + returnDate + " we are in method extend borrowing");
+
             borrowingtoBeExtended.setReturnDate(returnDate);
+            borrowingtoBeExtended.setStatus("extended");
+            borrowingtoBeExtended.setExtended(true);
             borrowingRepository.save(borrowingtoBeExtended);
+
+            toreturn = true;
         } else {
             System.out.println("cannot extend the borrowing");
+            toreturn = false;
         }
+        System.out.println(returnDate + " we are in method extend borrowing");
 
-        toreturn = true;
         return toreturn;
     }
 
     @Override
     public boolean verifyBoksListAvailableSize(Integer worksid) {
-        boolean toReturn = false;
+        boolean toReturn;
         List<Book> availableBooks = bookService.findAvailableBooksFromWork(worksid);
 
-        if(availableBooks.size()>0)
-        {
+        if (availableBooks.size() > 0) {
             System.out.println(availableBooks.size());
-            toReturn=true;
-        } else{
+            toReturn = true;
+        } else {
             System.out.println("the size of this list is 0");
+            toReturn = false;
         }
 
         return toReturn;
@@ -123,11 +127,12 @@ public class BorrowingServiceImpl implements BorrowingService {
          * if a booksavailable list isn't null
          * set new borrowing
          */
-        if (booksAvailable.size()> 0) {
+        if (booksAvailable.size() > 0) {
             borrowToBeAdded.setMember(member);
 
             //set Issue Date
             borrowToBeAdded.setIssueDate(new Date());
+            //borrowToBeAdded.setIssueDate(FRENCH_DATE_FORMAT.format(new Date()));
 
             //calculate the return date
             Date returndate = new Date();
@@ -142,7 +147,7 @@ public class BorrowingServiceImpl implements BorrowingService {
             borrowToBeAdded.setExtended(false);
 
             //the latest book on the available list will be borrowed
-            Book bookToBeAdded = booksAvailable.get(booksAvailable.size()-1);
+            Book bookToBeAdded = booksAvailable.get(booksAvailable.size() - 1);
             borrowToBeAdded.setBook(bookToBeAdded);
 
             //save the borrowing
@@ -166,7 +171,7 @@ public class BorrowingServiceImpl implements BorrowingService {
             //save the modification
             workRepository.save(workWithToBeBorrowed);
 
-            System.out.println("book " + bookToBeAdded.getBookId() +" is succesfully borrowed by "
+            System.out.println("book " + bookToBeAdded.getBookId() + " is succesfully borrowed by "
                     + member.getFirstName());
         } else {
             System.out.println("problem occured");
@@ -174,59 +179,22 @@ public class BorrowingServiceImpl implements BorrowingService {
         toReturn = true;
         return toReturn;
     }
-////////////////////TEST////////////////////////
-    /**
-     * Create a borrowing list from several books
-     *
-     * @param booksids
-     * @return
-     */
-    public boolean addBorrowing(List<String> booksids) {
-        boolean toReturn;
-        for (String bookid : booksids) {
-            Book bookToBorrow = bookRepository.findById(bookid).get();
-            Borrowing borrowToSave = new Borrowing();
-            Member m1 = new Member();
-            m1.setIduser(1);
-            m1.setFirstName("Lukas");
-            m1.setLastName("George");
 
-            boolean availability = bookToBorrow.isAvailable();
-            if (availability == true) {
-                borrowToSave.setBook(bookToBorrow);
-                //to do replace by connected member
-                borrowToSave.setMember(m1);
-                borrowToSave.setIdborrow(2);
-                borrowToSave.setIssueDate(new Date());
-                // calculation of the return date!
-                Date returndate = new Date();
-                Calendar calendar = Calendar.getInstance();
-                calendar.setTime(returndate);
-                calendar.add(Calendar.WEEK_OF_MONTH, 4);
-                returndate = calendar.getTime();
-                borrowToSave.setReturnDate(returndate);
-                borrowToSave.setStatus("ongoing");
-                bookToBorrow.setAvailable(false);
-                //save the newest borrowing
-                borrowingRepository.save(borrowToSave);
-                availability = false;
-
-            } else {
-                String errormessage = "Cannot borrow";
-            }
-
-        }
-
-        toReturn = true;
-        return toReturn;
-    }
 
     @Override
     public List<Borrowing> findByMember(Member member) {
+        //change date format for each borrow
+
+        //setDateRestitution (FRENCH_DATE_FORMAT.format(getDateRestitution));
+
+
         return borrowingRepository.findByMember(member);
     }
 
-
+    @Override
+    public Borrowing findByBorrowingId(Integer borrowingid) {
+        return borrowingRepository.findById(borrowingid).get();
+    }
 
 
 }

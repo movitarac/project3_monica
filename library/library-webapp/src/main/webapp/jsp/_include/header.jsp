@@ -17,15 +17,20 @@
                     <a class="nav-link" id="menuS" href="/library/condition">Condition</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="menuS1" href="/library/registration">Registration</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" id="menuS2" href="/library/information">How to?</a>
                 </li>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="menuS3" href="/library/browse">Browse</a>
                 </li>
+                <c:if test="${not empty memberConnected}">
+                <li class="nav-item">
+                    <a class="nav-link" id="menuS4" href="/library/profile">Profile</a>
+                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="menuS5" href="/library/borrowinglist">Borrowing List</a>
+                    </li>
+                </c:if>
             </ul>
 
             <c:choose>

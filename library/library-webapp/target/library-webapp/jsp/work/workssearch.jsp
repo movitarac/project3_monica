@@ -12,6 +12,7 @@
         </tr>
 
         <tr>
+
             <td><input type="submit" value="Search" class="btn btn-secondary"/></td>
             <td><input type="reset" value="Clear the Form" class="btn btn-secondary"></td>
         </tr>

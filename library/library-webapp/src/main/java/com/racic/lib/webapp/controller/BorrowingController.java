@@ -16,8 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -35,8 +33,8 @@ public class BorrowingController {
     @Autowired
     BookService bookService;
 
-    @RequestMapping(value = "/library/borrow", method = RequestMethod.POST)
-    public ModelAndView borrowbook(HttpServletRequest request, @RequestParam("worksId") Integer worksId) {
+    @RequestMapping(value = "/library/borrow/{worksId}", method = RequestMethod.GET)
+    public ModelAndView borrowThisbook(HttpServletRequest request, @PathVariable("worksId") Integer worksId) {
         ModelAndView modelAndView = null;
 
         if (request != null && request.getSession().getAttribute("connected") == null) {
@@ -69,8 +67,7 @@ public class BorrowingController {
         return modelAndView;
     }
 
-
-    @RequestMapping(value = "/library/borrowinglist", method = RequestMethod.POST)
+    @RequestMapping(value = "/library/borrowinglist", method = RequestMethod.GET)
     public ModelAndView getMemberBorrowingList(HttpServletRequest request) {
         ModelAndView mv = null;
 
@@ -81,27 +78,69 @@ public class BorrowingController {
             mv = new ModelAndView("borrowing/borrowinginfo");
             Member loggedInMember = (Member)request.getSession().getAttribute("memberConnected");
             List<Borrowing> borrowingList = borrowingService.findByMember(loggedInMember);
-
             mv.addObject("borrowingList", borrowingList);
-            // mv.addObject("worksBorrowed", worksBorrowed);
+
         } else {
             mv = new ModelAndView("library/error");
         }
         return mv;
     }
 
+    @RequestMapping(value = "/library/borrowinglist/extend/{borrowingid}", method = RequestMethod.GET)
+    public ModelAndView extendBorrow (HttpServletRequest request,@PathVariable int borrowingid) {
+        ModelAndView mv = null;
 
-    ////////////////////////TEST/////////////////////////////
+        String message="";
+        String msgError="";
+        if(request!=null && request.getSession().getAttribute("connected")!=null) {
+            Member member = (Member) request.getSession().getAttribute("memberConnected");
+            mv = new ModelAndView("borrowing/borrowinginfo");
+           boolean extendOK = borrowingService.extendBorrowing(borrowingid, member);
+            if (extendOK ==true ) {
+                List<Borrowing> borrowingList = borrowingService.findByMember(member);
+                message += "Your borrowing period for " + borrowingService.findByBorrowingId(borrowingid).getBook().getWork().getTitle() + " is successfully extended";
+                mv.addObject("borrowingList", borrowingList);
+                mv.addObject("message", message);
+                mv.addObject("extendOK",extendOK);
+            } else {
+                List<Borrowing> borrowingList = borrowingService.findByMember(member);
+                mv.addObject("borrowingList", borrowingList);
+                msgError += " You cannot extend twice the borrowing period or the Book is already returned!!";
+                mv.addObject("extendOK",extendOK);
+                mv.addObject("msgError", msgError);
+            }
+        } else {
+            mv = new ModelAndView("member/profile");
+        }
+        return mv;
+    }
 
-    @RequestMapping(value = "/library/borrowingbymember/{booksIds}", method = RequestMethod.GET)
-    public @ResponseBody
-    String getBorrowingsByMember(@PathVariable String booksIds) {
-        String[] arraybookid = booksIds.split("-");
-        List<String> listbooktoborrow = new ArrayList<>();
-        Collections.addAll(listbooktoborrow, arraybookid);
+    @RequestMapping(value = "/library/borrowinglist/return/{borrowingid}", method = RequestMethod.GET)
+    public ModelAndView returnBorrow (HttpServletRequest request,@PathVariable int borrowingid) {
+        String message="";
+        String msgError="";
+        ModelAndView mv = null;
 
-        borrowingService.addBorrowing(listbooktoborrow);
-
-        return "add borrowing list";
+        if(request!=null && request.getSession().getAttribute("connected")!=null) {
+            Member member = (Member) request.getSession().getAttribute("memberConnected");
+            mv = new ModelAndView("borrowing/borrowinginfo");
+            boolean returnOK = borrowingService.returnBorrowing(borrowingid, member);
+            if (returnOK ==true ) {
+                List<Borrowing> borrowingList = borrowingService.findByMember(member);
+                message += "Your borrowing for " + borrowingService.findByBorrowingId(borrowingid).getBook().getWork().getTitle() + " is successfully returned";
+                mv.addObject("borrowingList", borrowingList);
+                mv.addObject("returnOK",returnOK);
+                mv.addObject("message", message);
+            } else {
+                List<Borrowing> borrowingList = borrowingService.findByMember(member);
+                msgError += " You have returned this book!";
+                mv.addObject("msgError", msgError);
+                mv.addObject("borrowingList", borrowingList);
+                mv.addObject("returnOK",returnOK);
+            }
+        } else {
+            mv = new ModelAndView("member/profile");
+        }
+        return mv;
     }
 }

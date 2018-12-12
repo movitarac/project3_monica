@@ -88,13 +88,4 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-
-	<!--Spring security-->
-	<!--<bean class="org.springframework.security.data.repository.query.SecurityEvaluationContextExtension"/>-->
-
-
-	<!-- mapping for css -->
-	<mvc:resources mapping="/resources/**"
-		location="/resources/style/" />
-
 </beans>

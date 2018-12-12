@@ -3,22 +3,20 @@
 
 <%@ include file="../_include/header.jsp"%>
 
-
     <div class="browsebook">
 
-
             <c:forEach items="${worksList}" var="work">
-                <form:form method="POST" action="/library/borrow">
-                <ul>
-                    <li><a href="/library/workinfo/${work.worksId}" class="infowork">${work.title} by ${work.author}</a>
-                    <input hidden name="worksId" value="${work.worksId}"/>
-                    <li id="borrowbutton"><input type="submit" class="btn btn-success" value="Borrow" /></li>
+                <ul class="list-unstyled media">
+                    <li>
+                   <a href="/library/borrow/${work.worksId}" class="badge badge-secondary">Borrow this book</a>
+                    </li>
+                    <li class="media-body">
+                            <a href="/library/workinfo/${work.worksId}" class="infowork">${work.title}
+                        by ${work.author}</a>
+                    </li>
+
                 </ul>
-                </form:form>
             </c:forEach>
-
-        <div class="message">${msg}</div>
-
     </div>
 
 

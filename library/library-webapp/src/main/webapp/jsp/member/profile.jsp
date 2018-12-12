@@ -12,9 +12,7 @@
             <span class="profDetail">Username: </span> <span class="profInfo">${memberConnected.username}</span> <br>
             <span class="profDetail">Email: </span> <span class="profInfo">${memberConnected.email}</span> <br>
             <span class="profDetail">Address: </span> <span class="profInfo">${memberConnected.address}</span> <br>
-            <span class="profDetail"></span>
-            <button class="btn btn-lg btn-primary btn-block butBorrowList" type="submit"> Borrowing list</button>
-            <span class="profInfo"></span> <br>
+
         </p>
 </form:form>
 </main>
