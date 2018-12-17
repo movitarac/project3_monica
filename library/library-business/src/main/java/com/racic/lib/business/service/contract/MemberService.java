@@ -11,12 +11,6 @@ public interface MemberService {
 
     List<Member> findAll();
 
-    Member findMemberByLastName(String lastname);
-
-    Member findMemberById(Integer id);
-
-    Member findMemberByFirstName(String firstname);
-    
     Member findMemberByEmail(String email);
 
 
@@ -25,13 +19,6 @@ public interface MemberService {
 
     String addMember(String firstname, String lastname,
                      String email, String address);
-
-    String deleteMember(Member member);
-    
-    String updateMember(Member member);
-    
-    List<Borrowing> findByIdUser(Integer iduser);
-    Member findByUsername(String username);
 
     Member findByUsernameAndPassword(String username, String password);
 

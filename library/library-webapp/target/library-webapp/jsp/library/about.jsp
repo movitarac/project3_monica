@@ -1,13 +1,19 @@
 
 
 <div class="aboutwho">
-<h1>Who are we?</h1>
+<h1>Project 3 - OC</h1>
 
 <p>
+This project proposes a website, which is designed with RWD (Responsive web design), that can be accessible by all member / users.
+   <br>
+    They can:
+    <ul>
+    <li>find different works and their available copies</li>
+    <li>search a book by author's name</li>
+    <li>check their borrowing status and extend their borrowing period</li>
+</ul>
 
-    This web application can help to manage and store work - book information electronically according to users needs.
-    It helps both member and librarian to check and keep a constant track of all the work - book available in the library
-    as well as check the returned date of the loan.
+
 </p>
 
 

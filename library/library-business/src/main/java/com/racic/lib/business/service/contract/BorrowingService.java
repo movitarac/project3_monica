@@ -12,6 +12,8 @@ public interface BorrowingService {
 
     boolean returnBorrowing(Integer borrowingid, Member member);
 
+    List<Borrowing> getNotReturnedBorrowing(String status);
+
     boolean extendBorrowing (Integer borrowingId, Member member);
 
     List<Borrowing> findByMember(Member member);

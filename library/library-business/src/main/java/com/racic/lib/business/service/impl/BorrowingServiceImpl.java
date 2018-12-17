@@ -1,5 +1,6 @@
 package com.racic.lib.business.service.impl;
 
+import com.racic.lib.business.service.Util.Utils;
 import com.racic.lib.business.service.contract.BookService;
 import com.racic.lib.business.service.contract.BorrowingService;
 import com.racic.lib.consumer.repository.BookRepository;
@@ -36,9 +37,10 @@ public class BorrowingServiceImpl implements BorrowingService {
 
         Borrowing borrowingToBeReturned = borrowingRepository.findById(borrowingid).get();
 
-        if (borrowingToBeReturned.getStatus().equals("ongoing") || borrowingToBeReturned.getStatus().equals("extended")) {
+        if (borrowingToBeReturned.getStatus().equals(Utils.BorrowStatusEnum.ONGOING.getValue())
+                || borrowingToBeReturned.getStatus().equals(Utils.BorrowStatusEnum.EXTENDED.getValue())) {
             //change the status
-            borrowingToBeReturned.setStatus("returned");
+            borrowingToBeReturned.setStatus(Utils.BorrowStatusEnum.RETURNED.getValue());
             Book bookToBeReturned = borrowingToBeReturned.getBook();
 
             //modify the book availability and the borrowing id
@@ -69,6 +71,20 @@ public class BorrowingServiceImpl implements BorrowingService {
     }
 
 
+    @Override
+    public List<Borrowing> getNotReturnedBorrowing(String statusNotReturned) {
+        List<Borrowing> borrowList = new ArrayList<>();
+
+       if(statusNotReturned.equals(Utils.BorrowStatusEnum.ONGOING.getValue())
+       || statusNotReturned.equals(Utils.BorrowStatusEnum.EXTENDED.getValue())) {
+           borrowList = borrowingRepository.findByStatus(statusNotReturned);
+       } else {
+           borrowList=null;
+       }
+
+        return borrowList;
+    }
+
     public boolean extendBorrowing(Integer borrowingId, Member member) {
         boolean toreturn;
         Borrowing borrowingtoBeExtended = borrowingRepository.findById(borrowingId).get();
@@ -82,7 +98,7 @@ public class BorrowingServiceImpl implements BorrowingService {
             System.out.println("new date : " + returnDate + " we are in method extend borrowing");
 
             borrowingtoBeExtended.setReturnDate(returnDate);
-            borrowingtoBeExtended.setStatus("extended");
+            borrowingtoBeExtended.setStatus(Utils.BorrowStatusEnum.EXTENDED.getValue());
             borrowingtoBeExtended.setExtended(true);
             borrowingRepository.save(borrowingtoBeExtended);
 
@@ -131,19 +147,21 @@ public class BorrowingServiceImpl implements BorrowingService {
             borrowToBeAdded.setMember(member);
 
             //set Issue Date
-            borrowToBeAdded.setIssueDate(new Date());
+
             //borrowToBeAdded.setIssueDate(FRENCH_DATE_FORMAT.format(new Date()));
 
+            borrowToBeAdded.setIssueDate(new Date());
             //calculate the return date
             Date returndate = new Date();
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(returndate);
             calendar.add(Calendar.WEEK_OF_MONTH, 4);
             returndate = calendar.getTime();
+
             borrowToBeAdded.setReturnDate(returndate);
 
 
-            borrowToBeAdded.setStatus("ongoing");
+            borrowToBeAdded.setStatus(Utils.BorrowStatusEnum.ONGOING.getValue());
             borrowToBeAdded.setExtended(false);
 
             //the latest book on the available list will be borrowed

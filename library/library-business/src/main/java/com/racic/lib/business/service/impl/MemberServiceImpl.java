@@ -21,28 +21,13 @@ public class MemberServiceImpl implements MemberService {
 	@Autowired
 	UserRepository userRepository;
  
-    public Member findMemberById(int id) {
-    	return memberRepository.findById(id).get();
-    }
+
     public List<Member> findAll() {
     	//System.out.println("we are in member repository");
     	return memberRepository.findAll();
     }
 
-    public Member findMemberByLastName(String lastname) {
-        return memberRepository.findByLastName(lastname);
-    }
 
-	@Override
-	public Member findMemberById(Integer id) {
-		return memberRepository.findByIduser(id);
-	}
-
-
-	public Member findMemberByFirstName(String firstname) {
-        return memberRepository.findByFirstName(firstname);
-    }
-    
     public Member findMemberByEmail (String email) {
     	return memberRepository.findByEmail(email);
     }
@@ -68,29 +53,6 @@ public class MemberServiceImpl implements MemberService {
 		memberToBeAdded.setEmail(email);
     	memberRepository.save(memberToBeAdded);
 		return memberToBeAdded.getFirstName() + " one of our loyal member. Welcome!";
-	}
-
-	@Override
-	public String deleteMember(Member member) {
-		memberRepository.delete(member);
-		return "Member with id " + member.getIduser()  + " is deleted";
-	}
-
-	@Override
-	public String updateMember(Member member) {
-		memberRepository.save(member);
-		return "Member with id " + member.getIduser() + " is updated";
-	}
-	
-	public List<Borrowing> findByIdUser(Integer iduser){
-		List<Borrowing> borrowlist = memberRepository.findById(iduser).get().getBorrowing();
-		return borrowlist;
-	}
-	
-	@Override
-	public Member findByUsername(String username) {
-		
-		return memberRepository.findByUsername(username);
 	}
 
 	@Override

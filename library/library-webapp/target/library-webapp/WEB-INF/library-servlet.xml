@@ -26,7 +26,7 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	<!-- Spring container scans the base package of the applications to configure 
 		as beans -->
 	<!-- Define all the annotation (@Service,@Controller,@Repository @Autowired -->
-	<context:component-scan base-package="com.racic.lib" />
+	<context:component-scan base-package="com.racic" />
 
 	<!--enables the spring mvc to @Controller programming model -->
 	<mvc:annotation-driven />
@@ -72,6 +72,7 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 			ref="entityManagerFactory" />
 	</bean>
 	<tx:annotation-driven transaction-manager="transactionManager" />
+
 	<!-- Activate spring data JPA repository support -->
 	<!-- Find repositories -->
 	<jpa:repositories

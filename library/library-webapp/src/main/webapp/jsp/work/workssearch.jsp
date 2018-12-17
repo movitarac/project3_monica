@@ -1,4 +1,5 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<hr>
 <h2 class="searchbook">Find your book</h2>
 <hr>
 <form:form method="GET" name="workssearch" action="/library/searchbyauthor">

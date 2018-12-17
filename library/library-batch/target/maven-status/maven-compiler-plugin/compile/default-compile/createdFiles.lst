@@ -1,1 +1,2 @@
-com/racic/lib/batch/App.class
+com/racic/lib/batch/SendEmailJob.class
+com/racic/lib/batch/Email.class

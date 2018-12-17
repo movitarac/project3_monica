@@ -1,4 +1,5 @@
 com/racic/lib/webapp/controller/BookController.class
 com/racic/lib/webapp/controller/MemberController.class
 com/racic/lib/webapp/controller/BorrowingController.class
+com/racic/lib/webapp/controller/WorkController.class
 com/racic/lib/webapp/controller/LibraryController.class

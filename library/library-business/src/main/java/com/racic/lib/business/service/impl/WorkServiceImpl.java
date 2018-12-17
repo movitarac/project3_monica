@@ -48,22 +48,5 @@ public class WorkServiceImpl implements WorkService {
         return toReturn;
     }
 
-    @Override
-    public List<Work> findWorksByPublicationYear(int year) {
-        return workRepository.findWorksByPublicationYear(year);
-    }
-
-    @Override
-    public boolean isValidWorkByYear(int year) {
-        boolean toReturn;
-        List<Work> worksListFoundByYear = workRepository.findWorksByPublicationYear(year);
-
-        if (worksListFoundByYear.size() >= 1) {
-            toReturn = true;
-        } else {
-            toReturn = false;
-        }
-        return toReturn;
-    }
 
 }

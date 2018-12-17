@@ -13,8 +13,5 @@ public interface WorkService {
 
     boolean isValidWorkByAuthor(String author);
 
-    List<Work> findWorksByPublicationYear (int year);
-
-    boolean isValidWorkByYear(int year);
 
 }

@@ -2,6 +2,7 @@ package com.racic.lib.model;
 
 import javax.persistence.*;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -19,6 +20,9 @@ public class Borrowing {
     private Date returnDate;
     private String status;
     private boolean isExtended;
+
+
+    //public static final SimpleDateFormat FRENCH_DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
 
     public Borrowing() {
     }

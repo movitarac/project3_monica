@@ -45,7 +45,7 @@ CREATE TABLE `Book` (
   `work_worksId` int(11) DEFAULT NULL,
   PRIMARY KEY (`bookId`),
   KEY `fk_borrow1` (`borrowing_idborrow`),
-  KEY `fk_work2` (`works_worksId`),
+  KEY `fk_work2` (`work_worksId`),
   CONSTRAINT `fk_work2` FOREIGN KEY (`work_worksId`) REFERENCES `work` (`worksid`),
   CONSTRAINT `fk_borrow1` FOREIGN KEY (`borrowing_idborrow`) REFERENCES `borrowing` (`idborrow`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -66,8 +66,7 @@ CREATE TABLE `Borrowing` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-INSERT INTO `citylibrary`.`Library` (`city`,) VALUES ('Saint Herblain');
-UPDATE `citylibrary`.`Library` SET `libraryName` = 'City' WHERE (`libId` = '1');
+INSERT INTO `citylibrary`.`Library` (`city`,`libraryName`) VALUES ('Saint Herblain','City');
 
 
 INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`) VALUES ('Rowling', 'Fantasy', '1997', 'Harry Potter and the Philosopher\'s Stone', '1');
@@ -93,40 +92,40 @@ INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`
 INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`, `copiesAvailable`, `imageUrl`) VALUES ('Sir Arthur Conan Doyle', 'Detective', '1887', 'A Study in Scarlet', '1', '3', 'http://localhost:80/resources/assets/19.jpeg');
 INSERT INTO `citylibrary`.`Work` (`author`, `bookDescription`, `publicationYear`, `title`, `idlibrary`, `copiesAvailable`, `imageUrl`) VALUES ('Sir Arthur Conan Doyle', 'Detective', '1890', 'The Sign of Four', '1', '3', 'http://localhost:80/resources/assets/20.jpeg');
 
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/1.jpeg' WHERE (`worksId` = '1');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/2.jpeg' WHERE (`worksId` = '2');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/3.jpeg' WHERE (`worksId` = '3');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/4.jpeg' WHERE (`worksId` = '4');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/5.jpeg' WHERE (`worksId` = '5');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/6.jpeg' WHERE (`worksId` = '6');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/7.jpeg' WHERE (`worksId` = '7');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/8.jpeg' WHERE (`worksId` = '8');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/16.jpeg' WHERE (`worksId` = '16');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/15.jpeg' WHERE (`worksId` = '15');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/14.jpeg' WHERE (`worksId` = '14');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/13.jpeg' WHERE (`worksId` = '13');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/12.jpeg' WHERE (`worksId` = '12');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/11.jpeg' WHERE (`worksId` = '11');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/10.jpeg' WHERE (`worksId` = '10');
-UPDATE `citylibrary`.`Works` SET `imageUrl` = 'http://localhost:80/resources/assets/9.jpeg' WHERE (`worksId` = '9');
+UPDATE `citylibrary`.`Work` SET `imageUrl` = 'http://localhost:80/resources/assets/1.jpeg' WHERE (`worksId` = '1');
+UPDATE `citylibrary`.`Work` SET `imageUrl` = 'http://localhost:80/resources/assets/2.jpeg' WHERE (`worksId` = '2');
+UPDATE `citylibrary`.`Work` SET `imageUrl` = 'http://localhost:80/resources/assets/3.jpeg' WHERE (`worksId` = '3');
+UPDATE `citylibrary`.`Work` SET `imageUrl` = 'http://localhost:80/resources/assets/4.jpeg' WHERE (`worksId` = '4');
+UPDATE `citylibrary`.`Work` SET `imageUrl` = 'http://localhost:80/resources/assets/5.jpeg' WHERE (`worksId` = '5');
+UPDATE `citylibrary`.`Work` SET `imageUrl` = 'http://localhost:80/resources/assets/6.jpeg' WHERE (`worksId` = '6');
+UPDATE `citylibrary`.`Work` SET `imageUrl` = 'http://localhost:80/resources/assets/7.jpeg' WHERE (`worksId` = '7');
+UPDATE `citylibrary`.`Work` SET `imageUrl` = 'http://localhost:80/resources/assets/8.jpeg' WHERE (`worksId` = '8');
+UPDATE `citylibrary`.`Work` SET `imageUrl` = 'http://localhost:80/resources/assets/16.jpeg' WHERE (`worksId` = '16');
+UPDATE `citylibrary`.`Work` SET `imageUrl` = 'http://localhost:80/resources/assets/15.jpeg' WHERE (`worksId` = '15');
+UPDATE `citylibrary`.`Work` SET `imageUrl` = 'http://localhost:80/resources/assets/14.jpeg' WHERE (`worksId` = '14');
+UPDATE `citylibrary`.`Work` SET `imageUrl` = 'http://localhost:80/resources/assets/13.jpeg' WHERE (`worksId` = '13');
+UPDATE `citylibrary`.`Work` SET `imageUrl` = 'http://localhost:80/resources/assets/12.jpeg' WHERE (`worksId` = '12');
+UPDATE `citylibrary`.`Work` SET `imageUrl` = 'http://localhost:80/resources/assets/11.jpeg' WHERE (`worksId` = '11');
+UPDATE `citylibrary`.`Work` SET `imageUrl` = 'http://localhost:80/resources/assets/10.jpeg' WHERE (`worksId` = '10');
+UPDATE `citylibrary`.`Work` SET `imageUrl` = 'http://localhost:80/resources/assets/9.jpeg' WHERE (`worksId` = '9');
 
 
-UPDATE `citylibrary`.`Works` SET `copiesAvailable` = '4' WHERE (`worksId` = '1');
-UPDATE `citylibrary`.`Works` SET `copiesAvailable` = '2' WHERE (`worksId` = '2');
-UPDATE `citylibrary`.`Works` SET `copiesAvailable` = '1' WHERE (`worksId` = '16');
-UPDATE `citylibrary`.`Works` SET `copiesAvailable` = '2' WHERE (`worksId` = '15');
-UPDATE `citylibrary`.`Works` SET `copiesAvailable` = '2' WHERE (`worksId` = '14');
-UPDATE `citylibrary`.`Works` SET `copiesAvailable` = '3' WHERE (`worksId` = '13');
-UPDATE `citylibrary`.`Works` SET `copiesAvailable` = '4' WHERE (`worksId` = '12');
-UPDATE `citylibrary`.`Works` SET `copiesAvailable` = '1' WHERE (`worksId` = '11');
-UPDATE `citylibrary`.`Works` SET `copiesAvailable` = '3' WHERE (`worksId` = '10');
-UPDATE `citylibrary`.`Works` SET `copiesAvailable` = '2' WHERE (`worksId` = '9');
-UPDATE `citylibrary`.`Works` SET `copiesAvailable` = '2' WHERE (`worksId` = '8');
-UPDATE `citylibrary`.`Works` SET `copiesAvailable` = '2' WHERE (`worksId` = '7');
-UPDATE `citylibrary`.`Works` SET `copiesAvailable` = '3' WHERE (`worksId` = '3');
-UPDATE `citylibrary`.`Works` SET `copiesAvailable` = '3' WHERE (`worksId` = '4');
-UPDATE `citylibrary`.`Works` SET `copiesAvailable` = '3' WHERE (`worksId` = '5');
-UPDATE `citylibrary`.`Works` SET `copiesAvailable` = '1' WHERE (`worksId` = '6');
+UPDATE `citylibrary`.`Work` SET `copiesAvailable` = '4' WHERE (`worksId` = '1');
+UPDATE `citylibrary`.`Work` SET `copiesAvailable` = '2' WHERE (`worksId` = '2');
+UPDATE `citylibrary`.`Work` SET `copiesAvailable` = '1' WHERE (`worksId` = '16');
+UPDATE `citylibrary`.`Work` SET `copiesAvailable` = '2' WHERE (`worksId` = '15');
+UPDATE `citylibrary`.`Work` SET `copiesAvailable` = '2' WHERE (`worksId` = '14');
+UPDATE `citylibrary`.`Work` SET `copiesAvailable` = '3' WHERE (`worksId` = '13');
+UPDATE `citylibrary`.`Work` SET `copiesAvailable` = '4' WHERE (`worksId` = '12');
+UPDATE `citylibrary`.`Work` SET `copiesAvailable` = '1' WHERE (`worksId` = '11');
+UPDATE `citylibrary`.`Work` SET `copiesAvailable` = '3' WHERE (`worksId` = '10');
+UPDATE `citylibrary`.`Work` SET `copiesAvailable` = '2' WHERE (`worksId` = '9');
+UPDATE `citylibrary`.`Work` SET `copiesAvailable` = '2' WHERE (`worksId` = '8');
+UPDATE `citylibrary`.`Work` SET `copiesAvailable` = '2' WHERE (`worksId` = '7');
+UPDATE `citylibrary`.`Work` SET `copiesAvailable` = '3' WHERE (`worksId` = '3');
+UPDATE `citylibrary`.`Work` SET `copiesAvailable` = '3' WHERE (`worksId` = '4');
+UPDATE `citylibrary`.`Work` SET `copiesAvailable` = '3' WHERE (`worksId` = '5');
+UPDATE `citylibrary`.`Work` SET `copiesAvailable` = '1' WHERE (`worksId` = '6');
 
 
 INSERT INTO `citylibrary`.`User` ( `password`, `username`) VALUES ('1234lulu', 'georgelulu');
@@ -190,20 +189,20 @@ INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`) VALUES ('un3b', '1');
 INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`) VALUES ('un3c', '1');
 INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`) VALUES ('un3d', '1');
 INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`) VALUES ('un3e', '1');
-UPDATE `citylibrary`.`Book` SET `works_worksId` = '17' WHERE (`bookId` = 'un3a');
-UPDATE `citylibrary`.`Book` SET `works_worksId` = '17' WHERE (`bookId` = 'un3b');
-UPDATE `citylibrary`.`Book` SET `works_worksId` = '17' WHERE (`bookId` = 'un3c');
-UPDATE `citylibrary`.`Book` SET `works_worksId` = '17' WHERE (`bookId` = 'un3d');
-UPDATE `citylibrary`.`Book` SET `works_worksId` = '17' WHERE (`bookId` = 'un3e');
+UPDATE `citylibrary`.`Book` SET `work_worksId` = '17' WHERE (`bookId` = 'un3a');
+UPDATE `citylibrary`.`Book` SET `work_worksId` = '17' WHERE (`bookId` = 'un3b');
+UPDATE `citylibrary`.`Book` SET `work_worksId` = '17' WHERE (`bookId` = 'un3c');
+UPDATE `citylibrary`.`Book` SET `work_worksId` = '17' WHERE (`bookId` = 'un3d');
+UPDATE `citylibrary`.`Book` SET `work_worksId` = '17' WHERE (`bookId` = 'un3e');
 
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('un4a', '1', '18');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('un4b', '1', '18');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('sh1a', '1', '19');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('sh1b', '1', '19');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('sh1c', '1', '19');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('sh2a', '1', '20');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('sh2b', '1', '20');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('sh2c', '1', '20');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('un4a', '1', '18');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('un4b', '1', '18');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('sh1a', '1', '19');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('sh1b', '1', '19');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('sh1c', '1', '19');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('sh2a', '1', '20');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('sh2b', '1', '20');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('sh2c', '1', '20');
 
 
 

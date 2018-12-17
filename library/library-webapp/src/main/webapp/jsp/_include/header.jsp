@@ -13,12 +13,6 @@
                     <a class="nav-link" id="menuS0" href="/library">Home</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" id="menuS" href="/library/condition">Condition</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="menuS2" href="/library/information">How to?</a>
-                </li>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="menuS3" href="/library/browse">Browse</a>
@@ -30,11 +24,14 @@
                     <li class="nav-item">
                         <a class="nav-link" id="menuS5" href="/library/borrowinglist">Borrowing List</a>
                     </li>
+
+
+
                 </c:if>
             </ul>
-
+            <a class="nav-link" href="/library/profile"> ${memberConnected.firstName} ${memberConnected.lastName}</a>
             <c:choose>
-                <c:when test="${memberConnected eq null}">
+                <c:when test="${empty memberConnected}">
                     <form class="form-inline mt-2 mt-md-0">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="l"><a href="/library/login">Log in</a>
                         </button>
