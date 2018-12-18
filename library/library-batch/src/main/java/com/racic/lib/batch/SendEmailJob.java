@@ -16,14 +16,15 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import java.util.List;
 
 
-public class SendEmailJob implements Job {
+public class SendEmailJob {
 
 
     //Create the job
-    @Override
-    public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
-        ApplicationContext context= new AnnotationConfigApplicationContext(MyConfiguration.class);
 
+    //public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
+        public void execute(){
+          //  ApplicationContext context= new AnnotationConfigApplicationContext(MyConfiguration.class);
+/*
         Email email = context.getBean(Email.class);
         SendEmail send = context.getBean(SendEmail.class);
 
@@ -32,6 +33,7 @@ public class SendEmailJob implements Job {
 
         send.sendEmail(borrowings);
        System.out.println("-------executing job---------");
+       */
     }
 
 

@@ -7,55 +7,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b93f988-554d-4487-b7cf-21aa1cdb544d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Conf/MyConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/SendEmail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-batch/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-batch/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Email.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Conf/MyConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Conf/MyConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/SendEmailJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/SendEmailJob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-batch/target/classes/META-INF/library-batch.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/library-batch/target/classes/com/racic/lib/batch/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/library-batch/target/classes/com/racic/lib/batch/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-batch/target/classes/com/racic/lib/batch/Email$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-batch/target/classes/com/racic/lib/batch/Email.class" beforeDir="false" afterPath="$PROJECT_DIR$/library-batch/target/classes/com/racic/lib/batch/Email.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library-batch/target/classes/com/racic/lib/batch/Conf/MyConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/library-batch/target/classes/com/racic/lib/batch/Conf/MyConfiguration.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-batch/target/classes/com/racic/lib/batch/SendEmailJob.class" beforeDir="false" afterPath="$PROJECT_DIR$/library-batch/target/classes/com/racic/lib/batch/SendEmailJob.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-batch/target/library-batch-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/library-batch/target/library-batch-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-batch/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/library-batch/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-batch/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/library-batch/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-batch/target/surefire-reports/TEST-com.racic.lib.batch.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-batch/target/surefire-reports/TEST-com.racic.lib.batch.AppTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-batch/target/surefire-reports/com.racic.lib.batch.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/library-batch/target/surefire-reports/com.racic.lib.batch.AppTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-business/src/main/java/com/racic/lib/business/service/contract/BorrowingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-business/src/main/java/com/racic/lib/business/service/contract/BorrowingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-business/src/main/java/com/racic/lib/business/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-business/src/main/java/com/racic/lib/business/service/impl/BookServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-business/src/main/java/com/racic/lib/business/service/impl/BorrowingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-business/src/main/java/com/racic/lib/business/service/impl/BorrowingServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-business/target/classes/com/racic/lib/business/service/contract/BorrowingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/library-business/target/classes/com/racic/lib/business/service/contract/BorrowingService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-business/target/classes/com/racic/lib/business/service/impl/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/library-business/target/classes/com/racic/lib/business/service/impl/BookServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-business/target/classes/com/racic/lib/business/service/impl/BorrowingServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/library-business/target/classes/com/racic/lib/business/service/impl/BorrowingServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-business/target/library-business-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/library-business/target/library-business-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-business/target/surefire-reports/TEST-com.racic.lib.business.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-business/target/surefire-reports/TEST-com.racic.lib.business.AppTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-business/target/surefire-reports/com.racic.lib.business.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/library-business/target/surefire-reports/com.racic.lib.business.AppTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-consumer/src/main/java/com/racic/lib/consumer/repository/BorrowingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-consumer/src/main/java/com/racic/lib/consumer/repository/BorrowingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-consumer/target/classes/com/racic/lib/consumer/repository/BorrowingRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/library-consumer/target/classes/com/racic/lib/consumer/repository/BorrowingRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-consumer/target/library-consumer-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/library-consumer/target/library-consumer-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-consumer/target/surefire-reports/TEST-com.racic.lib.consumer.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-consumer/target/surefire-reports/TEST-com.racic.lib.consumer.AppTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-consumer/target/surefire-reports/com.racic.lib.consumer.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/library-consumer/target/surefire-reports/com.racic.lib.consumer.AppTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-model/target/library-model-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/library-model/target/library-model-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-model/target/surefire-reports/TEST-com.racic.lib.model.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-model/target/surefire-reports/TEST-com.racic.lib.model.AppTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-model/target/surefire-reports/com.racic.lib.model.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/library-model/target/surefire-reports/com.racic.lib.model.AppTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library-webapp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp.war" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/FastInfoset-1.2.13.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/byte-buddy-1.9.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/hibernate-core-5.4.0.CR1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/hibernate-entitymanager-5.4.0.CR1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/istack-commons-runtime-2.21.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/jaxb-api-2.2.12-b140109.1041.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/jaxb-core-2.2.11.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/jaxb-runtime-2.2.11.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-business-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-business-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-consumer-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-consumer-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-model-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-model-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/stax-ex-1.7.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/txw2-2.2.11.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/library-model/target/" />
@@ -75,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="237">
+              <caret line="16" selection-start-line="12" selection-start-column="3" selection-end-line="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,27 +62,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Email.java">
+        <entry file="file://$PROJECT_DIR$/library-batch/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-162">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="113">
+              <caret line="117" column="79" selection-start-line="117" selection-start-column="79" selection-end-line="117" selection-end-column="79" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/SendEmail.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#846#1112#0" expanded="true" />
-                <element signature="e#1111#1112#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="321">
+              <caret line="208" selection-start-line="208" selection-end-line="208" />
             </state>
           </provider>
         </entry>
@@ -113,8 +82,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/SendEmailJob.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+            <state relative-caret-position="251">
+              <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Conf/MyConfiguration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="98" column="60" selection-start-line="98" selection-start-column="60" selection-end-line="98" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,10 +104,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/library-batch/pom.xml">
+        <entry file="file://$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Email.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1515">
-              <caret line="101" column="21" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="21" />
+            <state relative-caret-position="132">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library-webapp/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="458">
+              <caret line="88" column="42" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -162,6 +155,8 @@
       <find>work</find>
       <find>work/</find>
       <find>verifyBoksListAvailableSize</find>
+      <find>web</find>
+      <find>entitymanager</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -197,7 +192,6 @@
         <option value="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/library/about.jsp" />
         <option value="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/work/workssearch.jsp" />
         <option value="$PROJECT_DIR$/library-business/pom.xml" />
-        <option value="$PROJECT_DIR$/library-webapp/pom.xml" />
         <option value="$PROJECT_DIR$/library-webapp/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/library-webapp/src/main/webapp/WEB-INF/library-servlet.xml" />
         <option value="$PROJECT_DIR$/library-batch/src/main/resources/library-servlet.xml" />
@@ -208,19 +202,20 @@
         <option value="$PROJECT_DIR$/library-model/pom.xml" />
         <option value="$PROJECT_DIR$/library-webapp/src/main/java/com/racic/lib/webapp/controller/LibraryController.java" />
         <option value="$PROJECT_DIR$/library-business/src/main/java/com/racic/lib/business/service/impl/BookServiceImpl.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/library-batch/pom.xml" />
         <option value="$PROJECT_DIR$/library-batch/src/main/resources/batchContext.xml.fxml" />
         <option value="$PROJECT_DIR$/library-batch/src/main/resources/batchContext.xml" />
         <option value="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Conf/SendEmail.java" />
-        <option value="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Conf/MyConfiguration.java" />
         <option value="$PROJECT_DIR$/library-business/src/main/java/com/racic/lib/business/service/contract/BorrowingService.java" />
         <option value="$PROJECT_DIR$/library-business/src/main/java/com/racic/lib/business/service/impl/BorrowingServiceImpl.java" />
         <option value="$PROJECT_DIR$/library-consumer/src/main/java/com/racic/lib/consumer/repository/BorrowingRepository.java" />
         <option value="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Email.java" />
         <option value="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/SendEmail.java" />
+        <option value="$PROJECT_DIR$/library-webapp/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Application.java" />
+        <option value="$PROJECT_DIR$/library-batch/pom.xml" />
         <option value="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/SendEmailJob.java" />
+        <option value="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Conf/MyConfiguration.java" />
       </list>
     </option>
   </component>
@@ -270,12 +265,17 @@
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="library-webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="library-webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
       </expand>
       <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="37" />
+    <option name="x" value="33" />
     <option name="y" value="23" />
     <option name="width" value="1263" />
     <option name="height" value="752" />
@@ -337,12 +337,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="batch" type="462c0819:PsiDirectoryNode" />
               <item name="Conf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="library" type="462c0819:PsiDirectoryNode" />
-              <item name="library-batch" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="library" type="b2602c69:ProjectViewProjectNode" />
@@ -410,41 +404,6 @@
             <path>
               <item name="library" type="b2602c69:ProjectViewProjectNode" />
               <item name="library" type="462c0819:PsiDirectoryNode" />
-              <item name="library-consumer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="library" type="462c0819:PsiDirectoryNode" />
-              <item name="library-consumer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="library" type="462c0819:PsiDirectoryNode" />
-              <item name="library-consumer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="library" type="462c0819:PsiDirectoryNode" />
-              <item name="library-consumer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="library" type="462c0819:PsiDirectoryNode" />
-              <item name="library-consumer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="library" type="462c0819:PsiDirectoryNode" />
               <item name="library-model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -501,6 +460,23 @@
               <item name="library-webapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="library" type="462c0819:PsiDirectoryNode" />
+              <item name="library-webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="library" type="462c0819:PsiDirectoryNode" />
+              <item name="library-webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -524,20 +500,20 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545125378010" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545169433660" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="spring" />
   </component>
@@ -597,6 +573,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MyConfiguration" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.racic.lib.batch.Conf.MyConfiguration" />
+      <module name="library-batch" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.racic.lib.batch.Conf.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SimpleEmail" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.racic.lib.batch.SimpleEmail" />
       <module name="library-batch" />
@@ -608,6 +597,79 @@
       </extension>
       <method v="2">
         <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.12" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/library_webapp_war/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="library-webapp:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/library_webapp_war" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_library" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="62700" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="library-webapp:war" />
+        </option>
       </method>
     </configuration>
     <configuration name="Tomcat-lib" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.12" ALTERNATIVE_JRE_ENABLED="false">
@@ -759,11 +821,14 @@
       <item itemvalue="Application.Application" />
       <item itemvalue="Application.AppMain" />
       <item itemvalue="Application.SimpleEmail" />
+      <item itemvalue="Application.MyConfiguration" />
+      <item itemvalue="Tomcat Server.Test" />
       <item itemvalue="Tomcat Server.Tomcat-lib" />
       <item itemvalue="Tomcat Server.registration.jsp" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MyConfiguration" />
         <item itemvalue="Application.Application" />
         <item itemvalue="Application.SimpleEmail" />
         <item itemvalue="Application.AppMain" />
@@ -794,17 +859,18 @@
       <workItem from="1544790811079" duration="193000" />
       <workItem from="1544791330614" duration="11296000" />
       <workItem from="1545034487447" duration="963000" />
-      <workItem from="1545036196209" duration="28425000" />
+      <workItem from="1545036196209" duration="35193000" />
+      <workItem from="1545167041615" duration="2674000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="378340000" />
+    <option name="totallyTimeSpent" value="387782000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="37" y="23" width="1263" height="752" extended-state="0" />
+    <frame x="33" y="23" width="1263" height="752" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23341523" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23832923" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -814,7 +880,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3287879" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.38636363" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.43030304" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -838,7 +904,7 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
-      <window_info anchor="right" id="Maven" order="10" visible="true" weight="0.13841113" />
+      <window_info anchor="right" id="Maven" order="10" visible="true" weight="0.123669125" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26617527" />
@@ -882,7 +948,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/library-batch/src/assembly/archive-deploy.xml" />
     <entry file="file://$PROJECT_DIR$/library-business/src/main/java/com/racic/lib/business/service/contract/WorkService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1050,16 +1115,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/AppMain.java" />
-    <entry file="file://$PROJECT_DIR$/library-webapp/src/main/java/com/racic/lib/webapp/controller/LibraryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library-batch/src/data/scripts/batch-X.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1084,13 +1139,6 @@
         <state relative-caret-position="-565" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="133" column="25" selection-start-line="129" selection-start-column="12" selection-end-line="133" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library-model/src/main/java/com/racic/lib/model/Book.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1101,13 +1149,6 @@
     <entry file="file://$PROJECT_DIR$/.project">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/library-webapp/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-902">
-          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="58" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library-model/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -1115,14 +1156,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library-batch/src/main/resources/batchContext.xml.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="42" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/library-batch/src/main/resources/batchContext.xml.fxml" />
     <entry file="file://$PROJECT_DIR$/library-webapp/src/main/webapp/WEB-INF/library-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
@@ -1130,13 +1164,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library-batch/src/main/resources/batchContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="61" column="65" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/library-batch/src/main/resources/batchContext.xml" />
     <entry file="file://$PROJECT_DIR$/library-business/src/main/java/com/racic/lib/business/service/contract/BorrowingService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1164,44 +1192,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Conf/MyConfiguration.java">
+    <entry file="file://$PROJECT_DIR$/library-webapp/src/main/java/com/racic/lib/webapp/controller/BookController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-48">
-          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1174#1175#0" expanded="true" />
-            <element signature="e#1247#1248#0" expanded="true" />
-            <element signature="e#1281#1282#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Email.java">
+    <entry file="file://$PROJECT_DIR$/library-webapp/src/main/java/com/racic/lib/webapp/controller/LibraryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-162">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/SendEmailJob.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+        <state relative-caret-position="240">
+          <caret line="27" column="35" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1220,10 +1221,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/library-webapp/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="88" column="42" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="208" selection-start-line="208" selection-end-line="208" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="16" selection-start-line="12" selection-start-column="3" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/library-batch/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1515">
-          <caret line="101" column="21" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="21" />
+        <state relative-caret-position="113">
+          <caret line="117" column="79" selection-start-line="117" selection-start-column="79" selection-end-line="117" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/SendEmailJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Conf/MyConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="98" column="60" selection-start-line="98" selection-start-column="60" selection-end-line="98" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Email.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

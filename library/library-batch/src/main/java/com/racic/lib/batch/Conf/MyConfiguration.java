@@ -2,6 +2,10 @@ package com.racic.lib.batch.Conf;
 
 import com.racic.lib.batch.Email;
 import com.racic.lib.batch.SendEmail;
+import com.racic.lib.batch.SendEmailJob;
+import com.racic.lib.model.Borrowing;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -17,6 +21,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
+import java.util.List;
 import java.util.Properties;
 
 @Configuration
@@ -29,6 +34,7 @@ public class MyConfiguration {
     public Email email() {
         return new Email();
     }
+
     @Bean
     public SendEmail sendEmail() {
         return new SendEmail();
@@ -39,7 +45,7 @@ public class MyConfiguration {
         LocalContainerEntityManagerFactoryBean em
                 = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan(new String[] { "com.racic.lib.model" });
+        em.setPackagesToScan(new String[]{"com.racic.lib.model"});
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
@@ -49,18 +55,18 @@ public class MyConfiguration {
     }
 
     @Bean
-    public DataSource dataSource(){
+    public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/citylibrary");
-        dataSource.setUsername( "root" );
-        dataSource.setPassword( "racineracine." );
+        dataSource.setUsername("root");
+        dataSource.setPassword("racineracine.");
         return dataSource;
     }
 
     @Bean
     public PlatformTransactionManager transactionManager(
-            EntityManagerFactory emf){
+            EntityManagerFactory emf) {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(emf);
 
@@ -68,7 +74,7 @@ public class MyConfiguration {
     }
 
     @Bean
-    public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
+    public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
@@ -80,6 +86,20 @@ public class MyConfiguration {
 
         return properties;
     }
-}
 
+    public static void main(String[] args) {
+        ApplicationContext context= new AnnotationConfigApplicationContext(MyConfiguration.class);
+        Email email = context.getBean(Email.class);
+        SendEmail send = context.getBean(SendEmail.class);
+
+        //the job is to send email
+        List<Borrowing> borrowings = email.getBorrowingListNotReturned();
+
+        send.sendEmail(borrowings);
+        System.out.println("-------executing job---------");
+
+
+    }
+
+}
 

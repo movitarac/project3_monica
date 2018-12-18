@@ -9,8 +9,13 @@ public class Application {
 
 
 
+
     public static void main(String[] args) {
 
+        SendEmailJob job = new SendEmailJob();
+        job.execute();
+
+        /*
         try {
 
             //create instance of factory and get scheduler
@@ -43,8 +48,10 @@ public class Application {
 
         }
 
-
+*/
 
     }
+
+
 }
 
