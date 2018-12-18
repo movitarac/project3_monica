@@ -1,2 +1,6 @@
+com/racic/lib/batch/SendEmail$1.class
+com/racic/lib/batch/SendEmail.class
+com/racic/lib/batch/Conf/MyConfiguration.class
 com/racic/lib/batch/SendEmailJob.class
+com/racic/lib/batch/Application.class
 com/racic/lib/batch/Email.class

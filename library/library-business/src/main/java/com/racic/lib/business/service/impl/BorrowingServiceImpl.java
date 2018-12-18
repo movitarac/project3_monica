@@ -14,12 +14,15 @@ import com.racic.lib.model.Work;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.jws.WebService;
 import java.text.SimpleDateFormat;
 import java.util.*;
+
 
 @Service
 public class BorrowingServiceImpl implements BorrowingService {
 
+    public static final SimpleDateFormat FRENCH_DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
     @Autowired
     BorrowingRepository borrowingRepository;
     @Autowired
@@ -28,8 +31,6 @@ public class BorrowingServiceImpl implements BorrowingService {
     WorkRepository workRepository;
     @Autowired
     BookService bookService;
-
-    public static final SimpleDateFormat FRENCH_DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
 
     @Override
     public boolean returnBorrowing(Integer borrowingid, Member member) {
@@ -72,15 +73,8 @@ public class BorrowingServiceImpl implements BorrowingService {
 
 
     @Override
-    public List<Borrowing> getNotReturnedBorrowing(String statusNotReturned) {
-        List<Borrowing> borrowList = new ArrayList<>();
-
-       if(statusNotReturned.equals(Utils.BorrowStatusEnum.ONGOING.getValue())
-       || statusNotReturned.equals(Utils.BorrowStatusEnum.EXTENDED.getValue())) {
-           borrowList = borrowingRepository.findByStatus(statusNotReturned);
-       } else {
-           borrowList=null;
-       }
+    public List<Borrowing> getNotReturnedBorrowing(Date today) {
+        List<Borrowing> borrowList = borrowingRepository.findAllByReturnDateBefore(today);
 
         return borrowList;
     }

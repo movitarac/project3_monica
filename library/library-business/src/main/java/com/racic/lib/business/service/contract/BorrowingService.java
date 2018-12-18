@@ -2,6 +2,8 @@ package com.racic.lib.business.service.contract;
 
 import com.racic.lib.model.Borrowing;
 import com.racic.lib.model.Member;
+
+import java.util.Date;
 import java.util.List;
 
 public interface BorrowingService {
@@ -12,7 +14,7 @@ public interface BorrowingService {
 
     boolean returnBorrowing(Integer borrowingid, Member member);
 
-    List<Borrowing> getNotReturnedBorrowing(String status);
+    List<Borrowing> getNotReturnedBorrowing(Date today);
 
     boolean extendBorrowing (Integer borrowingId, Member member);
 
