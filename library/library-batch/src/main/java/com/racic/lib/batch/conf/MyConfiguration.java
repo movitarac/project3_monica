@@ -1,11 +1,7 @@
-package com.racic.lib.batch.Conf;
+package com.racic.lib.batch.conf;
 
 import com.racic.lib.batch.Email;
 import com.racic.lib.batch.SendEmail;
-import com.racic.lib.batch.SendEmailJob;
-import com.racic.lib.model.Borrowing;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +17,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
-import java.util.List;
 import java.util.Properties;
 
 @Configuration
@@ -87,19 +82,7 @@ public class MyConfiguration {
         return properties;
     }
 
-    public static void main(String[] args) {
-        ApplicationContext context= new AnnotationConfigApplicationContext(MyConfiguration.class);
-        Email email = context.getBean(Email.class);
-        SendEmail send = context.getBean(SendEmail.class);
 
-        //the job is to send email
-        List<Borrowing> borrowings = email.getBorrowingListNotReturned();
-
-        send.sendEmail(borrowings);
-        System.out.println("-------executing job---------");
-
-
-    }
 
 }
 

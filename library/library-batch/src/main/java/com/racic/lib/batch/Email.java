@@ -5,7 +5,10 @@ import com.racic.lib.business.service.contract.BorrowingService;
 import com.racic.lib.model.Borrowing;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import java.util.Date;
+
+
+import java.time.LocalDate;
+
 import java.util.List;
 
 
@@ -21,7 +24,7 @@ public class Email {
 
 
     public List<Borrowing> getBorrowingListNotReturned() {
-        Date today = new Date();
+        LocalDate today = LocalDate.now();
         List<Borrowing> borrowingListNotReturned = borrowingService.getNotReturnedBorrowing(today);
 
 
@@ -30,7 +33,7 @@ public class Email {
 
 
         for (Borrowing borrow : borrowingListNotReturned ) {
-            if( today.after(borrow.getReturnDate())) {
+            if( today.isAfter(borrow.getReturnDate())) {
                 System.out.println(borrow.getMember().getFirstName() + " " +borrow.getBook().getWork().getTitle());
 
             } else {

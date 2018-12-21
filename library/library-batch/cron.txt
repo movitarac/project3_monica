@@ -1,0 +1,1 @@
+0  15  10  *  *  *  /Users/Vita/Documents/OC/projet-/library/library-batch/send.sh

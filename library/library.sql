@@ -1,3 +1,5 @@
+CREATE DATABASE `citylibrary` ;
+
 CREATE TABLE `Library` (
   `libId` int(11) NOT NULL AUTO_INCREMENT,
   `city` varchar(255) DEFAULT NULL,
@@ -44,10 +46,8 @@ CREATE TABLE `Book` (
   `borrowing_idborrow` int(11) DEFAULT NULL,
   `work_worksId` int(11) DEFAULT NULL,
   PRIMARY KEY (`bookId`),
-  KEY `fk_borrow1` (`borrowing_idborrow`),
   KEY `fk_work2` (`work_worksId`),
-  CONSTRAINT `fk_work2` FOREIGN KEY (`work_worksId`) REFERENCES `work` (`worksid`),
-  CONSTRAINT `fk_borrow1` FOREIGN KEY (`borrowing_idborrow`) REFERENCES `borrowing` (`idborrow`)
+  CONSTRAINT `fk_work2` FOREIGN KEY (`work_worksId`) REFERENCES `work` (`worksId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 CREATE TABLE `Borrowing` (
@@ -64,6 +64,17 @@ CREATE TABLE `Borrowing` (
   CONSTRAINT `fk_book1` FOREIGN KEY (`book_bookId`) REFERENCES `book` (`bookid`),
   CONSTRAINT `fk_memb1` FOREIGN KEY (`member_iduser`) REFERENCES `member` (`iduser`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+ALTER TABLE `citylibrary`.`book` 
+ADD INDEX `fk_borrow1_idx` (`borrowing_idborrow` ASC) VISIBLE;
+
+
+ALTER TABLE `citylibrary`.`book` 
+ADD CONSTRAINT `fk_borrow1`
+  FOREIGN KEY (`borrowing_idborrow`)
+  REFERENCES `citylibrary`.`borrowing` (`idborrow`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
 
 
 INSERT INTO `citylibrary`.`Library` (`city`,`libraryName`) VALUES ('Saint Herblain','City');
@@ -146,44 +157,44 @@ INSERT INTO `citylibrary`.`Member` (`address`, `email`, `firstName`, `lastName`,
 
 
 
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('hp1a', '1', '1');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('hp1', '1', '1');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('hp1c', '1', '1');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('hp1d', '1', '1');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('hp2a', '1', '2');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('hp2', '1', '2');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('hp3a', '1', '3');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('hp3', '1', '3');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('hp3c', '1', '3');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('hp4a', '1', '4');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('hp4', '1', '4');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('hp4c', '1', '4');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('hp5a', '1', '5');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('hp5', '1', '5');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('hp5c', '1', '5');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('hp6a', '1', '6');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('hp7a', '1', '7');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('hp7', '1', '7');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('nar1a', '1', '8');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('nar1', '1', '8');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('nar2a', '1', '9');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('nar2', '1', '9');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('nar3a', '1', '10');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('nar3', '1', '10');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('nar3c', '1', '10');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('nar4a', '1', '11');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('nar5a', '1', '12');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('nar5', '1', '12');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('nar5c', '1', '12');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('nar5d', '1', '12');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('nar6a', '1', '13');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('nar6', '1', '13');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('nar6c', '1', '13');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('nar7a', '1', '14');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('nar7', '1', '14');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('un1', '1', '15');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('un1a', '1', '15');
-INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `works_worksId`) VALUES ('un2', '1', '16');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('hp1a', '1', '1');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('hp1', '1', '1');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('hp1c', '1', '1');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('hp1d', '1', '1');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('hp2a', '1', '2');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('hp2', '1', '2');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('hp3a', '1', '3');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('hp3', '1', '3');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('hp3c', '1', '3');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('hp4a', '1', '4');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('hp4', '1', '4');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('hp4c', '1', '4');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('hp5a', '1', '5');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('hp5', '1', '5');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('hp5c', '1', '5');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('hp6a', '1', '6');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('hp7a', '1', '7');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('hp7', '1', '7');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('nar1a', '1', '8');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('nar1', '1', '8');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('nar2a', '1', '9');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('nar2', '1', '9');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('nar3a', '1', '10');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('nar3', '1', '10');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('nar3c', '1', '10');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('nar4a', '1', '11');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('nar5a', '1', '12');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('nar5', '1', '12');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('nar5c', '1', '12');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('nar5d', '1', '12');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('nar6a', '1', '13');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('nar6', '1', '13');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('nar6c', '1', '13');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('nar7a', '1', '14');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('nar7', '1', '14');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('un1', '1', '15');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('un1a', '1', '15');
+INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('un2', '1', '16');
 INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`) VALUES ('un3a', '1');
 INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`) VALUES ('un3b', '1');
 INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`) VALUES ('un3c', '1');
@@ -203,6 +214,3 @@ INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUE
 INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('sh2a', '1', '20');
 INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('sh2b', '1', '20');
 INSERT INTO `citylibrary`.`Book` (`bookId`, `isAvailable`, `work_worksId`) VALUES ('sh2c', '1', '20');
-
-
-

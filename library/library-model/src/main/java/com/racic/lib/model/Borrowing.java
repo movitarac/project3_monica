@@ -3,6 +3,7 @@ package com.racic.lib.model;
 import javax.persistence.*;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -16,8 +17,8 @@ public class Borrowing {
     private Member member;
    	@OneToOne
     private Book book;
-    private Date issueDate;
-    private Date returnDate;
+    private LocalDate issueDate;
+    private LocalDate returnDate;
     private String status;
     private boolean isExtended;
 
@@ -59,19 +60,19 @@ public class Borrowing {
         this.book = book;
     }
 
-    public Date getIssueDate() {
+    public LocalDate getIssueDate() {
         return issueDate;
     }
 
-    public void setIssueDate(Date issueDate) {
+    public void setIssueDate(LocalDate issueDate) {
         this.issueDate = issueDate;
     }
 
-    public Date getReturnDate() {
+    public LocalDate getReturnDate() {
         return returnDate;
     }
 
-    public void setReturnDate(Date returnDate) {
+    public void setReturnDate(LocalDate returnDate) {
         this.returnDate = returnDate;
     }
 
@@ -83,7 +84,7 @@ public class Borrowing {
         isExtended = extended;
     }
 
-	public Borrowing(Integer idborrow, Member member, Book book, Date issueDate, Date returnDate, String status,
+	public Borrowing(Integer idborrow, Member member, Book book, LocalDate issueDate, LocalDate returnDate, String status,
 			boolean isExtended) {
 		super();
 		this.idborrow = idborrow;

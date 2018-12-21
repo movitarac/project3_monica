@@ -14,17 +14,14 @@ http://www.springframework.org/schema/data/jpa
 http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context.xsd
-http://www.springframework.org/schema/jee 
-http://www.springframework.org/schema/jee/spring-jee.xsd
 http://www.springframework.org/schema/tx
 http://www.springframework.org/schema/tx/spring-tx.xsd
-http://www.springframework.org/schema/aop
-http://www.springframework.org/schema/aop/spring-aop.xsd
 http://www.springframework.org/schema/mvc
 http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	<!-- Spring container scans the base package of the applications to configure 
 		as beans -->
+	<context:annotation-config/>
 	<!-- Define all the annotation (@Service,@Controller,@Repository @Autowired -->
 	<context:component-scan base-package="com.racic" />
 

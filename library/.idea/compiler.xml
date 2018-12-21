@@ -11,6 +11,7 @@
         <module name="library-consumer" />
         <module name="library-model" />
         <module name="library-webapp" />
+        <module name="library-webservice" />
       </profile>
     </annotationProcessing>
   </component>
