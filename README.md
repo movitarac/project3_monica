@@ -93,14 +93,13 @@ Run – Edit Configurations – click + – Tomcat Server Local – Deployment �
 In http://localhost:8080/ the application will appear
 
 
-Application web
+======Application web======
 1.    Class diagram
 
 A member is inherited a user. An e-library has several different works, while for each work, it has different copies that can be borrowed by a member. A borrowing relates between a book (or a copy) and a member. A borrowing contains only a book.
 
-Batch
-
+======Batch======
 Batch is still on progress.
 
-Web service
+======Web service======
 This part is still on progress and construction.
