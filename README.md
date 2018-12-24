@@ -78,9 +78,11 @@ o    ?serverTimezone=UTC can be added after value for property name ‘url’
 
 
 3.    Web App
+https://github.com/movitarac/project3_resource   -> to download all resources (images, css and js)
 
     For the image, css and js files, we put them in Apache server, inside a folder called ‘resources’, we add 2 folders, ‘assets’ for images and ‘style’ for css + js. To call an image, for example, we enter the url ‘ http://localhost:80/resources/assets/1.jpeg’ . This url is one of an attribute called ‘imageUrl’ in ‘Work’ table.
-https://github.com/movitarac/project3_resource   -> to download all resources (images, css and js)
+
+
 
     For the moment the web service is still on progress. To make the web application part works, the web application is momentarily connected to the database (later version, only the web service will be connected to the database). The library-webapp.war can be deployed in Apache Tomcat 9:
 
@@ -99,17 +101,6 @@ A member is inherited a user. An e-library has several different works, while fo
 Batch
 
 Batch is still on progress.
-For this part, the application scans all unreturned books (book’s availability = false) or all borrowing with status ‘ongoing’ and ‘extended’. From then, it compares the return date and today. If the return date is before today, the application gathers members’ information and send them a reminding email related to their borrowing period.
-
 
 Web service
 This part is still on progress and construction.
-We are going to create a module for webservice and applied a bottom-up method.
-▪ In pom.xml , add maven plugin to generate web service; using ws-gen ->
-
-▪ Create java classes corresponding to the existing services located in library-business .
-
-o Example : WorkWS class -> correspond to WorkService class in library business, etc. 
-
-▪ Add annotation @WebService for the class , @WebMethod for different methods present in
-service also add @Autowired to do spring IOC to inject service class
