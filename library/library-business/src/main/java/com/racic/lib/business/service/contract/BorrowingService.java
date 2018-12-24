@@ -15,7 +15,7 @@ public interface BorrowingService {
 
     boolean returnBorrowing(Integer borrowingid, Member member);
 
-    List<Borrowing> getNotReturnedBorrowing(LocalDate today);
+    List<Borrowing> getNotReturnedBorrowing(Date today);
 
     boolean extendBorrowing (Integer borrowingId, Member member);
 

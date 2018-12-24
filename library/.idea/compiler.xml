@@ -8,10 +8,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="library-batch" />
         <module name="library-business" />
+        <module name="library-client" />
         <module name="library-consumer" />
         <module name="library-model" />
         <module name="library-webapp" />
         <module name="library-webservice" />
+        <module name="library-webservices" />
       </profile>
     </annotationProcessing>
   </component>

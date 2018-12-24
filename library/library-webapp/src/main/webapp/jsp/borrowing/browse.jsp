@@ -8,10 +8,10 @@
             <c:forEach items="${worksList}" var="work">
                 <ul class="list-unstyled media">
                     <li>
-                   <a href="/library/borrow/${work.worksId}" class="badge badge-secondary">Borrow this book</a>
+                   <a href="/borrow/${work.worksId}" class="badge badge-secondary">Borrow this book</a>
                     </li>
                     <li class="media-body">
-                            <a href="/library/workinfo/${work.worksId}" class="infowork">${work.title}
+                            <a href="/workinfo/${work.worksId}" class="infowork">${work.title}
                         by ${work.author}</a>
                     </li>
 

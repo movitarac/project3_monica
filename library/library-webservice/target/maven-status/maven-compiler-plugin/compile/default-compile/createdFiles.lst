@@ -1,2 +1,5 @@
+com/racic/lib/webservice/LibraryWS.class
 com/racic/lib/webservice/WorkWS.class
-com/racic/lib/webservice/App.class
+com/racic/lib/webservice/BookWS.class
+com/racic/lib/webservice/BorrowingWS.class
+com/racic/lib/webservice/MemberWS.class

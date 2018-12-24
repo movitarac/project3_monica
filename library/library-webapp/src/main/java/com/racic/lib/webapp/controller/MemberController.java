@@ -28,7 +28,7 @@ public class MemberController {
 
 
 
-	@RequestMapping(value = "/library/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login() {
 		return "member/login";
 	}
@@ -39,7 +39,7 @@ public class MemberController {
 	 * @param member
 	 * @return
 	 */
-	@RequestMapping(value="/library/profile", method=RequestMethod.POST)
+	@RequestMapping(value="/profile", method=RequestMethod.POST)
 	public ModelAndView login(HttpServletRequest request, Member member){
 
 
@@ -72,7 +72,7 @@ public class MemberController {
 		return modelAndView;
 	}
 
-	@RequestMapping(value="/library/profile")
+	@RequestMapping(value="/profile")
 	public ModelAndView getprofile(HttpServletRequest request) {
 		ModelAndView mv = null;
 		if (request!=null && request.getSession().getAttribute("connected") != null) {
@@ -86,7 +86,7 @@ public class MemberController {
 		return mv;
 	}
 
-	@RequestMapping(value="/library/logout", method = RequestMethod.GET)
+	@RequestMapping(value="/logout", method = RequestMethod.GET)
 	public ModelAndView logout(HttpServletRequest request) {
 		Member m1 =(Member)request.getSession().getAttribute("memberConnected");
 		System.out.println("before logged out " + m1.getFirstName());
@@ -96,7 +96,7 @@ public class MemberController {
 		return modelAndView;
 	}
 
-	@RequestMapping(value = "/library/register/", method = RequestMethod.POST)
+	@RequestMapping(value = "/register/", method = RequestMethod.POST)
 	public ModelAndView register(HttpServletRequest request,
 								 @ModelAttribute("member") Member member, User user){
 
@@ -114,7 +114,7 @@ public class MemberController {
 
 	////////////////////////TEST/////////////////////////////
 
-	@RequestMapping(value="/library/addusermember/{booksids}",method = RequestMethod.GET)
+	@RequestMapping(value="/addusermember/{booksids}",method = RequestMethod.GET)
 	public @ResponseBody String getBorrowingsByMember(@PathVariable String booksids) {
 		String[] idsbooks = booksids.split("-");
 		List<String> listDetails = new ArrayList<>();

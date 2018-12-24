@@ -14,13 +14,11 @@ import com.racic.lib.model.Work;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.jws.WebService;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.*;
 
 
-@Service
+@Service("borrowingService")
 public class BorrowingServiceImpl implements BorrowingService {
 
     public static final SimpleDateFormat FRENCH_DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
@@ -74,7 +72,7 @@ public class BorrowingServiceImpl implements BorrowingService {
 
 
     @Override
-    public List<Borrowing> getNotReturnedBorrowing(LocalDate today) {
+    public List<Borrowing> getNotReturnedBorrowing(Date today) {
         List<Borrowing> borrowList = borrowingRepository.findAllByReturnDateBefore(today);
 
         return borrowList;
@@ -83,7 +81,11 @@ public class BorrowingServiceImpl implements BorrowingService {
     public boolean extendBorrowing(Integer borrowingId, Member member) {
         boolean toreturn;
         Borrowing borrowingtoBeExtended = borrowingRepository.findById(borrowingId).get();
-        LocalDate returnDate = borrowingtoBeExtended.getReturnDate().plusWeeks(4);
+        Date returnDate = borrowingtoBeExtended.getReturnDate();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(returnDate);
+        calendar.add(Calendar.WEEK_OF_MONTH,4);
+        returnDate = calendar.getTime();
 
         if (!borrowingtoBeExtended.isExtended()) {
 
@@ -139,11 +141,17 @@ public class BorrowingServiceImpl implements BorrowingService {
             borrowToBeAdded.setMember(member);
 
             //set Issue Date
-            LocalDate issueDate=LocalDate.now();
+            Date issueDate=new Date();
 
             borrowToBeAdded.setIssueDate(issueDate);
             //calculate the return date
-           LocalDate returnDate = issueDate.plusWeeks(4);
+           Date returnDate = issueDate;
+
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(returnDate);
+            calendar.add(Calendar.WEEK_OF_MONTH,4);
+            returnDate = calendar.getTime();
+
            borrowToBeAdded.setReturnDate(returnDate);
 
             borrowToBeAdded.setStatus(Utils.BorrowStatusEnum.ONGOING.getValue());

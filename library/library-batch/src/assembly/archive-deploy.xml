@@ -6,7 +6,7 @@
     <!-- Identifiant de l'assemblage -->
     <id>archive-deploy</id>
 
-    <!-- Les formats d'archive à générer -->
+    <!-- archive format to be generated -->
     <formats>
         <format>tar.gz</format>
         <format>zip</format>
@@ -22,12 +22,12 @@
 
     <fileSets>
         <!-- script shell for launching -->
-        <fileSet>
-            <directory>src/data/scripts</directory>
-            <outputDirectory>bin</outputDirectory>
+       <!-- <fileSet>-->
+          <!--  <directory>src/data/scripts</directory>
+            <outputDirectory>bin</outputDirectory>-->
             <!-- Droits UNIX sur les fichiers (-rwx-rx-rx) -->
-            <fileMode>0755</fileMode>
-        </fileSet>
+           <!-- <fileMode>0755</fileMode>
+        </fileSet>-->
 
         <!-- configuration file -->
         <fileSet>

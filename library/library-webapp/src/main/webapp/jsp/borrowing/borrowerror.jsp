@@ -8,7 +8,7 @@
                 <br>
                 the book is not available, please choose another book.
                 <br>
-                <a href="/library/browse">go back to browse</a>
+                <a href="/browse">go back to browse</a>
         </p>
 
 </main>

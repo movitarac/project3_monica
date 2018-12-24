@@ -21,7 +21,7 @@ public class WorkController {
     @Autowired
     BookService bookService;
 
-    @RequestMapping(value = "/library/searchbyauthor", method = RequestMethod.GET)
+    @RequestMapping(value = "/searchbyauthor", method = RequestMethod.GET)
     public ModelAndView workssearchbyauthor(@RequestParam("author") String author) {
 
         boolean result;
@@ -47,7 +47,7 @@ public class WorkController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/library/workinfo/{worksId}")
+    @RequestMapping(value = "/workinfo/{worksId}")
     public ModelAndView getWorkInfo(@PathVariable Integer worksId) {
         ModelAndView mv = new ModelAndView("work/works-detail");
         Work work = workService.findWorksById(worksId);

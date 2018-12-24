@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Service("workService")
 public class WorkServiceImpl implements WorkService {
 
     @Autowired
@@ -25,10 +25,8 @@ public class WorkServiceImpl implements WorkService {
     }
 
     @Override
-    public Work findWorksById(Integer worksid) {
-        return workRepository.findById(worksid).get();
+    public Work findWorksById(Integer worksid) { return workRepository.findById(worksid).get();
     }
-
 
     @Override
     public List<Work> findWorksByAuthorContain(String author) {

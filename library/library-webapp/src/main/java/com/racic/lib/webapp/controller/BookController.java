@@ -18,7 +18,7 @@ public class BookController {
     BookService bookService;
 
 
-    @RequestMapping(value="/library/book/{id}",method= RequestMethod.GET)
+    @RequestMapping(value="/book/{id}",method= RequestMethod.GET)
     public @ResponseBody
     Book sayHello(@PathVariable String id){
 

@@ -33,7 +33,7 @@ public class BorrowingController {
     @Autowired
     BookService bookService;
 
-    @RequestMapping(value = "/library/borrow/{worksId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/borrow/{worksId}", method = RequestMethod.GET)
     public ModelAndView borrowThisbook(HttpServletRequest request, @PathVariable("worksId") Integer worksId) {
         ModelAndView modelAndView = null;
 
@@ -67,7 +67,7 @@ public class BorrowingController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/library/borrowinglist", method = RequestMethod.GET)
+    @RequestMapping(value = "/borrowinglist", method = RequestMethod.GET)
     public ModelAndView getMemberBorrowingList(HttpServletRequest request) {
         ModelAndView mv = null;
 
@@ -86,7 +86,7 @@ public class BorrowingController {
         return mv;
     }
 
-    @RequestMapping(value = "/library/borrowinglist/extend/{borrowingid}", method = RequestMethod.GET)
+    @RequestMapping(value = "/borrowinglist/extend/{borrowingid}", method = RequestMethod.GET)
     public ModelAndView extendBorrow (HttpServletRequest request,@PathVariable int borrowingid) {
         ModelAndView mv = null;
 
@@ -115,7 +115,7 @@ public class BorrowingController {
         return mv;
     }
 
-    @RequestMapping(value = "/library/borrowinglist/return/{borrowingid}", method = RequestMethod.GET)
+    @RequestMapping(value = "/borrowinglist/return/{borrowingid}", method = RequestMethod.GET)
     public ModelAndView returnBorrow (HttpServletRequest request,@PathVariable int borrowingid) {
         String message="";
         String msgError="";

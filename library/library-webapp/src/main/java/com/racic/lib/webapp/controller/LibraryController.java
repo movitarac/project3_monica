@@ -16,23 +16,19 @@ import java.util.List;
 @Controller
 public class LibraryController {
 
-	@Autowired
-	LibraryService libraryService;
 
 	@Autowired
 	WorkService workService;
 
-	@Autowired
-	BorrowingService borrowingService;
 
-	@RequestMapping(value="/library")
+	@RequestMapping(value="/")
 	public String home()
 	{
 		return "library/home";
 	}
 
 
-	@RequestMapping(value="/library/browse", method = RequestMethod.GET)
+	@RequestMapping(value="/browse", method = RequestMethod.GET)
 	public String works(HttpServletRequest request, Model model) {
 		List<Work> worksList = workService.getAll();
 		model.addAttribute("worksList", worksList);

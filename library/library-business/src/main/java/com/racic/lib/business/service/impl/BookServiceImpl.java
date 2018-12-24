@@ -14,7 +14,7 @@ import javax.jws.WebService;
 import java.util.List;
 
 
-@Service
+@Service("bookService")
 public class BookServiceImpl implements BookService {
 
 	@Autowired

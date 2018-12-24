@@ -12,7 +12,7 @@
         Publication Year : ${work.publicationYear}<br>
         Description : ${work.bookDescription}<br>
 
-       <a href="/library/borrow/${work.worksId}" class="badge badge-secondary">Borrow </a>
+       <a href="/borrow/${work.worksId}" class="badge badge-secondary">Borrow </a>
 
     </ul>
 

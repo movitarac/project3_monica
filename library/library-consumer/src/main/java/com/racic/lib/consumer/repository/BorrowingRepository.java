@@ -14,7 +14,7 @@ public interface BorrowingRepository extends CrudRepository<Borrowing, Integer>{
     
 	List<Borrowing> findAll();
 	List<Borrowing> findByMember(Member member);
-	List<Borrowing> findAllByReturnDateBefore(LocalDate today);
+	List<Borrowing> findAllByReturnDateBefore(Date today);
 
 	
 }

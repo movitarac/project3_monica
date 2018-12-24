@@ -1,2 +1,5 @@
 /Users/Vita/Documents/OC/projet-/library/library-webservice/src/main/java/com/racic/lib/webservice/WorkWS.java
-/Users/Vita/Documents/OC/projet-/library/library-webservice/src/main/java/com/racic/lib/webservice/App.java
+/Users/Vita/Documents/OC/projet-/library/library-webservice/src/main/java/com/racic/lib/webservice/MemberWS.java
+/Users/Vita/Documents/OC/projet-/library/library-webservice/src/main/java/com/racic/lib/webservice/BorrowingWS.java
+/Users/Vita/Documents/OC/projet-/library/library-webservice/src/main/java/com/racic/lib/webservice/LibraryWS.java
+/Users/Vita/Documents/OC/projet-/library/library-webservice/src/main/java/com/racic/lib/webservice/BookWS.java

@@ -31,10 +31,10 @@
                     <c:choose>
                         <c:when test="${borrow.status != 'returned'}">
                             <li class="badge badge-pill badge-light list-unstyled">
-                                <a href="/library/borrowinglist/extend/${borrow.idborrow}">Extend your borrowing</a>
+                                <a href="/borrowinglist/extend/${borrow.idborrow}">Extend your borrowing</a>
                             </li>
                             <li class="badge badge-pill badge-light list-unstyled">
-                                <a href="/library/borrowinglist/return/${borrow.idborrow}">Return this book</a></li>
+                                <a href="/borrowinglist/return/${borrow.idborrow}">Return this book</a></li>
                         </c:when>
                         <c:otherwise>
                             <br>
@@ -45,13 +45,13 @@
                 </ul>
             </c:forEach>
 
-            <a href="/library/profile"> back to profile</a>
+            <a href="/profile"> back to profile</a>
         </c:when>
         <c:otherwise>
             <h5>You haven't borrowed any book from the library</h5>
-            <a href="/library/profile"> back to profile</a>
+            <a href="/profile"> back to profile</a>
             <br>
-            <a href="/library/browse"> browse books </a>
+            <a href="/browse"> browse books </a>
         </c:otherwise>
     </c:choose>
 

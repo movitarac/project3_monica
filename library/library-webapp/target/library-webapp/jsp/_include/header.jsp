@@ -10,35 +10,35 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" id="menuS0" href="/library">Home</a>
+                    <a class="nav-link" id="menuS0" href="/">Home</a>
                 </li>
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="menuS3" href="/library/browse">Browse</a>
+                    <a class="nav-link" id="menuS3" href="/browse">Browse</a>
                 </li>
                 <c:if test="${not empty memberConnected}">
                 <li class="nav-item">
-                    <a class="nav-link" id="menuS4" href="/library/profile">Profile</a>
+                    <a class="nav-link" id="menuS4" href="/profile">Profile</a>
                 </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="menuS5" href="/library/borrowinglist">Borrowing List</a>
+                        <a class="nav-link" id="menuS5" href="/borrowinglist">Borrowing List</a>
                     </li>
 
 
 
                 </c:if>
             </ul>
-            <a class="nav-link" href="/library/profile"> ${memberConnected.firstName} ${memberConnected.lastName}</a>
+            <a class="nav-link" href="/profile"> ${memberConnected.firstName} ${memberConnected.lastName}</a>
             <c:choose>
                 <c:when test="${empty memberConnected}">
                     <form class="form-inline mt-2 mt-md-0">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="l"><a href="/library/login">Log in</a>
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="l"><a href="/login">Log in</a>
                         </button>
                     </form>
                 </c:when>
                 <c:otherwise>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="l"><a href="/library/logout">Log out</a>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="l"><a href="/logout">Log out</a>
                 </c:otherwise>
             </c:choose>
 

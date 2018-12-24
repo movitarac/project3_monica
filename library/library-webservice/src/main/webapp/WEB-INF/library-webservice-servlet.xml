@@ -2,11 +2,10 @@
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 			 xmlns:context="http://www.springframework.org/schema/context"
 			 xmlns="http://www.springframework.org/schema/beans"
-			 xmlns:aop="http://www.springframework.org/schema/aop"
-			 xmlns:p="http://www.springframework.org/schema/p"
 			 xmlns:jpa="http://www.springframework.org/schema/data/jpa"
-			 xmlns:jee="http://www.springframework.org/schema/jee"
-			 xmlns:mvc="http://www.springframework.org/schema/mvc"
+		xmlns:ws="http://jax-ws.dev.java.net/spring/core"
+		xmlns:wss="http://jax-ws.dev.java.net/spring/servlet"
+		xmlns:mvc="http://www.springframework.org/schema/mvc"
 			 xmlns:tx="http://www.springframework.org/schema/tx"
 			 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -14,33 +13,44 @@ http://www.springframework.org/schema/data/jpa
 http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context.xsd
-http://www.springframework.org/schema/jee 
-http://www.springframework.org/schema/jee/spring-jee.xsd
 http://www.springframework.org/schema/tx
 http://www.springframework.org/schema/tx/spring-tx.xsd
-http://www.springframework.org/schema/aop
-http://www.springframework.org/schema/aop/spring-aop.xsd
 http://www.springframework.org/schema/mvc
-http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+http://www.springframework.org/schema/mvc/spring-mvc.xsd
+ http://jax-ws.dev.java.net/spring/core
+    http://jax-ws.dev.java.net/spring/core.xsd
+    http://jax-ws.dev.java.net/spring/servlet
+    http://jax-ws.dev.java.net/spring/servlet.xsd">
 
 	<!-- Spring container scans the base package of the applications to configure 
 		as beans -->
 	<!-- Define all the annotation (@Service,@Controller,@Repository @Autowired -->
-	<context:component-scan base-package="com.racic" />
 	<context:annotation-config/>
+
+	<context:component-scan base-package="com.racic.lib" />
+
+<!--
+	<wss:binding url="/WorkService">
+		<wss:service>
+			<ws:service bean="#workService" />
+		</wss:service>
+	</wss:binding>
+	<bean id="workService" class="com.racic.lib.business.service.impl.WorkServiceImpl" />-->
 
 	<!--enables the spring mvc to @Controller programming model -->
 	<mvc:annotation-driven />
 
-
+<!--<bean class="org.springframework.remoting.jaxws.SimpleJaxWsServiceExporter"/>-->
 
 	<!-- Data Source -->
 	<bean id="dataSource"
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/library-monica" />
-		<property name="username" value="testLibrary" />
-		<property name="password" value="pass" />
+		  class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+				  value="com.mysql.jdbc.Driver" />
+		<property name="url"
+				  value="jdbc:mysql://localhost:3306/citylibrary" />
+		<property name="username" value="root" />
+		<property name="password" value="racineracine." />
 	</bean>
 
 	<!-- Jpa Vendor Adapter -->
@@ -80,13 +90,5 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 		entity-manager-factory-ref="entityManagerFactory"
 		transaction-manager-ref="transactionManager"/>
 
-
-	<!-- InternalResourceViewResolver -->
-	<bean id="viewResolver"
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<!--<property name="prefix" value="/WEB-INF/jsp/" /> -->
-	<property name="prefix" value="/jsp/" />
-		<property name="suffix" value=".jsp" />
-	</bean>
 
 </beans>

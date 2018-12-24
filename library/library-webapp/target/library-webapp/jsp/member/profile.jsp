@@ -3,7 +3,7 @@
 <body class="profile">
 <%@ include file="../_include/header.jsp" %>
 <main role="main" class="inner cover">
-<form:form method="POST" action="/library/borrowinglist">
+<form:form method="POST" action="/borrowinglist">
 
         <h1 class="persoinfo">Your personal information</h1>
         <p class="lead">

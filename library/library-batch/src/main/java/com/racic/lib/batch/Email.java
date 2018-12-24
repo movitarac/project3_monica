@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDate;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -24,7 +25,7 @@ public class Email {
 
 
     public List<Borrowing> getBorrowingListNotReturned() {
-        LocalDate today = LocalDate.now();
+        Date today = new Date();
         List<Borrowing> borrowingListNotReturned = borrowingService.getNotReturnedBorrowing(today);
 
 
@@ -33,7 +34,7 @@ public class Email {
 
 
         for (Borrowing borrow : borrowingListNotReturned ) {
-            if( today.isAfter(borrow.getReturnDate())) {
+            if( today.after(borrow.getReturnDate())) {
                 System.out.println(borrow.getMember().getFirstName() + " " +borrow.getBook().getWork().getTitle());
 
             } else {
