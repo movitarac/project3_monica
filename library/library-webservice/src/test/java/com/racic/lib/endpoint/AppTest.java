@@ -1,4 +1,4 @@
-package com.racic.lib.webservice;
+package com.racic.lib.endpoint;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

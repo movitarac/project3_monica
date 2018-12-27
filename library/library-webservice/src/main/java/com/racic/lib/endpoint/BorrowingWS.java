@@ -1,4 +1,4 @@
-package com.racic.lib.webservice;
+package com.racic.lib.endpoint;
 
 import com.racic.lib.business.service.contract.BorrowingService;
 import com.racic.lib.model.Borrowing;

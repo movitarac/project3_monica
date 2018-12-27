@@ -226,9 +226,9 @@
   <build>
     <finalName>library-webservice</finalName>
 
-  <!--<plugins>
+  <plugins>
 
-     &lt;!&ndash; generate ws&ndash;&gt;
+     <!--generate ws-->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>jaxws-maven-plugin</artifactId>
@@ -241,11 +241,11 @@
             </goals>
             <configuration>
               <executable>${tool.wsgen}</executable>
-              <sei>com.racic.lib.webservice.WorkWS</sei>
-            <sei>com.racic.lib.webservice.BorrowingWS</sei>
-                <sei>com.racic.lib.webservice.MemberWS</sei>
-                <sei>com.racic.lib.webservice.BookWS</sei>
-               &lt;!&ndash; <sei>com.racic.lib.webservice.LibraryWS</sei>&ndash;&gt;
+              <sei>com.racic.lib.endpoint.WorkWS</sei>
+            <sei>com.racic.lib.endpoint.BorrowingWS</sei>
+                <sei>com.racic.lib.endpoint.MemberWS</sei>
+                <sei>com.racic.lib.endpoint.BookWS</sei>
+                <!--<sei>com.racic.lib.endpointibraryWS</sei>-->
             </configuration>
           </execution>
         </executions>
@@ -253,7 +253,7 @@
 
 
 
-    </plugins>-->
+    </plugins>
   </build>
 
 </project>

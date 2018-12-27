@@ -13,8 +13,10 @@
         <module name="library-model" />
         <module name="library-webapp" />
         <module name="library-webservice" />
-        <module name="library-webservices" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="library-webservices" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

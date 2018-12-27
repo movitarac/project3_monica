@@ -1,8 +1,7 @@
-package com.racic.lib.webservice;
+package com.racic.lib.endpoint;
 
 import com.racic.lib.business.service.contract.MemberService;
 import com.racic.lib.model.Member;
-import com.racic.lib.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

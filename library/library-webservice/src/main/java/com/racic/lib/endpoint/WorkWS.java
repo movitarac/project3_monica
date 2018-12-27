@@ -1,13 +1,9 @@
-package com.racic.lib.webservice;
+package com.racic.lib.endpoint;
 
-import com.racic.lib.business.service.contract.WorkService;
 import com.racic.lib.business.service.impl.WorkServiceImpl;
 import com.racic.lib.model.Work;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
-import javax.annotation.PostConstruct;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;

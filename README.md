@@ -60,37 +60,52 @@ Configuration and Deployment
 
 1.    Database MySQL(8.0.13)
 
-    Create a database called ‘citylibrary’
 
-    Create 6 tables (information can be found in library.sql file)
-
-    Enter the data for all the tables using information from library.sql 
+	 Install MySQL
 
 
-2.    In IDE (Intellij or Eclipse)
+   Execute the script library.sql at the server (you can use phpmyadmin or mysql workbench) to create user, database, tables and to insert data into the database.
 
-    Change the configuration in library-webapp module by going to library-servlet.xml and in bean section ‘dataSource, change :
+
+2.    Resources images, css and js
+
+
+    Install and start Apache Server Local
+
+
+    Download  the resources folder to get all images, css and js from https://github.com/movitarac/project3_resource   
+
+
+    For the image, css and js files, we put them in Apache server - Document Root, inside a folder called ‘resources’, this folder contains  2 folders, ‘assets’ for images and ‘style’ for css + js. To call an image, for example, we enter the url ‘ http://localhost:80/resources/assets/1.jpeg’ . This url is one of an attribute called ‘imageUrl’ in ‘Work’ table.
+
+
+
+3.    In IDE (Intellij or Eclipse)
+
+   Unzip library.zip 
+
+
+   Import the project library in your chosen IDE (Intellij or Eclipse) as a Maven Project
+
+
+   Go to spring configuration file found in library/library-webapp/src/main/webapp/WEB-INF/library-servlet.xml,  and in bean section ‘dataSource, change :
 
 o     Values for property name “username” by your database username and for “password” by your database password
 
 o    ?serverTimezone=UTC can be added after value for property name ‘url’
 “jdbc:mysql://localhost:3306/citylibrary?serverTimezone=UTC” in case of problem with timezone.
 
+   Build the parent project (maven install)
 
-3.    Web App
-https://github.com/movitarac/project3_resource   -> to download all resources (images, css and js)
+o    in Intellij, 
+Run – Edit Configurations – click + – Tomcat Server Local – Deployment – click + Artifact library-webapp-war – delete all text found in Application context – Apply OK – Run
 
-    For the image, css and js files, we put them in Apache server, inside a folder called ‘resources’, we add 2 folders, ‘assets’ for images and ‘style’ for css + js. To call an image, for example, we enter the url ‘ http://localhost:80/resources/assets/1.jpeg’ . This url is one of an attribute called ‘imageUrl’ in ‘Work’ table.
-
+In http://localhost:8080/ the application will appear
+o    in Eclipse, 
 
 
     For the moment the web service is still on progress. To make the web application part works, the web application is momentarily connected to the database (later version, only the web service will be connected to the database). The library-webapp.war can be deployed in Apache Tomcat 9:
 
-o    Using IDE, in Intellij, 
-Run – Edit Configurations – click + – Tomcat Server Local – Deployment – click + Artifact library-webapp-war – delete all text found in Application context – Apply OK – Run
-
-
-In http://localhost:8080/ the application will appear
 
 
 ======Application web======
