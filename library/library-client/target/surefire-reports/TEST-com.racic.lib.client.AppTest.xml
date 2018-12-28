@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.racic.lib.client.AppTest" time="0.023" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.racic.lib.client.AppTest" time="0.019" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="gopherProxySet" value="false"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -17,7 +17,7 @@
     <property name="user.country" value="FR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib"/>
-    <property name="sun.java.command" value="/Users/Vita/Documents/OC/projet-/library/library-client/target/surefire/surefirebooter8301949362805327587.jar /Users/Vita/Documents/OC/projet-/library/library-client/target/surefire 2018-12-21T19-35-58_848-jvmRun1 surefire7734009095625616652tmp surefire_52338966360445785594tmp"/>
+    <property name="sun.java.command" value="/Users/Vita/Documents/OC/projet-/library/library-client/target/surefire/surefirebooter2247110237259225049.jar /Users/Vita/Documents/OC/projet-/library/library-client/target/surefire 2018-12-27T12-35-08_709-jvmRun1 surefire2750395909690673796tmp surefire_55303325791763864722tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="surefire.test.class.path" value="/Users/Vita/Documents/OC/projet-/library/library-client/target/test-classes:/Users/Vita/Documents/OC/projet-/library/library-client/target/classes:/Users/Vita/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/Users/Vita/Documents/OC/projet-/library/library-client/target/surefire/surefirebooter8301949362805327587.jar"/>
+    <property name="surefire.real.class.path" value="/Users/Vita/Documents/OC/projet-/library/library-client/target/surefire/surefirebooter2247110237259225049.jar"/>
     <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/classes"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
@@ -46,7 +46,7 @@
     <property name="localRepository" value="/Users/Vita/.m2/repository"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="java.io.tmpdir" value="/var/folders/f9/cz9762lj0bg5nnbb7zw581fr0000gn/T/"/>
-    <property name="idea.version" value="2018.3.1"/>
+    <property name="idea.version" value="2018.3.2"/>
     <property name="java.version" value="1.8.0_191"/>
     <property name="user.dir" value="/Users/Vita/Documents/OC/projet-/library/library-client"/>
     <property name="os.arch" value="x86_64"/>
@@ -62,5 +62,5 @@
     <property name="java.class.version" value="52.0"/>
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase name="testApp" classname="com.racic.lib.client.AppTest" time="0.002"/>
+  <testcase name="testApp" classname="com.racic.lib.client.AppTest" time="0.003"/>
 </testsuite>

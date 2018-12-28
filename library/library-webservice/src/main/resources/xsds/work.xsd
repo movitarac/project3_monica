@@ -1,0 +1,77 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="work.client.lib.racic.com"
+           targetNamespace="work.client.lib.racic.com" >
+
+    <xs:element name="workSearchByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="worksId" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="workSearchByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="workInfo" type="tns:workInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="workSearchByAuthorRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="author" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="workSearchByAuthorResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="workInfo" type="tns:workInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getAllWorksRequest">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="getAllWorksResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="workInfo" type="tns:workInfo" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="isValidWorkByAuthorRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="author" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="isValidWorkByAuthorResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="workServiceStatus" type="tns:workServiceStatus"/>
+                <xs:element name="workInfo" type="tns:workInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="workInfo">
+        <xs:sequence>
+            <xs:element name="worksId" type="xs:integer"/>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="author" type="xs:string"/>
+            <xs:element name="publicationYear" type="xs:int"/>
+            <xs:element name="bookDescription" type="xs:string"/>
+            <xs:element name="copiesAvailable" type="xs:int"/>
+            <xs:element name="imageUrl" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="workServiceStatus">
+        <xs:sequence>
+            <xs:element name="statusCode" type="xs:string"/>
+            <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

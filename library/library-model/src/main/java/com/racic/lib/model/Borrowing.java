@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
-@Table(name="Borrowing")
+@Table(name="borrowing")
 public class Borrowing {
     @Id
     @GeneratedValue(generator="gen_borrow", strategy = GenerationType.IDENTITY)

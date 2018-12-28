@@ -1,0 +1,66 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="borrowing.client.lib.racic.com"
+           targetNamespace="borrowing.client.lib.racic.com" >
+
+    <xs:element name="returnBorrowingRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="idborrow" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="returnBorrowingResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="borrowingInfo" type="tns:borrowingInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getNotReturnedBorrowingRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="date" type="xs:date"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getNotReturnedBorrowingResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="borrowingInfo" type="tns:borrowingInfo" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="extendBorrowingRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="idborrow" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="extendBorrowingResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="borrowingInfo" type="tns:borrowingInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:complexType name="borrowingInfo">
+        <xs:sequence>
+            <xs:element name="idborrow" type="xs:integer"/>
+            <xs:element name="issueDate" type="xs:date"/>
+            <xs:element name="returnDate" type="xs:date"/>
+            <xs:element name="status" type="xs:string"/>
+            <xs:element name="isExtended" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="borrowingServiceStatus">
+        <xs:sequence>
+            <xs:element name="statusCode" type="xs:string"/>
+            <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

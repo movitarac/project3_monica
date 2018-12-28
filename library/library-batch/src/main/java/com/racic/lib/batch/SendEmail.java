@@ -13,7 +13,7 @@ public class SendEmail {
 
     public void sendEmail(List<Borrowing> borrowList) {
         final String username = "stherblain.library@gmail.com";
-        final String password = "12345BATCHSt.Her";
+        final String password = "ABC12345BATCHSt.HerBlain";
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
