@@ -27,36 +27,10 @@ public class BookServiceImpl implements BookService {
 
 
 	@Override
-	public String updateBook(Book book) {
+	public void updateBook(Book book) {
 		bookRepository.save(book);
-		return book.getBookId() + " is updated";
 	}
 
-	@Override
-	public String findBookAvailability(String bookid) {
-
-
-		boolean availability = bookRepository.findById(bookid).get().isAvailable();
-
-		return "Book " + bookid + " is " + availability;
-	}
-
-
-	@Override
-	public Work findWorksByBookId(String bookid) {
-		return bookRepository.findById(bookid).get().getWork();
-	}
-
-	public Borrowing findBorrowingByBookId(String bookid) {
-		return bookRepository.findById(bookid).get().getBorrowing();
-	}
-
-
-	@Override
-	public List<Book> findBooksByWorksWorksId(Integer worksid) {
-
-		return bookRepository.findBooksByWorkWorksId(worksid);
-	}
 
 	@Override
 	public List<Book> findAvailableBooksFromWork(Integer worksid) {

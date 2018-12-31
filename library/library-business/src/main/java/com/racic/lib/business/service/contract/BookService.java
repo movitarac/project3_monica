@@ -10,14 +10,7 @@ public interface BookService {
 
     Book findBookbyId(String bookid);
 
-    String updateBook(Book book);
+    void updateBook(Book book);
 
-    String findBookAvailability(String bookid);
-
-    Work findWorksByBookId(String bookid);
-
-    Borrowing findBorrowingByBookId(String bookid);
-
-    List<Book> findBooksByWorksWorksId(Integer worksid);
     List<Book> findAvailableBooksFromWork(Integer worksid);
 }

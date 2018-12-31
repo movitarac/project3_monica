@@ -76,7 +76,7 @@ Configuration and Deployment
     Download  the resources folder to get all images, css and js from https://github.com/movitarac/project3_resource   
 
 
-    For the image, css and js files, we put them in Apache server - Document Root, inside a folder called ‘resources’, this folder contains  2 folders, ‘assets’ for images and ‘style’ for css + js. To call an image, for example, we enter the url ‘ http://localhost:80/resources/assets/1.jpeg’ . This url is one of an attribute called ‘imageUrl’ in ‘Work’ table.
+    Put them in Apache server - Document Root, inside a folder called ‘resources’, this folder contains  2 folders, ‘assets’ for images and ‘style’ for css + js. To call an image, for example, we enter the url ‘ http://localhost:80/resources/assets/1.jpeg’ . This url is one of an attribute called ‘imageUrl’ in ‘Work’ table.
 
 
 
@@ -98,11 +98,11 @@ o    ?serverTimezone=UTC can be added after value for property name ‘url’
    Build the parent project (maven install)
 
 o    in Intellij, 
-Run – Edit Configurations – click + – Tomcat Server Local – Deployment – click + Artifact library-webapp-war – delete all text found in Application context – Apply OK – Run
+Run – Edit Configurations – click + – Tomcat Server Local – Deployment – click + Artifact library-webapp-war – write /library-webapp in Application context – Apply OK – Run
 
-In http://localhost:8080/ the application will appear
+In http://localhost:8080/library-webapp the application will appear
 o    in Eclipse, 
-
+Run on server - Select Tomcat v9.0 Server- Click next - Add library-webapp - Click finish - Run the server
 
     For the moment the web service is still on progress. To make the web application part works, the web application is momentarily connected to the database (later version, only the web service will be connected to the database). The library-webapp.war can be deployed in Apache Tomcat 9:
 

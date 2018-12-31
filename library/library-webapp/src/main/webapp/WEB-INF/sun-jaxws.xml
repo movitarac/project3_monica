@@ -1,0 +1,18 @@
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime"
+	version="2.0">
+
+
+	<endpoint name="workWs" implementation="com.racic.lib.webservice.endpoint.WorkWs"
+		url-pattern="/ws/workWs" />
+
+	<endpoint name="bookWs" implementation="com.racic.lib.webservice.endpoint.BookWs"
+			  url-pattern="/ws/bookWs" />
+
+	<!--<endpoint name="LibraryServicImpl" implementation="com.racic.lib.endpointibraryWS"
+			  url-pattern="/libraryService" />
+-->
+	<endpoint name="memberWs" implementation="com.racic.lib.webservice.endpoint.MemberWs"
+			  url-pattern="/ws/memberWs" />
+	<endpoint name="borrowingWs" implementation="com.racic.lib.webservice.endpoint.BorrowingWs"
+			  url-pattern="/ws/borrowingWs" />
+</endpoints>

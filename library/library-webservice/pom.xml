@@ -62,13 +62,6 @@
       <artifactId>validation-api</artifactId>
     </dependency>
 
-    <!-- ========JAXWS web service ==========-->
-    <dependency>
-      <groupId>com.sun.xml.ws</groupId>
-      <artifactId>jaxws-rt</artifactId>
-      <version>2.3.1</version>
-    </dependency>
-
 
     <!-- ==========SPRING========== -->
 
@@ -102,11 +95,9 @@
 
     <dependency>
       <groupId>org.springframework.ws</groupId>
-      <artifactId>spring-ws</artifactId>
+      <artifactId>spring-ws-core</artifactId>
       <version>3.0.4.RELEASE</version>
-      <type>pom</type>
     </dependency>
-
 
 
     <dependency>
@@ -162,7 +153,12 @@
     </dependency>
 
 
-
+    <!-- https://mvnrepository.com/artifact/com.sun.xml.ws/jaxws-rt -->
+    <dependency>
+      <groupId>com.sun.xml.ws</groupId>
+      <artifactId>jaxws-rt</artifactId>
+      <version>2.3.1</version>
+    </dependency>
 
 
 
@@ -175,7 +171,7 @@
 
   <plugins>
 
-    <!-- &lt;!&ndash;generate ws&ndash;&gt;
+    <!--generate ws-->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>jaxws-maven-plugin</artifactId>
@@ -188,16 +184,22 @@
             </goals>
             <configuration>
               <executable>${tool.wsgen}</executable>
-              <sei>com.racic.lib.endpoint.WorkWS</sei>
-            <sei>com.racic.lib.endpoint.BorrowingWS</sei>
-                <sei>com.racic.lib.endpoint.MemberWS</sei>
-                <sei>com.racic.lib.endpoint.BookWS</sei>
-                &lt;!&ndash;<sei>com.racic.lib.endpointibraryWS</sei>&ndash;&gt;
+              <sei>com.racic.lib.webservice.MemberWs</sei>
+            </configuration>
+          </execution>
+          <execution>
+            <id>wsgen-from-jdk</id>
+            <goals>
+              <goal>wsgen</goal>
+            </goals>
+            <configuration>
+              <executable>${tool.wsgen}</executable>
+              <sei>com.racic.lib.webservice.WorkWs</sei>
             </configuration>
           </execution>
         </executions>
       </plugin>
--->
+
     <plugin>
       <groupId>org.codehaus.mojo</groupId>
       <artifactId>jaxb2-maven-plugin</artifactId>

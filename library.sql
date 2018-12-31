@@ -1,13 +1,14 @@
-CREATE DATABASE `citylibrary` ;
+CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'racine.root1234.';
+CREATE DATABASE IF NOT EXISTS `citylibrary` DEFAULT CHARACTER SET utf8;
 
-USE 'citylibrary';
+USE `citylibrary`;
 
 CREATE TABLE `Library` (
   `libId` int(11) NOT NULL AUTO_INCREMENT,
   `city` varchar(255) DEFAULT NULL,
   `libraryName` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`libId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 CREATE TABLE `User` (
@@ -15,7 +16,7 @@ CREATE TABLE `User` (
   `password` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`iduser`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 CREATE TABLE `Member` (
@@ -25,7 +26,7 @@ CREATE TABLE `Member` (
   `lastName` varchar(255) DEFAULT NULL,
   `iduser` int(11) NOT NULL,
   PRIMARY KEY (`iduser`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `Work` (
   `worksId` int(11) NOT NULL AUTO_INCREMENT,
@@ -39,7 +40,7 @@ CREATE TABLE `Work` (
   PRIMARY KEY (`worksId`),
   KEY `fk_work1` (`idlibrary`),
   CONSTRAINT `fk_work1` FOREIGN KEY (`idlibrary`) REFERENCES `library` (`libid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 CREATE TABLE `Book` (
@@ -50,7 +51,7 @@ CREATE TABLE `Book` (
   PRIMARY KEY (`bookId`),
   KEY `fk_work2` (`work_worksId`),
   CONSTRAINT `fk_work2` FOREIGN KEY (`work_worksId`) REFERENCES `work` (`worksId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `Borrowing` (
   `idborrow` int(11) NOT NULL AUTO_INCREMENT,
@@ -65,10 +66,8 @@ CREATE TABLE `Borrowing` (
   KEY `fk_memb1` (`member_iduser`),
   CONSTRAINT `fk_book1` FOREIGN KEY (`book_bookId`) REFERENCES `book` (`bookid`),
   CONSTRAINT `fk_memb1` FOREIGN KEY (`member_iduser`) REFERENCES `member` (`iduser`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
-ALTER TABLE `citylibrary`.`book` 
-ADD INDEX `fk_borrow1_idx` (`borrowing_idborrow` ASC) VISIBLE;
 
 
 ALTER TABLE `citylibrary`.`book` 

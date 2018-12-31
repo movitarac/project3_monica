@@ -23,7 +23,6 @@ public class MemberServiceImpl implements MemberService {
  
 
     public List<Member> findAll() {
-    	//System.out.println("we are in member repository");
     	return memberRepository.findAll();
     }
 
@@ -32,28 +31,6 @@ public class MemberServiceImpl implements MemberService {
     	return memberRepository.findByEmail(email);
     }
 
-
-	@Override
-	public String addUser(String username, String password) {
-    	User userToBeAdded = new User();
-    	userToBeAdded.setUsername(username);
-    	userToBeAdded.setPassword(password);
-    	userRepository.save(userToBeAdded);
-		return "user with " + userToBeAdded.getUsername() + " is added!";
-	}
-
-
-	@Override
-	public String addMember(String firstname, String lastname,
-							String email, String address) {
-		Member memberToBeAdded = new Member();
-		memberToBeAdded.setFirstName(firstname);
-		memberToBeAdded.setLastName(lastname);
-		memberToBeAdded.setAddress(address);
-		memberToBeAdded.setEmail(email);
-    	memberRepository.save(memberToBeAdded);
-		return memberToBeAdded.getFirstName() + " one of our loyal member. Welcome!";
-	}
 
 	@Override
 	public Member findByUsernameAndPassword(String username, String password){
@@ -75,5 +52,29 @@ public class MemberServiceImpl implements MemberService {
     	return toReturn;
 	}
 
-    
+
+	/*
+	@Override
+	public String addUser(String username, String password) {
+    	User userToBeAdded = new User();
+    	userToBeAdded.setUsername(username);
+    	userToBeAdded.setPassword(password);
+    	userRepository.save(userToBeAdded);
+		return "user with " + userToBeAdded.getUsername() + " is added!";
+	}
+
+
+	@Override
+	public String addMember(String firstname, String lastname,
+							String email, String address) {
+		Member memberToBeAdded = new Member();
+		memberToBeAdded.setFirstName(firstname);
+		memberToBeAdded.setLastName(lastname);
+		memberToBeAdded.setAddress(address);
+		memberToBeAdded.setEmail(email);
+    	memberRepository.save(memberToBeAdded);
+		return memberToBeAdded.getFirstName() + " one of our loyal member. Welcome!";
+	}
+*/
+
 }

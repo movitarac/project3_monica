@@ -95,6 +95,7 @@ public class MemberController {
 		request.getSession().invalidate();
 		return modelAndView;
 	}
+/*
 
 	@RequestMapping(value = "/register/", method = RequestMethod.POST)
 	public ModelAndView register(HttpServletRequest request,
@@ -110,6 +111,7 @@ public class MemberController {
 		System.out.println("new memmber" + member.getFirstName());
 		return modelAndView;
 	}
+*/
 
 
 	////////////////////////TEST/////////////////////////////

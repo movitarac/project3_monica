@@ -17,7 +17,7 @@ public class Work {
     private String bookDescription;
     private int copiesAvailable;
     private String imageUrl;
-    @ManyToOne
+   @ManyToOne
     @JoinColumn(name="idlibrary")
     private Library library;
     @OneToMany
@@ -32,7 +32,7 @@ public class Work {
         this.bookDescription = bookDescription;
         this.copiesAvailable = copiesAvailable;
         this.imageUrl = imageUrl;
-        this.library = library;
+        //this.library = library;
         this.books = books;
     }
 //default constructor
