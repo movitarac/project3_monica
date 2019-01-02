@@ -4,12 +4,10 @@ import com.racic.lib.business.service.contract.BookService;
 import com.racic.lib.business.service.contract.WorkService;
 import com.racic.lib.model.Work;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+
 import java.util.List;
 
-import com.racic.lib.webservice.client.WorkWs;
-import com.racic.lib.webservice.client.WorkWs_Service;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
