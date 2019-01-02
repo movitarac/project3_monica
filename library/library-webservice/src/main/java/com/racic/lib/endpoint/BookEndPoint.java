@@ -9,6 +9,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
+import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 
@@ -25,14 +26,14 @@ public class BookEndPoint {
     BookService bookService;
 
 
-/*
+
     @PayloadRoot(namespace= NAMESPACE_URL, localPart = "findBookbyIdRequest")
     //@RequestPayload
     public FindBookbyIdResponse findBookById (@RequestPayload FindBookbyIdRequest request) {
         FindBookbyIdResponse response = new FindBookbyIdResponse();
         BookInfo bookInfo = new BookInfo();
         BeanUtils.copyProperties(bookService.findBookbyId(request.getBookId()),bookInfo);
-        response.setBookInfo(bookInfo);
+        response.setBook(bookInfo);
         return response;
     }
 
@@ -43,12 +44,12 @@ public class BookEndPoint {
     public UpdateBookResponse updateBook(@RequestPayload UpdateBookRequest request) {
        UpdateBookResponse response = new UpdateBookResponse();
        Book book = new Book();
-       BeanUtils.copyProperties(request.getBookInfo(),book);
+       BeanUtils.copyProperties(request.getBook(),book);
         bookService.updateBook(book);
-        BookServiceStatus bookServiceStatus = new BookServiceStatus();
+        ServiceStatus bookServiceStatus = new ServiceStatus();
         bookServiceStatus.setStatusCode("SUCCESS");
         bookServiceStatus.setMessage("Book info is updated");
-        response.setBookServiceStatus(bookServiceStatus);
+        response.setServiceStatus(bookServiceStatus);
         return response;
     }
 
@@ -63,9 +64,9 @@ public class BookEndPoint {
             BeanUtils.copyProperties(bookAvailableList.get(i),bookInfo);
             bookInfoList.add(bookInfo);
         }
-        response.getBookInfo().addAll(bookInfoList);
+        response.getBook().addAll(bookInfoList);
         return response;
    }
 
-*/
+
 }

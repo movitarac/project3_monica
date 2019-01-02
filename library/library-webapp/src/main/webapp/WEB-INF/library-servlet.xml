@@ -20,7 +20,7 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 		as beans -->
 	<context:annotation-config/>
 	<!-- Define all the annotation (@Service,@Controller,@Repository @Autowired -->
-	<context:component-scan base-package="com.racic" />
+	<context:component-scan base-package="com.racic.lib.*" />
 
 	<!--enables the spring mvc to @Controller programming model -->
 	<mvc:annotation-driven />

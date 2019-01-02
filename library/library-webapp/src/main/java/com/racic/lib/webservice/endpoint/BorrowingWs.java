@@ -6,17 +6,21 @@ import com.racic.lib.model.Borrowing;
 import com.racic.lib.model.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
+import javax.annotation.PostConstruct;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 import java.util.Date;
 import java.util.List;
 
-@Component
+@Service
 @WebService(serviceName = "borrowingWs",name = "borrowingWs")
 @SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL)
-public class BorrowingWs {
+//@SOAPBinding(style = SOAPBinding.Style.RPC)
+public class BorrowingWs{
 
     @Autowired
     BorrowingService borrowingService;
@@ -54,5 +58,10 @@ public class BorrowingWs {
     @WebMethod
     public Borrowing findByBorrowingId(Integer borrowingid) {
         return borrowingService.findByBorrowingId(borrowingid);
+    }
+
+    @PostConstruct
+    public void init() {
+        SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
     }
 }

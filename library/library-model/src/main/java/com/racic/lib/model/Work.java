@@ -20,7 +20,7 @@ public class Work {
    @ManyToOne
     @JoinColumn(name="idlibrary")
     private Library library;
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     private List<Book> books;
 
 

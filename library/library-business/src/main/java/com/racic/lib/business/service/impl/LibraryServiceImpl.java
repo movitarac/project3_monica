@@ -14,9 +14,10 @@ public class LibraryServiceImpl implements LibraryService {
     @Autowired
     LibraryRepository libraryRepository;
 
-    public Library getByWorkList(Work work) {
+    /*public Library getByWorkList(Work work) {
         return libraryRepository.findByWorks(work);
     }
+    */
 
     public Library getLibraryByName(String libraryName) {
         return libraryRepository.findByLibraryName(libraryName);
@@ -29,8 +30,9 @@ public class LibraryServiceImpl implements LibraryService {
     public Library getLibraryByCity(String city) {
         return libraryRepository.findByCity(city);
     }
-    public List<Work> findByLibraryId(Integer libraryid) {
+    /*public List<Work> findByLibraryId(Integer libraryid) {
         List<Work> workslist = libraryRepository.findById(libraryid).get().getWorks();
         return workslist;
     }
+    */
 }

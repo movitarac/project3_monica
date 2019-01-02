@@ -2,11 +2,7 @@ package com.racic.lib.model;
 
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 
 @Entity(name="Library")
@@ -20,8 +16,8 @@ public class Library {
     private String libraryName;
     @Column
     private String city;
-    @OneToMany
-    private List<Work> works;
+    //@OneToMany
+    //private List<Work> works;
 
 
     public Library() {
@@ -57,7 +53,7 @@ public class Library {
         this.city = city;
     }
 
-    public List<Work> getWorks() {
+   /* public List<Work> getWorks() {
         return works;
     }
 
@@ -65,5 +61,5 @@ public class Library {
         this.works = works;
     }
 
-
+*/
 }

@@ -101,6 +101,8 @@
 
 
     </xs:element>
+
+
     <xs:element name="isValidWorkByAuthorRequest">
         <xs:complexType>
             <xs:sequence>
@@ -158,6 +160,23 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="member" type="tns:memberInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="isValidUserRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="username" type="xs:string"/>
+                <xs:element name="password" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="isValidUserResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+                <xs:element name="status" type="xs:boolean"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -225,7 +244,7 @@
     <xs:element name="returnBorrowingRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="idborrow" type="xs:integer"/>
+                <xs:element name="idborrow" type="xs:int"/>
                 <xs:element name="member" type="tns:memberInfo"/>
             </xs:sequence>
         </xs:complexType>
@@ -257,7 +276,7 @@
     <xs:element name="extendBorrowingRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="idborrow" type="xs:integer"/>
+                <xs:element name="idborrow" type="xs:int"/>
                 <xs:element name="member" type="tns:memberInfo"/>
             </xs:sequence>
         </xs:complexType>
@@ -275,7 +294,7 @@
     <xs:element name="verifyBoksListAvailableSizeRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="worksid" type="xs:integer"/>
+                <xs:element name="worksid" type="xs:int"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -291,7 +310,7 @@
     <xs:element name="borrowBookRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="worksId" type="xs:integer"/>
+                <xs:element name="worksId" type="xs:int"/>
                 <xs:element name="member" type="tns:memberInfo"/>
             </xs:sequence>
         </xs:complexType>

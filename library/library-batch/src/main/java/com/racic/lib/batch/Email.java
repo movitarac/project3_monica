@@ -42,19 +42,6 @@ public class Email {
             }
 
         }
-        //check les livres qui sont indisponible dans cette liste
-        //pour chaque borrowing, recuperer member
-        //recuperer email
-
-        //construire le message (simuler ici..on met en string) (TO DO next message sur une table email
-        //evoyer email au destinateur (installer serveur smtp/ ou utiliser serveur smtp en ligne)
-
-
-//lancer a la main un jar...
-        //
-        //
-        //
-        // cron - pour programmer relancement regulierement
 
         System.out.println("the end of the class email");
         return borrowingListNotReturned;

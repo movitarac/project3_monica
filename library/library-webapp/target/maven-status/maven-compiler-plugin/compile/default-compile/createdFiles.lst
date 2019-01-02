@@ -1,9 +1,9 @@
-com/racic/lib/webapp/controller/MemberController.class
-com/racic/lib/webapp/controller/BorrowingController.class
-com/racic/lib/webapp/controller/LibraryController.class
-com/racic/lib/webservice/endpoint/MemberWs.class
+com/racic/lib/webapp/controller/BookController.class
 com/racic/lib/webservice/endpoint/WorkWs.class
 com/racic/lib/webapp/controller/WorkController.class
-com/racic/lib/webapp/controller/BookController.class
 com/racic/lib/webservice/endpoint/BorrowingWs.class
+com/racic/lib/webapp/controller/LibraryController.class
+com/racic/lib/webservice/endpoint/MemberWs.class
+com/racic/lib/webapp/controller/MemberController.class
 com/racic/lib/webservice/endpoint/BookWs.class
+com/racic/lib/webapp/controller/BorrowingController.class

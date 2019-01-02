@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface LibraryService {
 
-	Library getByWorkList(Work work);
+	//Library getByWorkList(Work work);
 
 	Library getLibraryByName(String libraryName);
 
@@ -15,6 +15,6 @@ public interface LibraryService {
 
 	Library getLibraryByCity(String city);
 
-	List<Work> findByLibraryId(Integer libraryid);
+	//List<Work> findByLibraryId(Integer libraryid);
 
 }

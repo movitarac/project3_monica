@@ -39,6 +39,10 @@
 			<groupId>com.racic.lib</groupId>
 			<artifactId>library-model</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.racic.lib</groupId>
+			<artifactId>library-client</artifactId>
+		</dependency>
 		<!-- ==3rd party libraries== -->
 
 		<dependency>
@@ -205,6 +209,7 @@
 			<version>1.5.6</version>
 		</dependency>
 
+
 	</dependencies>
 
 
@@ -219,16 +224,68 @@
 			<artifactId>jaxws-maven-plugin</artifactId>
 			<version>2.5</version>
 			<executions>
+				<!--generate webservice-->
 				<execution>
-					<id>wsgen-from-jdk</id>
+					<id>wsgen-for-bookws</id>
 					<goals>
 						<goal>wsgen</goal>
 					</goals>
-						<configuration>
+					<configuration>
+						<executable>${tool.wsgen}</executable>
+						<sei>com.racic.lib.webservice.endpoint.BookWs</sei>
+						<genWsdl>true</genWsdl>
+					</configuration>
+				</execution>
+				<execution>
+					<id>wsgen-for-borrowingws</id>
+					<goals>
+						<goal>wsgen</goal>
+					</goals>
+					<configuration>
+						<executable>${tool.wsgen}</executable>
+						<sei>com.racic.lib.webservice.endpoint.BorrowingWs</sei>
+						<genWsdl>true</genWsdl>
+					</configuration>
+				</execution>
+				<execution>
+					<id>wsgen-for-workws</id>
+					<goals>
+						<goal>wsgen</goal>
+					</goals>
+					<configuration>
 						<executable>${tool.wsgen}</executable>
 						<sei>com.racic.lib.webservice.endpoint.WorkWs</sei>
-						</configuration>
+						<genWsdl>true</genWsdl>
+					</configuration>
 				</execution>
+				<execution>
+					<id>wsgen-for-memberws</id>
+					<goals>
+						<goal>wsgen</goal>
+					</goals>
+					<configuration>
+						<executable>${tool.wsgen}</executable>
+						<sei>com.racic.lib.webservice.endpoint.MemberWs</sei>
+						<genWsdl>true</genWsdl>
+					</configuration>
+				</execution>
+
+				<!--&lt;!&ndash;generate client&ndash;&gt;
+				<execution>
+					<id>wsimport-for-all</id>
+					<goals>
+						<goal>wsimport</goal>
+					</goals>
+					<configuration>
+						<sourceDestDir>${project.basedir}/src/main/java/generated</sourceDestDir>
+						<wsdlUrls>
+							<wsdlUrl>http://localhost:8080/library-webapp/ws/workWs?wsdl</wsdlUrl>
+							<wsdlUrl>http://localhost:8080/library-webapp/ws/borrowingWs?wsdl</wsdlUrl>
+							<wsdlUrl>http://localhost:8080/library-webapp/ws/bookWs?wsdl</wsdlUrl>
+							<wsdlUrl>http://localhost:8080/library-webapp/ws/memberWs?wsdl</wsdlUrl>
+						</wsdlUrls>
+						</configuration>
+				</execution>-->
 			</executions>
 		</plugin>
 	</plugins>

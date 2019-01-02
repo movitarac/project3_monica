@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface LibraryRepository extends CrudRepository<Library, Integer> {
 
-	Library findByWorks(Work work);
+	//Library findByWorks(Work work);
 
 	Library findByLibraryName(String libraryname);
 

@@ -37,12 +37,14 @@ public class WorkEndPoint {
 	//@RequestPayload
 	 public WorkSearchByAuthorResponse findWorksByAuthorContain(@RequestPayload WorkSearchByAuthorRequest request) {
 		 WorkSearchByAuthorResponse response = new WorkSearchByAuthorResponse();
+		 List<WorkInfo> workInfos = new ArrayList<>();
 		 List<Work> workListByAuthor = workService.findWorksByAuthorContain(request.getAuthor());
 		for (int i = 0; i < workListByAuthor.size(); i++) {
 			WorkInfo wi = new WorkInfo();
 			BeanUtils.copyProperties(workService.findWorksByAuthorContain(request.getAuthor()),wi);
+			workInfos.add(wi);
 		}
-
+		response.getWork().addAll(workInfos);
  	return response;
 	 }
 

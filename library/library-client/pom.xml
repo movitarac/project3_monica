@@ -16,11 +16,49 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencies>
+      <!-- MODULES -->
+
+      <dependency>
+          <groupId>com.racic.lib</groupId>
+          <artifactId>library-business</artifactId>
+      </dependency>
+      <dependency>
+          <groupId>com.racic.lib</groupId>
+          <artifactId>library-model</artifactId>
+      </dependency>
+
+      <!--3rd party library-->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jaxws-maven-plugin</artifactId>
+        <version>2.5</version>
+        <executions>
+      <execution>
+					<id>wsimport-for-all</id>
+					<goals>
+						<goal>wsimport</goal>
+					</goals>
+					<configuration>
+						<sourceDestDir>${project.basedir}/src/main/java/generated/</sourceDestDir>
+						<wsdlUrls>
+							<wsdlUrl>http://localhost:8080/library-webapp/ws/workWs?wsdl</wsdlUrl>
+							<wsdlUrl>http://localhost:8080/library-webapp/ws/borrowingWs?wsdl</wsdlUrl>
+							<wsdlUrl>http://localhost:8080/library-webapp/ws/bookWs?wsdl</wsdlUrl>
+							<wsdlUrl>http://localhost:8080/library-webapp/ws/memberWs?wsdl</wsdlUrl>
+						</wsdlUrls>
+						</configuration>
+				</execution>
+        </executions>
+      </plugin>
+    </plugins>
+
+  </build>
 </project>
