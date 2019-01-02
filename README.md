@@ -100,9 +100,14 @@ o    ?serverTimezone=UTC can be added after value for property name ‘url’
 o    in Intellij, 
 Run – Edit Configurations – click + – Tomcat Server Local – Deployment – click + Artifact library-webapp-war – write /library-webapp in Application context – Apply OK – Run
 
-In http://localhost:8080/library-webapp the application will appear
+
 o    in Eclipse, 
 Run on server - Select Tomcat v9.0 Server- Click next - Add library-webapp - Click finish - Run the server
+
+
+In http://localhost:8080/library-webapp the application will appear (same url for both IDE)
+
+
 
     For the moment the web service is still on progress. To make the web application part works, the web application is momentarily connected to the database (later version, only the web service will be connected to the database). The library-webapp.war can be deployed in Apache Tomcat 9:
 
