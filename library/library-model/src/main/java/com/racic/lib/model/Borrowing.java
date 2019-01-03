@@ -1,9 +1,10 @@
 package com.racic.lib.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlIDREF;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -28,7 +29,7 @@ public class Borrowing {
     public Borrowing() {
     }
 
-    public Integer getIdborrow() {
+   public Integer getIdborrow() {
         return idborrow;
     }
 
@@ -43,6 +44,7 @@ public class Borrowing {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
 
 	public Member getMember() {
         return member;

@@ -3,7 +3,8 @@ package com.racic.lib.model;
 import java.util.List;
 
 import javax.persistence.*;
-
+import javax.xml.bind.annotation.XmlIDREF;
+import javax.xml.bind.annotation.XmlTransient;
 
 
 @Entity
@@ -15,7 +16,7 @@ public class Member extends User{
     private String lastName;
     private String email;
     private String address;
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	private List<Borrowing> borrowing;
 	
 	

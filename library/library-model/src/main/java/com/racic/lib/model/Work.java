@@ -13,9 +13,9 @@ public class Work {
     private Integer worksId;
     private String title;
     private String author;
+    private int copiesAvailable;
     private int publicationYear;
     private String bookDescription;
-    private int copiesAvailable;
     private String imageUrl;
    @ManyToOne
     @JoinColumn(name="idlibrary")
@@ -81,6 +81,13 @@ public class Work {
         this.bookDescription = bookDescription;
     }
 
+    public int getCopiesAvailable() {
+        return copiesAvailable;
+    }
+
+    public void setCopiesAvailable(int copiesAvailable) {
+        this.copiesAvailable = copiesAvailable;
+    }
 
     public Library getLibrary() {
         return library;
@@ -98,13 +105,6 @@ public class Work {
         this.books = books;
     }
 
-    public int getCopiesvailable() {
-        return copiesAvailable;
-    }
-
-    public void setCopiesAvailable(int copies) {
-        this.copiesAvailable = copies;
-    }
 
     public String getImageUrl() {
         return imageUrl;

@@ -2,17 +2,14 @@
 	version="2.0">
 
 
-	<endpoint name="workWs" implementation="com.racic.lib.webservice.endpoint.WorkWs"
+	<endpoint name="workWeb" implementation="com.racic.lib.webservice.WorkWs"
 		url-pattern="/ws/workWs" />
 
-	<endpoint name="bookWs" implementation="com.racic.lib.webservice.endpoint.BookWs"
+	<endpoint name="bookWeb" implementation="com.racic.lib.webservice.BookWs"
 			  url-pattern="/ws/bookWs" />
 
-	<!--<endpoint name="LibraryServicImpl" implementation="com.racic.lib.endpointibraryWS"
-			  url-pattern="/libraryService" />
--->
-	<endpoint name="memberWs" implementation="com.racic.lib.webservice.endpoint.MemberWs"
+	<endpoint name="memberWeb" implementation="com.racic.lib.webservice.MemberWs"
 			  url-pattern="/ws/memberWs" />
-	<endpoint name="borrowingWs" implementation="com.racic.lib.webservice.endpoint.BorrowingWs"
+	<endpoint name="borrowingWeb" implementation="com.racic.lib.webservice.BorrowingWs"
 			  url-pattern="/ws/borrowingWs" />
 </endpoints>

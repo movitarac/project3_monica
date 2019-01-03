@@ -5,9 +5,7 @@ import com.racic.lib.business.service.contract.BorrowingService;
 import com.racic.lib.business.service.contract.MemberService;
 
 import com.racic.lib.business.service.contract.WorkService;
-import com.racic.lib.model.Borrowing;
-import com.racic.lib.model.Member;
-import com.racic.lib.model.Work;
+import com.racic.lib.client.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -33,27 +31,32 @@ public class BorrowingController {
     @Autowired
     BookService bookService;
 
+
+
     @RequestMapping(value = "/borrow/{worksId}", method = RequestMethod.GET)
     public ModelAndView borrowThisbook(HttpServletRequest request, @PathVariable("worksId") Integer worksId) {
         ModelAndView modelAndView = null;
-
+        WorkWeb workWeb = new WorkWeb();
+        WorkWs workWs = workWeb.getWorkWsPort();
+        BorrowingWeb borrowingWeb = new BorrowingWeb();
+        BorrowingWs borrowingWs = borrowingWeb.getBorrowingWsPort();
         if (request != null && request.getSession().getAttribute("connected") == null) {
             modelAndView = new ModelAndView("member/login");
             System.out.println("the member connected is null");
 
         } else if (request != null && request.getSession().getAttribute("connected") != null) {
             //get the connected member
-            Member loggedInMember = (Member) request.getSession().getAttribute("memberConnected");
+            com.racic.lib.client.Member loggedInMember = (com.racic.lib.client.Member) request.getSession().getAttribute("memberConnected");
             System.out.print(loggedInMember.getFirstName() + " is connected " +
                     "and the clicked works id is " + worksId);
 
             //get the borrowed work
-            Work borrowedWork = workService.findWorksById(worksId);
+            com.racic.lib.client.Work borrowedWork = workWs.findWorksById(worksId);
 
             //call the method to verify if there are available copies for the work
-            if (borrowingService.verifyBoksListAvailableSize(worksId) == true) {
+            if (borrowingWs.verifyBoksListAvailableSize(worksId) == true) {
                 //call the method borrowbook from borrowing service
-                borrowingService.borrowBook(worksId, loggedInMember);
+                borrowingWs.borrowBook(worksId, loggedInMember);
                 modelAndView = new ModelAndView("borrowing/borrowsuccess");
                 modelAndView.addObject("loggedInMember", loggedInMember);
                 modelAndView.addObject("borrowedWork", borrowedWork);
@@ -71,13 +74,17 @@ public class BorrowingController {
     public ModelAndView getMemberBorrowingList(HttpServletRequest request) {
         ModelAndView mv = null;
 
+        BorrowingWeb borrowingWeb = new BorrowingWeb();
+        BorrowingWs borrowingWs = borrowingWeb.getBorrowingWsPort();
         if (request == null && request.getSession().getAttribute("connected") == null) {
             mv = new ModelAndView("member/login");
 
         } else if (request != null && request.getSession().getAttribute("connected") != null) {
             mv = new ModelAndView("borrowing/borrowinginfo");
-            Member loggedInMember = (Member)request.getSession().getAttribute("memberConnected");
-            List<Borrowing> borrowingList = borrowingService.findByMember(loggedInMember);
+            com.racic.lib.client.Member loggedInMember = (com.racic.lib.client.Member) request.getSession().getAttribute("memberConnected");
+            List<com.racic.lib.client.Borrowing> borrowingList = borrowingWs.findByMember(loggedInMember);
+                    //loggedInMember.getBorrowing();
+
             mv.addObject("borrowingList", borrowingList);
 
         } else {
@@ -89,21 +96,23 @@ public class BorrowingController {
     @RequestMapping(value = "/borrowinglist/extend/{borrowingid}", method = RequestMethod.GET)
     public ModelAndView extendBorrow (HttpServletRequest request,@PathVariable int borrowingid) {
         ModelAndView mv = null;
-
+        BorrowingWeb borrowingWeb = new BorrowingWeb();
+        BorrowingWs borrowingWs = borrowingWeb.getBorrowingWsPort();
         String message="";
         String msgError="";
         if(request!=null && request.getSession().getAttribute("connected")!=null) {
-            Member member = (Member) request.getSession().getAttribute("memberConnected");
+            com.racic.lib.client.Member member = (com.racic.lib.client.Member) request.getSession().getAttribute("memberConnected");
             mv = new ModelAndView("borrowing/borrowinginfo");
-           boolean extendOK = borrowingService.extendBorrowing(borrowingid, member);
+           boolean extendOK = borrowingWs.extendBorrowing(borrowingid, member);
             if (extendOK ==true ) {
-                List<Borrowing> borrowingList = borrowingService.findByMember(member);
-                message += "Your borrowing period for " + borrowingService.findByBorrowingId(borrowingid).getBook().getWork().getTitle() + " is successfully extended";
+                List<com.racic.lib.client.Borrowing> borrowingList = member.getBorrowing();
+                message += "Your borrowing period for " + borrowingWs.findByBorrowingId(borrowingid).getBook().getWork().getTitle() + " is successfully extended";
                 mv.addObject("borrowingList", borrowingList);
                 mv.addObject("message", message);
                 mv.addObject("extendOK",extendOK);
             } else {
-                List<Borrowing> borrowingList = borrowingService.findByMember(member);
+                List<com.racic.lib.client.Borrowing> borrowingList = member.getBorrowing();
+                        //borrowingWs.findByMember(member);
                 mv.addObject("borrowingList", borrowingList);
                 msgError += " You cannot extend twice the borrowing period or the Book is already returned!!";
                 mv.addObject("extendOK",extendOK);
@@ -119,20 +128,22 @@ public class BorrowingController {
     public ModelAndView returnBorrow (HttpServletRequest request,@PathVariable int borrowingid) {
         String message="";
         String msgError="";
+        BorrowingWeb borrowingWeb = new BorrowingWeb();
+        BorrowingWs borrowingWs = borrowingWeb.getBorrowingWsPort();
         ModelAndView mv = null;
 
         if(request!=null && request.getSession().getAttribute("connected")!=null) {
-            Member member = (Member) request.getSession().getAttribute("memberConnected");
+            com.racic.lib.client.Member member = (Member) request.getSession().getAttribute("memberConnected");
             mv = new ModelAndView("borrowing/borrowinginfo");
-            boolean returnOK = borrowingService.returnBorrowing(borrowingid, member);
+            boolean returnOK = borrowingWs.returnBorrowing(borrowingid, member);
             if (returnOK ==true ) {
-                List<Borrowing> borrowingList = borrowingService.findByMember(member);
-                message += "Your borrowing for " + borrowingService.findByBorrowingId(borrowingid).getBook().getWork().getTitle() + " is successfully returned";
+                List<com.racic.lib.client.Borrowing> borrowingList = member.getBorrowing();
+                message += "Your borrowing for " + borrowingWs.findByBorrowingId(borrowingid).getBook().getWork().getTitle() + " is successfully returned";
                 mv.addObject("borrowingList", borrowingList);
                 mv.addObject("returnOK",returnOK);
                 mv.addObject("message", message);
             } else {
-                List<Borrowing> borrowingList = borrowingService.findByMember(member);
+                List<Borrowing> borrowingList = member.getBorrowing();
                 msgError += " You have returned this book!";
                 mv.addObject("msgError", msgError);
                 mv.addObject("borrowingList", borrowingList);

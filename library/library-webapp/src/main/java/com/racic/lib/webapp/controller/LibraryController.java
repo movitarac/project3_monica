@@ -1,10 +1,9 @@
 package com.racic.lib.webapp.controller;
 
-import com.racic.lib.business.service.contract.BorrowingService;
-import com.racic.lib.business.service.contract.LibraryService;
-import com.racic.lib.business.service.contract.WorkService;
-import com.racic.lib.model.Work;
-import org.springframework.beans.factory.annotation.Autowired;
+
+
+import com.racic.lib.client.WorkWeb;
+import com.racic.lib.client.WorkWs;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,8 +16,6 @@ import java.util.List;
 public class LibraryController {
 
 
-	@Autowired
-	WorkService workService;
 
 
 	@RequestMapping(value="/")
@@ -30,7 +27,9 @@ public class LibraryController {
 
 	@RequestMapping(value="/browse", method = RequestMethod.GET)
 	public String works(HttpServletRequest request, Model model) {
-		List<Work> worksList = workService.getAll();
+		WorkWeb workWsService = new WorkWeb();
+		WorkWs workWs = workWsService.getWorkWsPort();
+		List<com.racic.lib.client.Work> worksList = workWs.getAll();
 		model.addAttribute("worksList", worksList);
 
 		return "borrowing/browse";

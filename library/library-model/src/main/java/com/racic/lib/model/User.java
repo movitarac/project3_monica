@@ -3,6 +3,7 @@ package com.racic.lib.model;
 
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlID;
 
 
 @Entity

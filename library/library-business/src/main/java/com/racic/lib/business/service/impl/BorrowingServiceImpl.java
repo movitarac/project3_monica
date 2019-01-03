@@ -16,12 +16,16 @@ import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
 
 
 @Service("borrowingService")
 public class BorrowingServiceImpl implements BorrowingService {
 
-    public static final SimpleDateFormat FRENCH_DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
+    //public static final SimpleDateFormat FRENCH_DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
     @Autowired
     BorrowingRepository borrowingRepository;
     @Autowired
@@ -194,11 +198,6 @@ public class BorrowingServiceImpl implements BorrowingService {
 
     @Override
     public List<Borrowing> findByMember(Member member) {
-        //change date format for each borrow
-
-        //setDateRestitution (FRENCH_DATE_FORMAT.format(getDateRestitution));
-
-
         return borrowingRepository.findByMember(member);
     }
 
@@ -207,5 +206,65 @@ public class BorrowingServiceImpl implements BorrowingService {
         return borrowingRepository.findById(borrowingid).get();
     }
 
+    @Override
+    public void launchSendEmail() {
+        String username = "stherblain.library@gmail.com";
+        String password = "ABC12345BATCHSt.HerBlain";
+
+        /*SMPT Server configuration*/
+        Properties props = new Properties();
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
+
+        Date today = new Date();
+        List<Borrowing> borrowList = borrowingRepository.findAllByReturnDateBefore(today);
+
+        if (borrowList.size() > 0) {
+            for (Borrowing borrow : borrowList) {
+                if (today.after(borrow.getReturnDate())) {
+                    System.out.println(borrow.getMember().getFirstName() + " " + borrow.getBook().getWork().getTitle());
+                    Session session = Session.getInstance(props,
+                            new javax.mail.Authenticator() {
+                                protected PasswordAuthentication getPasswordAuthentication() {
+                                    return new PasswordAuthentication(username, password);
+                                }
+                            });
+
+                    try {
+
+                        Message message = new MimeMessage(session);
+                        message.setFrom(new InternetAddress("stherblain.library@gmail.com"));
+
+                        message.setRecipients(Message.RecipientType.TO,
+                                InternetAddress.parse(borrow.getMember().getEmail()));
+
+                        message.setSubject("---Returning Book--City Library---");
+                        message.setText(" Dear " + borrow.getMember().getFirstName() + " ,"
+                                + "\n\n you haven't returned your loan for " +
+                                borrow.getBook().getWork().getTitle() +
+                                " . Please return it as soon as possible or before "
+                                + borrow.getReturnDate());
+
+                        Transport.send(message);
+
+                        System.out.println("Sent to" + borrow.getMember().getEmail() +
+                                " related to their loan " + borrow.getBook().getWork().getTitle());
+
+                    } catch (MessagingException e) {
+                        throw new RuntimeException(e);
+                    }
+
+                } else {
+                    System.out.println("PROBLEM!!!!");
+                }
+
+            }
+        }else {
+            System.out.println("PROBLEM!!!!");
+        }
+
+    }
 
 }

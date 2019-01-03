@@ -47,7 +47,7 @@
 						<goal>wsimport</goal>
 					</goals>
 					<configuration>
-						<sourceDestDir>${project.basedir}/src/main/java/generated/</sourceDestDir>
+						<sourceDestDir>${project.basedir}/src/main/java/generated</sourceDestDir>
 						<wsdlUrls>
 							<wsdlUrl>http://localhost:8080/library-webapp/ws/workWs?wsdl</wsdlUrl>
 							<wsdlUrl>http://localhost:8080/library-webapp/ws/borrowingWs?wsdl</wsdlUrl>
