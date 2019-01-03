@@ -14,7 +14,7 @@ import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
 @Service
-@WebService(serviceName = "bookWs",name = "bookWs")
+@WebService(serviceName = "bookWeb",name = "bookWs")
 @SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL)
 //@SOAPBinding(style = SOAPBinding.Style.RPC)
 public class BookWs{
@@ -37,6 +37,7 @@ public class BookWs{
         return bookService.findBookbyId(bookid);
     }
 
+    //@WebMethod(exclude=true)
     @PostConstruct
     public void init() {
         SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);

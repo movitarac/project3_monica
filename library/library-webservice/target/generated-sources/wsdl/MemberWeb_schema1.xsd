@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://webservice.lib.racic.com/" xmlns:tns="http://webservice.lib.racic.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="findAll" type="tns:findAll"/>
+
+  <xs:element name="findAllResponse" type="tns:findAllResponse"/>
+
+  <xs:element name="findByUsernameAndPassword" type="tns:findByUsernameAndPassword"/>
+
+  <xs:element name="findByUsernameAndPasswordResponse" type="tns:findByUsernameAndPasswordResponse"/>
+
+  <xs:element name="findMemberByEmail" type="tns:findMemberByEmail"/>
+
+  <xs:element name="findMemberByEmailResponse" type="tns:findMemberByEmailResponse"/>
+
+  <xs:element name="init" type="tns:init"/>
+
+  <xs:element name="initResponse" type="tns:initResponse"/>
+
+  <xs:element name="isValidUser" type="tns:isValidUser"/>
+
+  <xs:element name="isValidUserResponse" type="tns:isValidUserResponse"/>
+
+  <xs:complexType name="isValidUser">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="isValidUserResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAll">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="findAllResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:member" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="member">
+    <xs:complexContent>
+      <xs:extension base="tns:user">
+        <xs:sequence>
+          <xs:element name="address" type="xs:string" minOccurs="0"/>
+          <xs:element name="email" type="xs:string" minOccurs="0"/>
+          <xs:element name="firstName" type="xs:string" minOccurs="0"/>
+          <xs:element name="lastName" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="user">
+    <xs:sequence>
+      <xs:element name="iduser" type="xs:int" minOccurs="0"/>
+      <xs:element name="password" type="xs:string" minOccurs="0"/>
+      <xs:element name="username" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findByUsernameAndPassword">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findByUsernameAndPasswordResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:member" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findMemberByEmail">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findMemberByEmailResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:member" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="init">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="initResponse">
+    <xs:sequence/>
+  </xs:complexType>
+</xs:schema>
+

@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.List;
 
 @Service
-@WebService(serviceName = "borrowingWs",name = "borrowingWs")
+@WebService(serviceName = "borrowingWeb",name = "borrowingWs")
 @SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL)
 //@SOAPBinding(style = SOAPBinding.Style.RPC)
 public class BorrowingWs{
@@ -59,6 +59,12 @@ public class BorrowingWs{
         return borrowingService.findByBorrowingId(borrowingid);
     }
 
+    @WebMethod
+    public void launchSendEmail(){
+        borrowingService.launchSendEmail();
+    }
+
+    //@WebMethod(exclude=true)
     @PostConstruct
     public void init() {
         SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);

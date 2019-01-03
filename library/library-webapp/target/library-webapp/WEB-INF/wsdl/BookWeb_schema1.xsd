@@ -35,41 +35,7 @@
     <xs:sequence>
       <xs:element name="available" type="xs:boolean"/>
       <xs:element name="bookId" type="xs:string" minOccurs="0"/>
-      <xs:element name="borrowing" type="tns:borrowing" minOccurs="0"/>
       <xs:element name="work" type="tns:work" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="borrowing">
-    <xs:sequence>
-      <xs:element name="book" type="tns:book" minOccurs="0"/>
-      <xs:element name="extended" type="xs:boolean"/>
-      <xs:element name="idborrow" type="xs:int" minOccurs="0"/>
-      <xs:element name="issueDate" type="xs:dateTime" minOccurs="0"/>
-      <xs:element name="member" type="tns:member" minOccurs="0"/>
-      <xs:element name="returnDate" type="xs:dateTime" minOccurs="0"/>
-      <xs:element name="status" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="member">
-    <xs:complexContent>
-      <xs:extension base="tns:user">
-        <xs:sequence>
-          <xs:element name="address" type="xs:string" minOccurs="0"/>
-          <xs:element name="email" type="xs:string" minOccurs="0"/>
-          <xs:element name="firstName" type="xs:string" minOccurs="0"/>
-          <xs:element name="lastName" type="xs:string" minOccurs="0"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="user">
-    <xs:sequence>
-      <xs:element name="iduser" type="xs:int" minOccurs="0"/>
-      <xs:element name="password" type="xs:string" minOccurs="0"/>
-      <xs:element name="username" type="xs:string" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 

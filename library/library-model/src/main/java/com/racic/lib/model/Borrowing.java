@@ -1,9 +1,7 @@
 package com.racic.lib.model;
 
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlID;
-import javax.xml.bind.annotation.XmlIDREF;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 
 import java.util.Date;
 

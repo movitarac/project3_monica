@@ -83,8 +83,7 @@ public class BorrowingController {
             mv = new ModelAndView("borrowing/borrowinginfo");
             com.racic.lib.client.Member loggedInMember = (com.racic.lib.client.Member) request.getSession().getAttribute("memberConnected");
             List<com.racic.lib.client.Borrowing> borrowingList = borrowingWs.findByMember(loggedInMember);
-                    //loggedInMember.getBorrowing();
-
+            System.out.println(borrowingList.get(1).getIdborrow());
             mv.addObject("borrowingList", borrowingList);
 
         } else {
@@ -111,8 +110,7 @@ public class BorrowingController {
                 mv.addObject("message", message);
                 mv.addObject("extendOK",extendOK);
             } else {
-                List<com.racic.lib.client.Borrowing> borrowingList = member.getBorrowing();
-                        //borrowingWs.findByMember(member);
+                List<com.racic.lib.client.Borrowing> borrowingList = borrowingWs.findByMember(member);
                 mv.addObject("borrowingList", borrowingList);
                 msgError += " You cannot extend twice the borrowing period or the Book is already returned!!";
                 mv.addObject("extendOK",extendOK);
@@ -137,13 +135,13 @@ public class BorrowingController {
             mv = new ModelAndView("borrowing/borrowinginfo");
             boolean returnOK = borrowingWs.returnBorrowing(borrowingid, member);
             if (returnOK ==true ) {
-                List<com.racic.lib.client.Borrowing> borrowingList = member.getBorrowing();
+                List<com.racic.lib.client.Borrowing> borrowingList = borrowingWs.findByMember(member);
                 message += "Your borrowing for " + borrowingWs.findByBorrowingId(borrowingid).getBook().getWork().getTitle() + " is successfully returned";
                 mv.addObject("borrowingList", borrowingList);
                 mv.addObject("returnOK",returnOK);
                 mv.addObject("message", message);
             } else {
-                List<Borrowing> borrowingList = member.getBorrowing();
+                List<Borrowing> borrowingList = borrowingWs.findByMember(member);
                 msgError += " You have returned this book!";
                 mv.addObject("msgError", msgError);
                 mv.addObject("borrowingList", borrowingList);

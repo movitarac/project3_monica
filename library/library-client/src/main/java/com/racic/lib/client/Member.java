@@ -43,7 +43,6 @@ public class Member
 
     protected String address;
     @XmlElement(nillable = true)
-    //@XmlTransient
     protected List<Borrowing> borrowing;
     protected String email;
     protected String firstName;

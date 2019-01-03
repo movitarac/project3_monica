@@ -13,7 +13,7 @@ import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
 @Service
-@WebService(serviceName = "workWs",name = "workWs")
+@WebService(serviceName = "workWeb",name = "workWs")
 @SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL)
 //@SOAPBinding(style = SOAPBinding.Style.RPC)
 public class WorkWs {
@@ -36,6 +36,14 @@ public class WorkWs {
         return workService.isValidWorkByAuthor(author);
     }
 
+    @WebMethod
+    public List<Work> getAll() {
+
+        return  workService.getAll();
+    }
+
+
+    //@WebMethod(exclude=true)
     @PostConstruct
     public void init() {
         SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);

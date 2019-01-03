@@ -13,7 +13,7 @@ import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
 @Service
-@WebService(serviceName = "memberWs",name = "memberWs")
+@WebService(serviceName = "memberWeb",name = "memberWs")
 @SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL)
 //@SOAPBinding(style = SOAPBinding.Style.RPC)
 public class MemberWs{
@@ -41,6 +41,7 @@ public class MemberWs{
         return memberService.isValidUser(userName, passWord);
     }
 
+    //@WebMethod(exclude=true)
     @PostConstruct
     public void init() {
         SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);

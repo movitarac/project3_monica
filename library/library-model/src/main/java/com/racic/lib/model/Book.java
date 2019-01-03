@@ -1,6 +1,7 @@
 package com.racic.lib.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlTransient;
 
 @Entity
 @Table(name="Book")
@@ -51,6 +52,7 @@ public class Book {
         this.work = work;
     }
 
+    @XmlTransient
     public Borrowing getBorrowing() {
         return borrowing;
     }

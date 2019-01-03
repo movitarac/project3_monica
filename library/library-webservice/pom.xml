@@ -200,22 +200,23 @@
   <build>
     <finalName>library-webservice</finalName>
 
-  <plugins>
-
-   <!-- generate ws -->
+    <plugins>
+      <!--generate ws-->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>jaxws-maven-plugin</artifactId>
         <version>2.5</version>
         <executions>
+          <!--generate client-->
           <execution>
-            <id>wsgen-from-jdk</id>
+            <id>wsgen-for-bookws</id>
             <goals>
               <goal>wsgen</goal>
             </goals>
             <configuration>
               <executable>${tool.wsgen}</executable>
-              <sei>MemberWs</sei>
+              <sei>com.racic.lib.webservice.BookWs</sei>
+              <genWsdl>true</genWsdl>
             </configuration>
           </execution>
           <execution>
@@ -225,7 +226,7 @@
             </goals>
             <configuration>
               <executable>${tool.wsgen}</executable>
-              <sei>BorrowingWs</sei>
+              <sei>com.racic.lib.webservice.BorrowingWs</sei>
               <genWsdl>true</genWsdl>
             </configuration>
           </execution>
@@ -236,7 +237,7 @@
             </goals>
             <configuration>
               <executable>${tool.wsgen}</executable>
-              <sei>WorkWs</sei>
+              <sei>com.racic.lib.webservice.WorkWs</sei>
               <genWsdl>true</genWsdl>
             </configuration>
           </execution>
@@ -247,36 +248,15 @@
             </goals>
             <configuration>
               <executable>${tool.wsgen}</executable>
-              <sei>BookWs</sei>
+              <sei>com.racic.lib.webservice.MemberWs</sei>
               <genWsdl>true</genWsdl>
             </configuration>
           </execution>
+
+
         </executions>
       </plugin>
-
-    <!--<plugin>
-      <groupId>org.codehaus.mojo</groupId>
-      <artifactId>jaxb2-maven-plugin</artifactId>
-      <version>2.4</version>
-      <executions>
-        <execution>
-          <id>xjc-schema</id>
-          <goals>
-            <goal>xjc</goal>
-          </goals>
-        </execution>
-      </executions>
-      <configuration>
-        <sources>
-          <source>src/main/resources/xsds</source>
-        </sources>
-        <packageName>com.racic.lib.gs_ws</packageName>
-        <clearOutputDir>false</clearOutputDir>
-      </configuration>
-    </plugin>-->
-
-
-  </plugins>
+    </plugins>
   </build>
 
 </project>

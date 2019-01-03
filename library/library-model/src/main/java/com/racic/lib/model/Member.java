@@ -71,6 +71,7 @@ public class Member extends User{
         this.address = address;
     }
 
+    @XmlTransient
 	public List<Borrowing> getBorrowing() {
 		return borrowing;
 	}
