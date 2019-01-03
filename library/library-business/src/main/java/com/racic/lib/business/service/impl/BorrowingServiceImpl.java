@@ -206,8 +206,9 @@ public class BorrowingServiceImpl implements BorrowingService {
         return borrowingRepository.findById(borrowingid).get();
     }
 
-    @Override
-    public void launchSendEmail() {
+
+    public boolean launchSendEmail() {
+        boolean sendOk;
         String username = "stherblain.library@gmail.com";
         String password = "ABC12345BATCHSt.HerBlain";
 
@@ -249,22 +250,26 @@ public class BorrowingServiceImpl implements BorrowingService {
 
                         Transport.send(message);
 
-                        System.out.println("Sent to" + borrow.getMember().getEmail() +
+                        System.out.println("Sent to " + borrow.getMember().getEmail() +
                                 " related to their loan " + borrow.getBook().getWork().getTitle());
 
+                        sendOk = true;
                     } catch (MessagingException e) {
                         throw new RuntimeException(e);
                     }
 
                 } else {
                     System.out.println("PROBLEM!!!!");
+                    sendOk = false;
                 }
 
             }
         }else {
             System.out.println("PROBLEM!!!!");
         }
-
+        sendOk = true;
+return sendOk;
     }
+
 
 }

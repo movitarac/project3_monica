@@ -23,5 +23,5 @@ public interface BorrowingService {
 
     Borrowing findByBorrowingId(Integer borrowingid);
 
-    void launchSendEmail();
+    boolean launchSendEmail();
 }

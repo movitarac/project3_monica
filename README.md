@@ -51,9 +51,7 @@ By using Apache Maven, we decided to divide our Maven project into multiple modu
 
 •    library-model        : containing different entities
 
-•    library-webapp        : containing the view and controllers
-
-•    library-webservice    : containing webservice (in construction)
+•    library-webapp        : containing the view and controllers also a package containing webservice. This module doesn’t directly call the business module.
 
 
 Configuration and Deployment
@@ -113,13 +111,17 @@ In http://localhost:8080/library-webapp the application will appear (same url fo
 
 
 
-======Application web======
-1.    Class diagram
+==================Application web==================
 
 A member is inherited a user. An e-library has several different works, while for each work, it has different copies that can be borrowed by a member. A borrowing relates between a book (or a copy) and a member. A borrowing contains only a book.
 
-======Batch======
-Batch is still on progress.
+==================Batch========================
 
-======Web service======
-This part is still on progress and construction.
+For this part, the application calls a client of a webservice to get all unreturned books (book’s availability = false) or all borrowing with status ‘ongoing’ and ‘extended’. From then, it compares the return date and today. If the return date is after today, the application gathers members’ information and send them a reminding email related to their borrowing period. It is scheduled to be automatically launch every 12am.
+
+==================Web service==================
+
+Inside library-webapp, there is a package corresponding to webservice (SOAP webservice). The webservice is connected to database and constructed with bottom up method. All the web methods
+found in this package call all methods found in library-business. It means the application web does not directly call the library-business.
+WSDL files can be accessed after deploying the library-webapp.war in Tomcat
+http://localhost:8080/library-webapp/ws/workWs

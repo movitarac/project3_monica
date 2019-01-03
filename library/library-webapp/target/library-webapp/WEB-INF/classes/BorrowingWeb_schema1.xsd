@@ -176,7 +176,9 @@
   </xs:complexType>
 
   <xs:complexType name="launchSendEmailResponse">
-    <xs:sequence/>
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="findByBorrowingId">

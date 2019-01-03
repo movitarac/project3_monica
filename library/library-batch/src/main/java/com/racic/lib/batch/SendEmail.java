@@ -1,6 +1,6 @@
 package com.racic.lib.batch;
 
-import com.racic.lib.model.Borrowing;
+import com.racic.lib.client.Borrowing;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -11,7 +11,7 @@ import java.util.Properties;
 public class SendEmail {
 
 
-    public void sendEmail(List<Borrowing> borrowList) {
+    public void sendEmail(List<com.racic.lib.client.Borrowing> borrowList) {
         final String username = "stherblain.library@gmail.com";
         final String password = "ABC12345BATCHSt.HerBlain";
 

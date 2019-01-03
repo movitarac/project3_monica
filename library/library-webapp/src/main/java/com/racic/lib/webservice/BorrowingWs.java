@@ -60,8 +60,9 @@ public class BorrowingWs{
     }
 
     @WebMethod
-    public void launchSendEmail(){
-       borrowingService.launchSendEmail();
+    public boolean launchSendEmail(){
+
+       return borrowingService.launchSendEmail();
     }
 
     //@WebMethod(exclude=true)

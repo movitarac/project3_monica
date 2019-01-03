@@ -156,6 +156,6 @@ public interface BorrowingWs {
     @RequestWrapper(localName = "launchSendEmail", targetNamespace = "http://webservice.lib.racic.com/", className = "com.racic.lib.client.LaunchSendEmail")
     @ResponseWrapper(localName = "launchSendEmailResponse", targetNamespace = "http://webservice.lib.racic.com/", className = "com.racic.lib.client.LaunchSendEmailResponse")
     @Action(input = "http://webservice.lib.racic.com/borrowingWs/launchSendEmailRequest", output = "http://webservice.lib.racic.com/borrowingWs/launchSendEmailResponse")
-    public void launchSendEmail();
+    public boolean launchSendEmail();
 
 }
