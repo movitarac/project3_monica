@@ -1,1 +1,1 @@
-java -jar /Users/Vita/Documents/OC/projet-/library/library-batch/target/library-batch-1.0-SNAPSHOT.jar
+java -jar /Users/Vita/Documents/OC/projet-/library/library-batch/target/library-batch-1.0-SNAPSHOT-with-dependecies.jar

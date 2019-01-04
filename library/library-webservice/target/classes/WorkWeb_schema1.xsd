@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://webservice.lib.racic.com/" xmlns:tns="http://webservice.lib.racic.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="findWorksByAuthorContain" type="tns:findWorksByAuthorContain"/>
+
+  <xs:element name="findWorksByAuthorContainResponse" type="tns:findWorksByAuthorContainResponse"/>
+
+  <xs:element name="findWorksById" type="tns:findWorksById"/>
+
+  <xs:element name="findWorksByIdResponse" type="tns:findWorksByIdResponse"/>
+
+  <xs:element name="getAll" type="tns:getAll"/>
+
+  <xs:element name="getAllResponse" type="tns:getAllResponse"/>
+
+  <xs:element name="init" type="tns:init"/>
+
+  <xs:element name="initResponse" type="tns:initResponse"/>
+
+  <xs:element name="isValidWorkByAuthor" type="tns:isValidWorkByAuthor"/>
+
+  <xs:element name="isValidWorkByAuthorResponse" type="tns:isValidWorkByAuthorResponse"/>
+
+  <xs:complexType name="getAll">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:work" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="work">
+    <xs:sequence>
+      <xs:element name="author" type="xs:string" minOccurs="0"/>
+      <xs:element name="bookDescription" type="xs:string" minOccurs="0"/>
+      <xs:element name="books" type="tns:book" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="copiesAvailable" type="xs:int"/>
+      <xs:element name="imageUrl" type="xs:string" minOccurs="0"/>
+      <xs:element name="library" type="tns:library" minOccurs="0"/>
+      <xs:element name="publicationYear" type="xs:int"/>
+      <xs:element name="title" type="xs:string" minOccurs="0"/>
+      <xs:element name="worksId" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="book">
+    <xs:sequence>
+      <xs:element name="available" type="xs:boolean"/>
+      <xs:element name="bookId" type="xs:string" minOccurs="0"/>
+      <xs:element name="work" type="tns:work" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="library">
+    <xs:sequence>
+      <xs:element name="city" type="xs:string" minOccurs="0"/>
+      <xs:element name="libId" type="xs:int" minOccurs="0"/>
+      <xs:element name="libraryName" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findWorksById">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findWorksByIdResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:work" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="init">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="initResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="findWorksByAuthorContain">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findWorksByAuthorContainResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:work" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="isValidWorkByAuthor">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="isValidWorkByAuthorResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

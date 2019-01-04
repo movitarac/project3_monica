@@ -3,7 +3,7 @@
           xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0
           http://maven.apache.org/xsd/assembly-2.0.0.xsd">
 
-    <!-- Identifiant de l'assemblage -->
+    <!-- assemblage identification -->
     <id>archive-deploy</id>
 
     <!-- archive format to be generated -->
@@ -16,23 +16,23 @@
     <dependencySets>
         <dependencySet>
             <outputDirectory>lib</outputDirectory>
-            <scope>runtime</scope>
+            <scope>compile</scope>
         </dependencySet>
     </dependencySets>
 
-    <fileSets>
-        <!-- script shell for launching -->
-       <!-- <fileSet>-->
-          <!--  <directory>src/data/scripts</directory>
-            <outputDirectory>bin</outputDirectory>-->
-            <!-- Droits UNIX sur les fichiers (-rwx-rx-rx) -->
-           <!-- <fileMode>0755</fileMode>
-        </fileSet>-->
+     <fileSets>
+       <!-- script shell for launching-->
+    <fileSet>
+            <directory>src/data/scripts</directory>
+            <outputDirectory>bin</outputDirectory>
+           <!--  Droits UNIX sur les fichiers (-rwx-rx-rx)-->
+            <fileMode>0755</fileMode>
+        </fileSet>
 
-        <!-- configuration file -->
+      <!--  &lt;!&ndash; configuration file &ndash;&gt;
         <fileSet>
             <directory>src/data/conf</directory>
             <outputDirectory>conf</outputDirectory>
-        </fileSet>
+        </fileSet>-->
     </fileSets>
 </assembly>
