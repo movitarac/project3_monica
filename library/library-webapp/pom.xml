@@ -224,7 +224,6 @@
 			<artifactId>jaxws-maven-plugin</artifactId>
 			<version>2.5</version>
 			<executions>
-				<!--generate client-->
 				<execution>
 					<id>wsgen-for-bookws</id>
 					<goals>
@@ -270,22 +269,6 @@
 					</configuration>
 				</execution>
 
-				<!--&lt;!&ndash;generate client&ndash;&gt;
-				<execution>
-					<id>wsimport-for-all</id>
-					<goals>
-						<goal>wsimport</goal>
-					</goals>
-					<configuration>
-						<sourceDestDir>${project.basedir}/src/main/java/generated</sourceDestDir>
-						<wsdlUrls>
-							<wsdlUrl>http://localhost:8080/library-webapp/ws/workWs?wsdl</wsdlUrl>
-							<wsdlUrl>http://localhost:8080/library-webapp/ws/borrowingWs?wsdl</wsdlUrl>
-							<wsdlUrl>http://localhost:8080/library-webapp/ws/bookWs?wsdl</wsdlUrl>
-							<wsdlUrl>http://localhost:8080/library-webapp/ws/memberWs?wsdl</wsdlUrl>
-						</wsdlUrls>
-						</configuration>
-				</execution>-->
 			</executions>
 		</plugin>
 	</plugins>

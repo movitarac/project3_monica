@@ -16,10 +16,12 @@
 		</listener-class>
 	</listener>
 
+
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>WEB-INF/library-webservice-servlet.xml</param-value>
 	</context-param>
+
 
 
 
@@ -28,9 +30,6 @@
 		<servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-
-
-
 
 	<servlet-mapping>
 		<servlet-name>jaxws-servlet</servlet-name>

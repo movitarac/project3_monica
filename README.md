@@ -5,53 +5,74 @@ o    A web site designed with responsive web design (RWD). The user can perform 
 
     Find different works and their available copies
 
+
     Borrow different books
+
 
     Search books by author’s name
 
+
     Check their borrowing status and period
 
+
     Extend their borrowing period
+
 
     Return borrowed books
 
 
-o    A batch that is scheduled to run and send automatically email. This email will be sent to all users who have not returned their borrowed books. Everybody in general can browse book, find works, use the ‘find a book by author’ search part and access home page. 
+o    A batch that is scheduled to run and send automatically email. This email will be sent to all users who have not returned their borrowed books. 
+
+
+Everybody in general can browse book, find works, use the ‘find a book by author’ search part and access home page. 
+
+
 To borrow a book and access the profile page, a registered member must log in.
 
+
 After member login successfully, they can access the profile page, consult their borrowing list, extend and or return their loan, also make a new loan.
+
+
 A member can only extend once their borrowing period and the borrowing period will be extended for another 4weeks. 
 
 2.    Technologies
 
 Technologies used in general to develop this application are :
 
-•    Apache maven 3.6.0
+•   Apache maven 3.6.0
 
-•    Apache Tomcat 9
+•   Apache Tomcat 9
 
-•    MySQL 8.0.13
+•   MySQL 8.0.13
 
-•    Spring Framework 5.1.2 RELEASE
+•   Spring Framework 5.1.2 RELEASE
 
-•    Spring Data 2.1.2 RELEASE
+•   Spring Data 2.1.2 RELEASE
 
-•    Spring MVC 5.1.2 RELEASE
+•   Spring MVC 5.1.2 RELEASE
 
-•    Hibernate 5.1.0.Final
+•   Hibernate 5.1.0.Final
+
+•	JAX-WS
+
+•	Quartz 2 Scheduler
+
+
 
 
 By using Apache Maven, we decided to divide our Maven project into multiple modules
 
-•    library-batch        : containing batch to send automatically email
+
+•    library-batch       : containing batch to send automatically email
 
 •    library-business    : containing services / business logic
 
 •    library-consumer    : containing repository to connect to database
 
-•    library-model        : containing different entities
+•    library-model       : containing different entities
 
-•    library-webapp        : containing the view and controllers also a package containing webservice. This module doesn’t directly call the business module.
+•    library-webapp      : containing a package for the view + controllers (web application) 
+also a package containing webservice. This web application doesn’t directly call the business module.
 
 
 Configuration and Deployment
@@ -106,22 +127,65 @@ Run on server - Select Tomcat v9.0 Server- Click next - Add library-webapp - Cli
 In http://localhost:8080/library-webapp the application will appear (same url for both IDE)
 
 
+4.    Batch 
 
-    For the moment the web service is still on progress. To make the web application part works, the web application is momentarily connected to the database (later version, only the web service will be connected to the database). The library-webapp.war can be deployed in Apache Tomcat 9:
+•	In Linux and MacOs
+
+
+i.	Put the jar file and script shell at the $HOME (example /Users/<currentusername>) 
+
+
+ii.	Run the send.sh file in terminal ./send.sh
+
+
+•	In Windows
+
+
+i.	Put the jar file at the %homepath% (example \Users\<currentusername>)
+
+
+ii.	Run the send.bat 
+
+
+•	In general we can launch the jar by executing 
+
+
+java -jar library-batch-1.0-SNAPSHOT-jar-with-dependencies.jar 
 
 
 
 ==================Application web==================
 
-A member is inherited a user. An e-library has several different works, while for each work, it has different copies that can be borrowed by a member. A borrowing relates between a book (or a copy) and a member. A borrowing contains only a book.
+A member is inherited a user. 
+
+An e-library has several different works, while for each work, it has different copies that can be borrowed by a member. 
+
+A borrowing relates between a book (or a copy) and a member. 
+
+A borrowing contains only a book.
 
 ==================Batch========================
 
-For this part, the application calls a client of a webservice to get all unreturned books (book’s availability = false) or all borrowing with status ‘ongoing’ and ‘extended’. From then, it compares the return date and today. If the return date is after today, the application gathers members’ information and send them a reminding email related to their borrowing period. It is scheduled to be automatically launch every 12am.
+For this part, the application calls a client of a webservice to get all unreturned books (book’s availability = false) or all borrowing with status ‘ongoing’ and ‘extended’. 
+
+From then, it compares the return date and today. 
+
+If the return date is after today, the application gathers members’ information and send them a reminding email related to their borrowing period. 
+
+It is scheduled to be automatically launch every 5 seconds (only for presentation/test).
 
 ==================Web service==================
 
-Inside library-webapp, there is a package corresponding to webservice (SOAP webservice). The webservice is connected to database and constructed with bottom up method. All the web methods
-found in this package call all methods found in library-business. It means the application web does not directly call the library-business.
-WSDL files can be accessed after deploying the library-webapp.war in Tomcat
-http://localhost:8080/library-webapp/ws/workWs
+Inside library-webapp, there is a package corresponding to webservice (SOAP webservice). 
+
+
+The webservice is connected to database and constructed with bottom up method. 
+
+
+All the web methods found in this package call all methods found in library-business. 
+
+
+It means the application web does not directly call the library-business.
+
+
+WSDL files can be accessed after deploying the library-webapp.war in Tomcat http://localhost:8080/library-webapp/ws/workWs

@@ -16,7 +16,7 @@ http://www.springframework.org/schema/tx/spring-tx.xsd
 http://www.springframework.org/schema/mvc
 http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<!-- Spring container scans the base package of the applications to configure 
+	<!-- Spring container scans the base package of the applications to configure
 		as beans -->
 	<context:annotation-config/>
 	<!-- Define all the annotation (@Service,@Controller,@Repository @Autowired -->

@@ -1,9 +1,5 @@
 package com.racic.lib.webapp.controller;
 
-import com.racic.lib.business.service.contract.BookService;
-import com.racic.lib.business.service.contract.BorrowingService;
-import com.racic.lib.business.service.contract.MemberService;
-
 import com.racic.lib.business.service.contract.WorkService;
 import com.racic.lib.client.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,19 +14,6 @@ import java.util.List;
 
 @Controller
 public class BorrowingController {
-
-    @Autowired
-    BorrowingService borrowingService;
-
-    @Autowired
-    MemberService memberService;
-
-    @Autowired
-    WorkService workService;
-
-    @Autowired
-    BookService bookService;
-
 
 
     @RequestMapping(value = "/borrow/{worksId}", method = RequestMethod.GET)

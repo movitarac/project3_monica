@@ -1,8 +1,5 @@
 package com.racic.lib.webapp.controller;
 
-import com.racic.lib.business.service.contract.BookService;
-import com.racic.lib.business.service.contract.WorkService;
-
 import com.racic.lib.client.Work;
 import com.racic.lib.client.WorkWeb;
 import com.racic.lib.client.WorkWs;
@@ -14,8 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.List;
 
 
