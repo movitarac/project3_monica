@@ -9,56 +9,10 @@
     <list default="true" id="2207753e-3e2f-4670-853c-cd210366094f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../SOAP-UI/borrowingWs-soapui-project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SOAP-UI/borrowingWs-soapui-project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-batch/src/data/scripts/send.sh" beforeDir="false" afterPath="$PROJECT_DIR$/library-batch/src/data/scripts/send.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/LaunchEmailJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/LaunchEmailJob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library-batch/library-batch.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library-batch/src/data/scripts/send.bat" beforeDir="false" afterPath="$PROJECT_DIR$/library-batch/src/data/scripts/send.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-webapp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/java/com/racic/lib/webapp/controller/BorrowingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/src/main/java/com/racic/lib/webapp/controller/BorrowingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/java/com/racic/lib/webapp/controller/WorkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/src/main/java/com/racic/lib/webapp/controller/WorkController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/webapp/WEB-INF/library-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/src/main/webapp/WEB-INF/library-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/webapp/WEB-INF/sun-jaxws.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/classes/MemberWeb.wsdl" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/classes/MemberWeb.wsdl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/classes/com/racic/lib/webapp/controller/BorrowingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/classes/com/racic/lib/webapp/controller/BorrowingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/classes/com/racic/lib/webapp/controller/WorkController.class" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/classes/com/racic/lib/webapp/controller/WorkController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/generated-sources/wsdl/MemberWeb.wsdl" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/generated-sources/wsdl/MemberWeb.wsdl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp.war" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/classes/MemberWeb.wsdl" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/classes/MemberWeb.wsdl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/classes/com/racic/lib/webapp/controller/BorrowingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/classes/com/racic/lib/webapp/controller/BorrowingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/classes/com/racic/lib/webapp/controller/WorkController.class" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/classes/com/racic/lib/webapp/controller/WorkController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-business-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-business-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-client-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-client-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/library-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/library-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/sun-jaxws.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/sun-jaxws.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/wsdl/MemberWeb.wsdl" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/wsdl/MemberWeb.wsdl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-webservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-webservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/src/main/webapp/WEB-INF/library-webservice-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-webservice/src/main/webapp/WEB-INF/library-webservice-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-webservice/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice.war" beforeDir="false" afterPath="$PROJECT_DIR$/library-webservice/target/library-webservice.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/gmbal-api-only-3.1.0-b001.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/ha-api-3.1.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/javax.activation-1.2.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/javax.jws-api-1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/javax.xml.soap-api-1.4.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/jaxb-api-2.4.0-b180830.0359.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/jaxws-api-2.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/jaxws-rt-2.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/library-business-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/library-business-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/library-consumer-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/library-consumer-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/library-model-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/library-model-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/management-api-3.0.0-b012.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/mimepull-1.9.10.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/policy-2.7.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/saaj-impl-1.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/stax-ex-1.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/stax2-api-4.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/woodstox-core-5.1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/wsdl4j-1.6.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/library-webservice-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/library-webservice-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/surefire-reports/TEST-com.racic.lib.endpoint.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-webservice/target/surefire-reports/TEST-com.racic.lib.endpoint.AppTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/surefire-reports/com.racic.lib.endpoint.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/library-webservice/target/surefire-reports/com.racic.lib.endpoint.AppTest.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/library-webservice/target/" />
     <ignored path="$PROJECT_DIR$/library-model/target/" />
@@ -80,11 +34,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/library-webapp/src/main/webapp/WEB-INF/sun-jaxws.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library-webservice/src/main/webapp/WEB-INF/library-webservice-servlet.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1125">
@@ -105,8 +54,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library-webapp/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3375">
-              <caret line="225" column="24" selection-start-line="225" selection-start-column="24" selection-end-line="225" selection-end-column="24" />
+            <state relative-caret-position="263">
+              <caret line="138" column="36" selection-start-line="138" selection-start-column="36" selection-end-line="138" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/library-webservice/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="172">
+              <caret line="133" column="20" selection-start-line="128" selection-start-column="4" selection-end-line="133" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -148,14 +106,18 @@
         <entry file="file://$PROJECT_DIR$/library-batch/src/data/scripts/send.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" column="62" selection-start-line="3" selection-start-column="62" selection-end-line="3" selection-end-column="62" />
+              <caret line="3" column="62" selection-start-line="3" selection-end-line="3" selection-end-column="62" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library-batch/src/data/scripts/send.bat">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="62" selection-start-line="3" selection-start-column="62" selection-end-line="3" selection-end-column="62" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -211,7 +173,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/library-webapp/src/main/java/com/racic/lib/webservice/MemberWs.java" />
         <option value="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/work/worksfound.jsp" />
         <option value="$PROJECT_DIR$/library-webapp/src/main/java/com/racic/lib/webapp/controller/Controller.java" />
         <option value="$PROJECT_DIR$/library-webapp/target/generated-sources/wsdl/WorkWeb_schema1.xsd" />
@@ -249,7 +210,6 @@
         <option value="$PROJECT_DIR$/library-batch/library-batch.eml" />
         <option value="$PROJECT_DIR$/library-batch/pom.xml" />
         <option value="$PROJECT_DIR$/library-batch/src/assembly/archive-deploy.xml" />
-        <option value="$PROJECT_DIR$/library-webservice/pom.xml" />
         <option value="$PROJECT_DIR$/library-webservice/src/main/webapp/WEB-INF/library-webservice-servlet.xml" />
         <option value="$PROJECT_DIR$/library-webservice/src/main/webapp/WEB-INF/sun-jaxws.xml" />
         <option value="$PROJECT_DIR$/library-webservice/src/main/webapp/WEB-INF/web.xml" />
@@ -258,10 +218,12 @@
         <option value="$PROJECT_DIR$/library-webapp/src/main/java/com/racic/lib/webapp/controller/WorkController.java" />
         <option value="$PROJECT_DIR$/library-webapp/src/main/webapp/WEB-INF/library-servlet.xml" />
         <option value="$PROJECT_DIR$/library-webapp/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/library-webapp/pom.xml" />
         <option value="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/LaunchEmailJob.java" />
         <option value="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Main.java" />
         <option value="$PROJECT_DIR$/library-batch/src/data/scripts/send.sh" />
+        <option value="$PROJECT_DIR$/library-batch/src/data/scripts/send.bat" />
+        <option value="$PROJECT_DIR$/library-webapp/pom.xml" />
+        <option value="$PROJECT_DIR$/library-webservice/pom.xml" />
       </list>
     </option>
   </component>
@@ -298,15 +260,6 @@
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="library-webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="library-webservice" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="library-webservice" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
       </expand>
@@ -765,17 +718,17 @@
       <workItem from="1546243552981" duration="558000" />
       <workItem from="1546244238471" duration="38327000" />
       <workItem from="1546423490388" duration="77897000" />
-      <workItem from="1546626323292" duration="495000" />
+      <workItem from="1546626323292" duration="1791000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140135000" />
+    <option name="totallyTimeSpent" value="141431000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="17" y="24" width="1280" height="752" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3101777" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3101777" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -802,7 +755,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" sideWeight="0.4975728" visible="true" weight="0.16397415" />
+      <window_info active="true" anchor="right" id="Maven" order="3" sideWeight="0.4975728" visible="true" weight="0.16397415" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" />
@@ -1015,13 +968,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library-webservice/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2053">
-          <caret line="210" selection-start-line="210" selection-end-line="210" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library-webservice/src/main/webapp/WEB-INF/sun-jaxws.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1107,13 +1053,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library-webapp/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3375">
-          <caret line="225" column="24" selection-start-line="225" selection-start-column="24" selection-end-line="225" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library-batch/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1155">
@@ -1141,13 +1080,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library-batch/src/data/scripts/send.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="62" selection-start-line="3" selection-start-column="62" selection-end-line="3" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library-webapp/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
@@ -1155,8 +1087,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/library-batch/src/data/scripts/send.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="62" selection-start-line="3" selection-end-line="3" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/library-batch/src/data/scripts/send.bat">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="62" selection-start-line="3" selection-start-column="62" selection-end-line="3" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library-webapp/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="138" column="36" selection-start-line="138" selection-start-column="36" selection-end-line="138" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library-webservice/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="133" column="20" selection-start-line="128" selection-start-column="4" selection-end-line="133" selection-end-column="20" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
