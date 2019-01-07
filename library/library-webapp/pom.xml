@@ -127,13 +127,6 @@
 			<artifactId>spring-data-jpa</artifactId>
 		</dependency>
 
-		<!--&lt;!&ndash; pour le test &ndash;&gt;
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>2.9.8</version>
-		</dependency>-->
-
 		<!-- JDBC Driver -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -201,7 +194,6 @@
 			<version>2.3.0.1</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.sun.xml.stream.buffer/streambuffer -->
 		<dependency>
 			<groupId>com.sun.xml.stream.buffer</groupId>
 			<artifactId>streambuffer</artifactId>
@@ -216,7 +208,7 @@
 <build>
 <finalName>library-webapp</finalName>
 
-	<plugins>
+<plugins>
 		<!--generate ws-->
 		<plugin>
 			<groupId>org.codehaus.mojo</groupId>

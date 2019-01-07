@@ -17,15 +17,17 @@ import javax.servlet.http.HttpServletRequest;
 public class MemberController {
 
 
-
-
+	/**
+	 * /login will be shown when the login button is clicked
+	 * @return login page
+	 */
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login() {
 		return "member/login";
 	}
 
 	/**
-	 * this controller will be called when submit button from login page is clicked
+	 * this method will be called when submit button from login page is clicked
 	 * @param request
 	 * @param member
 	 * @return
@@ -42,9 +44,11 @@ public class MemberController {
 
 		if(member !=null && username !=null & password !=null) {
 
+			//call the webservice client
 			MemberWeb memberWeb = new MemberWeb();
 			MemberWs memberWs = memberWeb.getMemberWsPort();
 
+			//call the webmethod
 			result = memberWs.isValidUser(username,password);
 
 			if (result == true) {

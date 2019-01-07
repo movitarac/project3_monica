@@ -15,9 +15,6 @@ import java.util.List;
 @Controller
 public class LibraryController {
 
-
-
-
 	@RequestMapping(value="/")
 	public String home()
 	{

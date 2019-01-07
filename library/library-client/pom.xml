@@ -35,12 +35,13 @@
   </dependencies>
 
   <build>
-    <plugins>
+   <!-- <plugins>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>jaxws-maven-plugin</artifactId>
         <version>2.5</version>
         <executions>
+            &lt;!&ndash;Generate webservice client&ndash;&gt;
       <execution>
 					<id>wsimport-for-all</id>
 					<goals>
@@ -58,7 +59,7 @@
 				</execution>
         </executions>
       </plugin>
-    </plugins>
+    </plugins>-->
 
   </build>
 </project>
