@@ -13,23 +13,19 @@ o    A batch that is scheduled to run and send automatically email. This email w
 
 Technologies used in general to develop this application are :
 
-•   Apache maven 3.6.0
+•   Apache maven 3
 
 •   Apache Tomcat 9
 
 •   MySQL 8.0.13
 
-•   Spring Framework 5.1.2 RELEASE
+•   Spring Core Framework 
 
-•   Spring Data 2.1.2 RELEASE
+•   Spring Data 
 
-•   Spring MVC 5.1.2 RELEASE
+•   Spring MVC 
 
-•   Hibernate 5.1.0.Final
-
-•	JAX-WS
-
-•	Quartz 2 Scheduler
+•   JPA 
 
 
 ## Maven project into multiple modules
@@ -39,64 +35,81 @@ Technologies used in general to develop this application are :
 
 •    library-business    :containing services / business logic
 
-•    library-consumer    :containing repository to connect to database
+•    library-consumer    :containing repository to manage the database
 
 •    library-model       :containing different entities
 
-•    library-webapp      :containing a package for the view + controllers (web application) 
-also a package containing webservice. This web application doesn’t directly call the business module.
-
+•    library-webapp      :containing 2 different projects: 
+		o	Presentation project: view and controller (Spring MVC)
+		o	Web service project: Expose APIs for business logic
 
 ## Configuration and Deployment
 
 ### 1. Database MySQL(8.0.13)
 
 ```
-	 Install MySQL
+-Install MySQL
 ```
 ```
-   Execute the script library.sql at the server (you can use phpmyadmin or mysql workbench) to create user, database, tables and to insert data into the database.
+-Execute the script library-database-and-user.sql at the server (you can use phpmyadmin or mysql workbench) to create user and database.
 
 ```
 
 ### 2. Resources images, css and js
 
 ```
-    Install and start Apache Server Local
+- Install and start Apache Server Local
 ```
 ```
-    Download  the resources folder to get all images, css and js from https://github.com/movitarac/project3_resource   
+- Download  the resources folder to get all images, css and js from https://github.com/movitarac/project3_resource   
 ```
 ```
-    Put them in Apache server - Document Root, inside a folder called ‘resources’, this folder contains  2 folders, ‘assets’ for images and ‘style’ for css + js. To call an image, for example, we enter the url ‘ http://localhost:80/resources/assets/1.jpeg’ . This url is one of an attribute called ‘imageUrl’ in ‘Work’ table.
-```
-
-
-### 3. In IDE (Intellij or Eclipse)
-```
-   Unzip library.zip 
-```
-```
-   Import the project library in your chosen IDE (Intellij or Eclipse) as a Maven Project
-```
-```
-   Go to spring configuration file found in library/library-webapp/src/main/webapp/WEB-INF/library-servlet.xml,  and in bean section ‘dataSource, change :
-
-o     Values for property name “username” by your database username and for “password” by your database password
-
-o    ?serverTimezone=UTC can be added after value for property name ‘url’
-“jdbc:mysql://localhost:3306/citylibrary?serverTimezone=UTC” in case of problem with timezone.
-```
-```
-   Build the parent project (maven install)
+- Put them in Apache server - Document Root, inside a folder called ‘resources’, this folder contains  2 folders, ‘assets’ for images and ‘style’ for css + js. To call an image, for example, we enter the url ‘ http://localhost:80/resources/assets/1.jpeg’ . This url is one of an attribute called ‘imageUrl’ in ‘Work’ table.
 ```
 
-o    in Intellij, 
+### 3. 3.    Deployment of presentation project and web services project from a war file
+```
+- You need the Tomcat installed in your machine. Let the default port to 8080
+```
+```
+- Download from OC the file library-webapp.war and put them to the directory <YOUR_TOMCAT_DIRECTORY>/webapps
+```
+```
+- Start your tomcat
+```
+```
+- Go to your database citylibrary and execute the script library-data-test.sql
+```
+```
+- access to the app: http://localhost:8080/library-webapp
+```
+```
+- use the following user informations to login:
+username georgelulu / password 1234lulu
+
+```
+
+### 4. In IDE (Intellij or Eclipse)
+
+- Download sources from github (zip is better): 
+```
+https://github.com/movitarac/project3_monica
+```
+- Unzip your download project3_monica-master
+
+- Import the project project3_monica-master/library in your chosen IDE (Intellij or Eclipse) as a Maven Project
+
+-   Build the parent project (maven install)
+```
+mvn clean install (on parent project -> library)
+```
+
+-  To run on embedded server in Intellij: 
 ```
 Run – Edit Configurations – click + – Tomcat Server Local – Deployment – click + Artifact library-webapp-war – write /library-webapp in Application context – Apply OK – Run
 ```
 
-o    in Eclipse, 
+o   To run on embedded server  in Eclipse, 
 ```
 Run on server - Select Tomcat v9.0 Server- Click next - Add library-webapp - Click finish - Run the server
 ```

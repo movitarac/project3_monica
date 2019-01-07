@@ -7,280 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2207753e-3e2f-4670-853c-cd210366094f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SOAP-UI/borrowingWs-soapui-project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SOAP-UI/borrowingWs-soapui-project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../library.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-batch/cron.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/java/com/racic/lib/webapp/controller/LibraryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/src/main/java/com/racic/lib/webapp/controller/LibraryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/java/com/racic/lib/webapp/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/src/main/java/com/racic/lib/webapp/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/webapp/WEB-INF/library-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/src/main/webapp/WEB-INF/library-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/classes/com/racic/lib/webapp/controller/LibraryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/classes/com/racic/lib/webapp/controller/LibraryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/classes/com/racic/lib/webapp/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/classes/com/racic/lib/webapp/controller/MemberController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp.war" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/classes/com/racic/lib/webapp/controller/LibraryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/classes/com/racic/lib/webapp/controller/LibraryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/classes/com/racic/lib/webapp/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/classes/com/racic/lib/webapp/controller/MemberController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-business-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-business-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-client-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-client-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-consumer-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-consumer-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-model-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-model-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/library-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/library-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/src/main/java/com/racic/lib/webservice/BookWs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/src/main/java/com/racic/lib/webservice/BorrowingWs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/src/main/java/com/racic/lib/webservice/MemberWs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/src/main/java/com/racic/lib/webservice/WorkWs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/src/main/webapp/WEB-INF/library-webservice-servlet.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/src/main/webapp/WEB-INF/sun-jaxws.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/src/test/java/com/racic/lib/endpoint/AppTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/BookWeb.wsdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/BookWeb_schema1.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/BorrowingWeb.wsdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/BorrowingWeb_schema1.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/MemberWeb.wsdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/MemberWeb_schema1.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/WorkWeb.wsdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/WorkWeb_schema1.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/BookWs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/BorrowingWs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/MemberWs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/WorkWs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/BorrowBook.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/BorrowBookResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/ExtendBorrowing.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/ExtendBorrowingResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/FindAll.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/FindAllResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/FindAvailableBooksFromWork.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/FindAvailableBooksFromWorkResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/FindBookbyId.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/FindBookbyIdResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/FindByBorrowingId.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/FindByBorrowingIdResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/FindByMember.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/FindByMemberResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/FindByUsernameAndPassword.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/FindByUsernameAndPasswordResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/FindMemberByEmail.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/FindMemberByEmailResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/FindWorksByAuthorContain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/FindWorksByAuthorContainResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/FindWorksById.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/FindWorksByIdResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/GetAll.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/GetAllResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/GetNotReturnedBorrowing.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/GetNotReturnedBorrowingResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/Init.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/InitResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/IsValidUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/IsValidUserResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/IsValidWorkByAuthor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/IsValidWorkByAuthorResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/LaunchSendEmail.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/LaunchSendEmailResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/ReturnBorrowing.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/ReturnBorrowingResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/UpdateBook.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/UpdateBookResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/VerifyBoksListAvailableSize.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/classes/com/racic/lib/webservice/jaxws/VerifyBoksListAvailableSizeResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsdl/BookWeb.wsdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsdl/BookWeb_schema1.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsdl/BorrowingWeb.wsdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsdl/BorrowingWeb_schema1.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsdl/MemberWeb.wsdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsdl/MemberWeb_schema1.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsdl/WorkWeb.wsdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsdl/WorkWeb_schema1.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/BorrowBook.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/BorrowBookResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/ExtendBorrowing.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/ExtendBorrowingResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/FindAll.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/FindAllResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/FindAvailableBooksFromWork.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/FindAvailableBooksFromWorkResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/FindBookbyId.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/FindBookbyIdResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/FindByBorrowingId.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/FindByBorrowingIdResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/FindByMember.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/FindByMemberResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/FindByUsernameAndPassword.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/FindByUsernameAndPasswordResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/FindMemberByEmail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/FindMemberByEmailResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/FindWorksByAuthorContain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/FindWorksByAuthorContainResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/FindWorksById.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/FindWorksByIdResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/GetAll.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/GetAllResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/GetNotReturnedBorrowing.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/GetNotReturnedBorrowingResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/Init.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/InitResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/IsValidUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/IsValidUserResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/IsValidWorkByAuthor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/IsValidWorkByAuthorResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/LaunchSendEmail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/LaunchSendEmailResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/ReturnBorrowing.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/ReturnBorrowingResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/UpdateBook.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/UpdateBookResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/VerifyBoksListAvailableSize.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/generated-sources/wsgen/com/racic/lib/webservice/jaxws/VerifyBoksListAvailableSizeResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/BookWeb.wsdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/BookWeb_schema1.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/BorrowingWeb.wsdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/BorrowingWeb_schema1.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/MemberWeb.wsdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/MemberWeb_schema1.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/WorkWeb.wsdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/WorkWeb_schema1.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/BookWs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/BorrowingWs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/MemberWs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/WorkWs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/BorrowBook.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/BorrowBookResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/ExtendBorrowing.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/ExtendBorrowingResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/FindAll.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/FindAllResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/FindAvailableBooksFromWork.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/FindAvailableBooksFromWorkResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/FindBookbyId.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/FindBookbyIdResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/FindByBorrowingId.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/FindByBorrowingIdResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/FindByMember.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/FindByMemberResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/FindByUsernameAndPassword.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/FindByUsernameAndPasswordResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/FindMemberByEmail.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/FindMemberByEmailResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/FindWorksByAuthorContain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/FindWorksByAuthorContainResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/FindWorksById.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/FindWorksByIdResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/GetAll.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/GetAllResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/GetNotReturnedBorrowing.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/GetNotReturnedBorrowingResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/Init.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/InitResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/IsValidUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/IsValidUserResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/IsValidWorkByAuthor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/IsValidWorkByAuthorResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/LaunchSendEmail.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/LaunchSendEmailResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/ReturnBorrowing.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/ReturnBorrowingResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/UpdateBook.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/UpdateBookResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/VerifyBoksListAvailableSize.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/classes/com/racic/lib/webservice/jaxws/VerifyBoksListAvailableSizeResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/FastInfoset-1.2.15.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/activation-1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/antlr-2.7.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/aspectjrt-1.9.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/byte-buddy-1.9.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/classmate-1.3.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/commons-io-2.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/commons-logging-1.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/dom4j-2.1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/hibernate-commons-annotations-5.1.0.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/hibernate-core-5.4.0.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/hibernate-entitymanager-5.4.0.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/istack-commons-runtime-3.0.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/jackson-annotations-2.9.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/jackson-core-2.9.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/jackson-databind-2.9.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/jandex-2.0.5.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/javassist-3.24.0-GA.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/javax.activation-api-1.2.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/javax.annotation-api-1.3.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/javax.inject-1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/javax.persistence-api-2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/jaxb-api-2.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/jaxb-core-2.3.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/jaxb-impl-2.1.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/jaxb-runtime-2.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/jaxws-api-2.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/jaxws-rt-2.1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/jaxws-spring-1.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/jboss-logging-3.3.2.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/jboss-transaction-api_1.2_spec-1.1.1.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/jsr181-api-1.0-MR1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/library-business-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/library-consumer-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/library-model-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/mail-1.5.0-b01.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/mimepull-1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/mysql-connector-java-8.0.13.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/persistence-api-1.0.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/protobuf-java-3.6.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/resolver-20050927.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/saaj-api-1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/saaj-impl-1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/sjsxp-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/slf4j-api-1.7.25.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/spring-aop-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/spring-beans-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/spring-context-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/spring-core-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/spring-data-commons-2.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/spring-data-jpa-2.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/spring-expression-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/spring-jcl-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/spring-jdbc-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/spring-orm-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/spring-oxm-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/spring-tx-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/spring-web-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/spring-webmvc-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/spring-ws-core-3.0.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/spring-xml-3.0.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/stax-api-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/stax-ex-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/streambuffer-1.5.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/txw2-2.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/validation-api-2.0.1.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/lib/xbean-spring-3.14.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/library-webservice-servlet.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/sun-jaxws.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/wsdl/BookWeb.wsdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/wsdl/BookWeb_schema1.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/wsdl/BorrowingWeb.wsdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/wsdl/BorrowingWeb_schema1.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/wsdl/MemberWeb.wsdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/wsdl/MemberWeb_schema1.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/wsdl/WorkWeb.wsdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/WEB-INF/wsdl/WorkWeb_schema1.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/library-webservice/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/surefire-reports/TEST-com.racic.lib.endpoint.AppTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/surefire-reports/com.racic.lib.endpoint.AppTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webservice/target/test-classes/com/racic/lib/endpoint/AppTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../readme.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../readme.pdf" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/library-webservice/target/" />
     <ignored path="$PROJECT_DIR$/library-model/target/" />
@@ -301,10 +31,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/library-webapp/src/main/webapp/WEB-INF/library-servlet.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
+            <state relative-caret-position="91">
               <caret line="36" column="56" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="56" />
             </state>
           </provider>
@@ -367,7 +97,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library-webapp/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
@@ -532,7 +262,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="117" />
+    <option name="x" value="-11" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="752" />
@@ -694,7 +424,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546871939238" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546873561613" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -932,15 +662,15 @@
       <workItem from="1546244238471" duration="38327000" />
       <workItem from="1546423490388" duration="77897000" />
       <workItem from="1546626323292" duration="2838000" />
-      <workItem from="1546857828104" duration="5336000" />
+      <workItem from="1546857828104" duration="6078000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147814000" />
+    <option name="totallyTimeSpent" value="148556000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="117" y="23" width="1280" height="752" extended-state="0" />
+    <frame x="-11" y="23" width="1280" height="752" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31502423" />
@@ -1317,17 +1047,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library-webapp/src/main/webapp/WEB-INF/library-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="36" column="56" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library-webapp/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="264" column="14" selection-start-line="264" selection-start-column="14" selection-end-line="264" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library-webapp/src/main/webapp/WEB-INF/library-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="36" column="56" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="56" />
         </state>
       </provider>
     </entry>
