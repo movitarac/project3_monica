@@ -117,7 +117,7 @@ Run on server - Select Tomcat v9.0 Server- Click next - Add library-webapp - Cli
 In http://localhost:8080/library-webapp the application will appear (same url for both IDE)
 ```
 
-### 4. Batch 
+### 5. Batch 
 
 •	In Linux and MacOs
 
