@@ -42,8 +42,7 @@ public class WorkWs {
         return  workService.getAll();
     }
 
-
-    //@WebMethod(exclude=true)
+    @WebMethod
     @PostConstruct
     public void init() {
         SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);

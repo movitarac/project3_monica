@@ -25,7 +25,6 @@
 		<build.timestamp>${maven.build.timestamp}</build.timestamp>
 		<!-- tools de génération WS pour OS Linux et Mac -->
 		<tool.wsgen>${java.home}/../bin/wsgen</tool.wsgen>
-		<tool.wsimport>${java.home}/../bin/wsimport</tool.wsimport>
 	</properties>
 
 	<!-- ==DEPENDENCIES== -->

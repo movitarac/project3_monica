@@ -66,7 +66,6 @@ public class BorrowingController {
             mv = new ModelAndView("borrowing/borrowinginfo");
             com.racic.lib.client.Member loggedInMember = (com.racic.lib.client.Member) request.getSession().getAttribute("memberConnected");
             List<com.racic.lib.client.Borrowing> borrowingList = borrowingWs.findByMember(loggedInMember);
-            System.out.println(borrowingList.get(1).getIdborrow());
             mv.addObject("borrowingList", borrowingList);
 
         } else {
@@ -87,9 +86,9 @@ public class BorrowingController {
             mv = new ModelAndView("borrowing/borrowinginfo");
            boolean extendOK = borrowingWs.extendBorrowing(borrowingid, member);
             if (extendOK ==true ) {
-                List<com.racic.lib.client.Borrowing> borrowingList = member.getBorrowing();
-                message += "Your borrowing period for " + borrowingWs.findByBorrowingId(borrowingid).getBook().getWork().getTitle() + " is successfully extended";
+                List<com.racic.lib.client.Borrowing> borrowingList = borrowingWs.findByMember(member);
                 mv.addObject("borrowingList", borrowingList);
+                message += "Your borrowing period for " + borrowingWs.findByBorrowingId(borrowingid).getBook().getWork().getTitle() + " is successfully extended";
                 mv.addObject("message", message);
                 mv.addObject("extendOK",extendOK);
             } else {

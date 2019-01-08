@@ -37,7 +37,7 @@ public class BookWs{
         return bookService.findBookbyId(bookid);
     }
 
-    //@WebMethod(exclude=true)
+    @WebMethod
     @PostConstruct
     public void init() {
         SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);

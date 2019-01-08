@@ -67,7 +67,7 @@ Technologies used in general to develop this application are :
 - Put them in Apache server - Document Root, inside a folder called ‘resources’, this folder contains  2 folders, ‘assets’ for images and ‘style’ for css + js. To call an image, for example, we enter the url ‘ http://localhost:80/resources/assets/1.jpeg’ . This url is one of an attribute called ‘imageUrl’ in ‘Work’ table.
 ```
 
-### 3. 3.    Deployment of presentation project and web services project from a war file
+### 3. Deployment of presentation project and web services project from a war file
 ```
 - You need the Tomcat installed in your machine. Let the default port to 8080
 ```

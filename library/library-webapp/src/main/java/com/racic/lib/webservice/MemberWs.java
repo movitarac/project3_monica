@@ -41,7 +41,7 @@ public class MemberWs{
         return memberService.isValidUser(userName, passWord);
     }
 
-    //@WebMethod(exclude=true)
+    @WebMethod
     @PostConstruct
     public void init() {
         SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);

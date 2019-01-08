@@ -65,7 +65,7 @@ public class BorrowingWs{
        return borrowingService.launchSendEmail();
     }
 
-    //@WebMethod(exclude=true)
+    @WebMethod
     @PostConstruct
     public void init() {
         SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
