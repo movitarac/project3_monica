@@ -2,7 +2,7 @@
 <hr>
 <h2 class="searchbook">Find your book</h2>
 <hr>
-<form:form method="GET" name="workssearch" action="/library-webapp/searchbyauthor">
+<form:form method="GET" name="workssearch" action="${pageContext.request.contextPath}/searchbyauthor">
     <table class="searchbook">
         <tr>
             <label for="inputAuthor" class="sr-only">

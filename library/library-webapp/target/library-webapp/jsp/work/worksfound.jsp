@@ -8,7 +8,7 @@
 
             <ul class="worksfounddetail">
 
-                <li><a href="/library-webapp/workinfo/${work.worksId}" class="infowork"> <h4>${work.title}</h4> by ${work.author}</a></li>
+                <li><a href="${pageContext.request.contextPath}/workinfo/${work.worksId}" class="infowork"> <h4>${work.title}</h4> by ${work.author}</a></li>
                 <span class="profDetail">Available copies: </span> <span class="profInfo">${work.copiesAvailable}</span><br>
 
             </ul>
@@ -19,5 +19,5 @@
 
 
 </div>
-<%@ include file="../_include/footer.jsp" %>
+
 </body>

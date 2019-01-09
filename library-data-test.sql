@@ -137,3 +137,7 @@ INSERT INTO `citylibrary`.`borrowing` (`idborrow`, `isExtended`, `issueDate`, `r
 (12, '0', '2019-01-08 09:56:34.054000', '2019-02-05 09:56:34.054000', 'ongoing', 'nar2', 6),
 (13, '0', '2019-12-11 09:56:37.130000', '2019-01-08 09:56:37.130000', 'ongoing', 'sh2a', 6),
 (14, '0', '2019-12-08 09:56:39.504000', '2019-01-05 09:56:39.504000', 'ongoing', 'nar3a', 6);
+
+UPDATE `seq_borrow` SET `next_val`=15 WHERE 1;
+UPDATE `seq_works` SET `next_val`=21 WHERE 1;
+UPDATE `seq_user` SET `next_val`=7 WHERE 1;

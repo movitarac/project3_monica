@@ -33,10 +33,10 @@
                     <c:choose>
                         <c:when test="${borrow.status != 'returned'}">
                             <li class="badge badge-pill badge-light list-unstyled">
-                                <a href="/library-webapp/borrowinglist/extend/${borrow.idborrow}">Extend your borrowing</a>
+                                <a href="${pageContext.request.contextPath}borrowinglist/extend/${borrow.idborrow}">Extend your borrowing</a>
                             </li>
                             <li class="badge badge-pill badge-light list-unstyled">
-                                <a href="/library-webapp/borrowinglist/return/${borrow.idborrow}">Return this book</a></li>
+                                <a href="${pageContext.request.contextPath}/borrowinglist/return/${borrow.idborrow}">Return this book</a></li>
                         </c:when>
                         <c:otherwise>
                             <br>
@@ -47,16 +47,16 @@
                 </ul>
             </c:forEach>
 
-            <a href="/library-webapp/profile"> back to profile</a>
+            <a href="${pageContext.request.contextPath}/profile"> back to profile</a>
         </c:when>
         <c:otherwise>
             <h5>You haven't borrowed any book from the library</h5>
-            <a href="/library-webapp/profile"> back to profile</a>
+            <a href="${pageContext.request.contextPath}/profile"> back to profile</a>
             <br>
-            <a href="/library-webapp/browse"> browse books </a>
+            <a href="${pageContext.request.contextPath}/browse"> browse books </a>
         </c:otherwise>
     </c:choose>
 
 </main>
-<%@ include file="../_include/footer.jsp" %>
+
 </body>

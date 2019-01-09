@@ -1,5 +1,5 @@
 
 <body class="errorpage">
 <%@ include file="../_include/taglib.jsp" %>
-<a href="/library-webapp" id="errorpage">Back to home</a>
+<a href="${pageContext.request.contextPath}" id="errorpage">Back to home</a>
 </body>

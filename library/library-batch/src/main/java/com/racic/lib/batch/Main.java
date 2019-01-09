@@ -19,7 +19,7 @@ public class Main {
                 .newTrigger()
                 .withIdentity("triggersendjob", "group1")
                 .withSchedule(
-                        CronScheduleBuilder.cronSchedule("0/5 * * * * ?"))
+                        CronScheduleBuilder.cronSchedule("0/10 * * * * ?"))
                 .build();
 
 // schedule the job
@@ -29,6 +29,7 @@ public class Main {
             scheduler.start();
             scheduler.scheduleJob(sendjob, trigger);
             System.out.println("send ok!");
+
         } catch (SchedulerException e) {
             e.printStackTrace();
         }

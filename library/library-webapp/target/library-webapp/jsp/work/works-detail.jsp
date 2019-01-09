@@ -12,10 +12,9 @@
         Publication Year : ${work.publicationYear}<br>
         Description : ${work.bookDescription}<br>
 
-       <a href="/library-webapp/borrow/${work.worksId}" class="badge badge-secondary">Borrow </a>
+       <a href="${pageContext.request.contextPath}/borrow/${work.worksId}" class="badge badge-secondary">Borrow </a>
 
     </ul>
 
 </div>
-<%@ include file="../_include/footer.jsp" %>
 </body>
