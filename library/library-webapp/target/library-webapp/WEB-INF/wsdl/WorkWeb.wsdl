@@ -12,6 +12,12 @@
   <message name="initResponse">
     <part name="parameters" element="tns:initResponse"/>
   </message>
+  <message name="getAll">
+    <part name="parameters" element="tns:getAll"/>
+  </message>
+  <message name="getAllResponse">
+    <part name="parameters" element="tns:getAllResponse"/>
+  </message>
   <message name="findWorksById">
     <part name="parameters" element="tns:findWorksById"/>
   </message>
@@ -30,16 +36,14 @@
   <message name="isValidWorkByAuthorResponse">
     <part name="parameters" element="tns:isValidWorkByAuthorResponse"/>
   </message>
-  <message name="getAll">
-    <part name="parameters" element="tns:getAll"/>
-  </message>
-  <message name="getAllResponse">
-    <part name="parameters" element="tns:getAllResponse"/>
-  </message>
   <portType name="workWs">
     <operation name="init">
       <input wsam:Action="http://webservice.lib.racic.com/workWs/initRequest" message="tns:init"/>
       <output wsam:Action="http://webservice.lib.racic.com/workWs/initResponse" message="tns:initResponse"/>
+    </operation>
+    <operation name="getAll">
+      <input wsam:Action="http://webservice.lib.racic.com/workWs/getAllRequest" message="tns:getAll"/>
+      <output wsam:Action="http://webservice.lib.racic.com/workWs/getAllResponse" message="tns:getAllResponse"/>
     </operation>
     <operation name="findWorksById">
       <input wsam:Action="http://webservice.lib.racic.com/workWs/findWorksByIdRequest" message="tns:findWorksById"/>
@@ -53,14 +57,19 @@
       <input wsam:Action="http://webservice.lib.racic.com/workWs/isValidWorkByAuthorRequest" message="tns:isValidWorkByAuthor"/>
       <output wsam:Action="http://webservice.lib.racic.com/workWs/isValidWorkByAuthorResponse" message="tns:isValidWorkByAuthorResponse"/>
     </operation>
-    <operation name="getAll">
-      <input wsam:Action="http://webservice.lib.racic.com/workWs/getAllRequest" message="tns:getAll"/>
-      <output wsam:Action="http://webservice.lib.racic.com/workWs/getAllResponse" message="tns:getAllResponse"/>
-    </operation>
   </portType>
   <binding name="workWsPortBinding" type="tns:workWs">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
     <operation name="init">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAll">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
@@ -88,15 +97,6 @@
       </output>
     </operation>
     <operation name="isValidWorkByAuthor">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
-      </output>
-    </operation>
-    <operation name="getAll">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>

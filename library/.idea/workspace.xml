@@ -7,47 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="550fb58c-7d97-4369-a1c1-8e092e851ccd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SOAP-UI/borrowingWs-soapui-project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SOAP-UI/borrowingWs-soapui-project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SOAP-UI/workWs-soapui-project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SOAP-UI/workWs-soapui-project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/_include/assets/logo_facebook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/_include/assets/logo_flickr.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/_include/assets/logo_google_plus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/_include/assets/logo_instagram_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/_include/assets/logo_twitter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/_include/footer.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/_include/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/_include/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/borrowing/borrowerror.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/borrowing/borrowerror.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/borrowing/borrowinginfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/borrowing/borrowinginfo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/borrowing/browse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/borrowing/browse.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/library/error.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/library/error.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/member/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/member/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/member/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/member/profile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/work/works-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/work/works-detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/work/worksfound.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/work/worksfound.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/work/workssearch.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/work/workssearch.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/classes/WorkWeb.wsdl" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/classes/WorkWeb.wsdl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/generated-sources/wsdl/WorkWeb.wsdl" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/generated-sources/wsdl/WorkWeb.wsdl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp.war" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/classes/WorkWeb.wsdl" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/classes/WorkWeb.wsdl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/jaxb-impl-2.1.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-business-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-business-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-client-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-client-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-consumer-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-consumer-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-model-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/lib/library-model-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/wsdl/WorkWeb.wsdl" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/WEB-INF/wsdl/WorkWeb.wsdl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/jsp/_include/assets/logo_facebook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/jsp/_include/assets/logo_flickr.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/jsp/_include/assets/logo_google_plus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/jsp/_include/assets/logo_instagram_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/jsp/_include/assets/logo_twitter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/jsp/_include/footer.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/jsp/_include/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/jsp/_include/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/jsp/borrowing/borrowinginfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/jsp/borrowing/borrowinginfo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/jsp/work/works-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/jsp/work/works-detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-webapp/target/library-webapp/jsp/work/worksfound.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/library-webapp/target/library-webapp/jsp/work/worksfound.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/library-client/target/" />
     <ignored path="$PROJECT_DIR$/library-batch/target/" />
@@ -64,11 +28,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="258">
-              <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/borrowing/borrowinginfo.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="71">
+              <caret line="35" column="76" selection-start-line="35" selection-start-column="76" selection-end-line="35" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -96,7 +69,6 @@
         <option value="$PROJECT_DIR$/library-webapp/pom.xml" />
         <option value="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/_include/header.jsp" />
         <option value="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/borrowing/borrowerror.jsp" />
-        <option value="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/borrowing/borrowinginfo.jsp" />
         <option value="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/borrowing/browse.jsp" />
         <option value="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/library/error.jsp" />
         <option value="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/member/login.jsp" />
@@ -105,6 +77,7 @@
         <option value="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/work/worksfound.jsp" />
         <option value="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/work/workssearch.jsp" />
         <option value="$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Main.java" />
+        <option value="$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/borrowing/borrowinginfo.jsp" />
       </list>
     </option>
   </component>
@@ -128,6 +101,15 @@
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="library" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="library-batch" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="library-batch" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
@@ -218,41 +200,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="batch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="library" type="462c0819:PsiDirectoryNode" />
-              <item name="library-business" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="library" type="462c0819:PsiDirectoryNode" />
-              <item name="library-business" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="library" type="462c0819:PsiDirectoryNode" />
-              <item name="library-business" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="library" type="462c0819:PsiDirectoryNode" />
-              <item name="library-business" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="library" type="462c0819:PsiDirectoryNode" />
-              <item name="library-business" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="library" type="b2602c69:ProjectViewProjectNode" />
@@ -360,7 +307,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547058144140" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547066362701" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -565,18 +512,18 @@
       <workItem from="1546947763446" duration="2033000" />
       <workItem from="1546963605931" duration="173000" />
       <workItem from="1547036598189" duration="1772000" />
-      <workItem from="1547047384487" duration="6849000" />
+      <workItem from="1547047384487" duration="8704000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10827000" />
+    <option name="totallyTimeSpent" value="12682000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="36" y="23" width="1280" height="752" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2536349" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2536349" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -586,7 +533,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3287879" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3287879" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -703,13 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/borrowing/borrowinginfo.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="55" column="55" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/borrowing/borrowsuccess.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -782,7 +722,14 @@
     <entry file="file://$PROJECT_DIR$/library-batch/src/main/java/com/racic/lib/batch/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
-          <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library-webapp/src/main/webapp/jsp/borrowing/borrowinginfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="35" column="76" selection-start-line="35" selection-start-column="76" selection-end-line="35" selection-end-column="76" />
         </state>
       </provider>
     </entry>

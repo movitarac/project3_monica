@@ -33,7 +33,7 @@
                     <c:choose>
                         <c:when test="${borrow.status != 'returned'}">
                             <li class="badge badge-pill badge-light list-unstyled">
-                                <a href="${pageContext.request.contextPath}borrowinglist/extend/${borrow.idborrow}">Extend your borrowing</a>
+                                <a href="${pageContext.request.contextPath}/borrowinglist/extend/${borrow.idborrow}">Extend your borrowing</a>
                             </li>
                             <li class="badge badge-pill badge-light list-unstyled">
                                 <a href="${pageContext.request.contextPath}/borrowinglist/return/${borrow.idborrow}">Return this book</a></li>
