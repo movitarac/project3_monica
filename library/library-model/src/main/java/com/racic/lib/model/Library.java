@@ -16,8 +16,6 @@ public class Library {
     private String libraryName;
     @Column
     private String city;
-    //@OneToMany
-    //private List<Work> works;
 
 
     public Library() {

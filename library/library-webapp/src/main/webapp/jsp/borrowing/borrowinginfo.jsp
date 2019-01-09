@@ -1,3 +1,4 @@
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <body class="borrowlist">
 <%@ include file="../_include/header.jsp" %>
 <main role="main" class="inner cover">
@@ -24,8 +25,9 @@
 
                 <h5>${borrow.book.work.title}</h5>
                 <ul>
-                    <li>Issue date : ${borrow.issueDate}</li>
-                    <li>Due date : ${borrow.returnDate}</li>
+
+                    <li>Issue date : <fmt:formatDate value="${borrow.issueDate.toGregorianCalendar().time}" pattern="yyyy-MM-dd" /></li>
+                    <li>Due date : <fmt:formatDate value="${borrow.returnDate.toGregorianCalendar().time}" pattern="yyyy-MM-dd" /></li>
                     <li>Status: ${borrow.status}</li>
 
                     <c:choose>
