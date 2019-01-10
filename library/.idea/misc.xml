@@ -3,9 +3,7 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/library-webapp" />
-  </component>
-  <component name="JavaScriptSettings">
-    <option name="languageLevel" value="ES6" />
+    <file type="web" url="file://$PROJECT_DIR$/library-webservice" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

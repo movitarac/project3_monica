@@ -8,5 +8,6 @@
     <file url="file://$PROJECT_DIR$/library-consumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/library-model" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/library-webapp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/library-webservice" charset="UTF-8" />
   </component>
 </project>

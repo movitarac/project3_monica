@@ -30,7 +30,7 @@ public class MemberWeb
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8080/library-webapp/ws/memberWs?wsdl");
+            url = new URL("http://localhost:8080/library-webapp/ws/ws/memberWs?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

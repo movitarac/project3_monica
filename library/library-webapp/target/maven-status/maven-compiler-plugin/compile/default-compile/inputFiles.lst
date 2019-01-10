@@ -1,8 +1,4 @@
 /Users/Vita/Documents/OC/projet-/library/library-webapp/src/main/java/com/racic/lib/webapp/controller/BorrowingController.java
 /Users/Vita/Documents/OC/projet-/library/library-webapp/src/main/java/com/racic/lib/webapp/controller/MemberController.java
-/Users/Vita/Documents/OC/projet-/library/library-webapp/src/main/java/com/racic/lib/webservice/MemberWs.java
-/Users/Vita/Documents/OC/projet-/library/library-webapp/src/main/java/com/racic/lib/webservice/BookWs.java
-/Users/Vita/Documents/OC/projet-/library/library-webapp/src/main/java/com/racic/lib/webservice/BorrowingWs.java
 /Users/Vita/Documents/OC/projet-/library/library-webapp/src/main/java/com/racic/lib/webapp/controller/LibraryController.java
 /Users/Vita/Documents/OC/projet-/library/library-webapp/src/main/java/com/racic/lib/webapp/controller/WorkController.java
-/Users/Vita/Documents/OC/projet-/library/library-webapp/src/main/java/com/racic/lib/webservice/WorkWs.java

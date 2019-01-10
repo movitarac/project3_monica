@@ -64,7 +64,8 @@ Technologies used in general to develop this application are :
 - Download  the resources folder to get all images, css and js from https://github.com/movitarac/project3_resource   
 ```
 ```
-- Put them in Apache server - Document Root, inside a folder called ‘resources’, this folder contains  2 folders, ‘assets’ for images and ‘style’ for css + js. To call an image, for example, we enter the url ‘ http://localhost:80/resources/assets/1.jpeg’ . This url is one of an attribute called ‘imageUrl’ in ‘Work’ table.
+- •	Put the ‘resources’ folder in Apache server - Document Root, this folder contains 2 folders, ‘assets’ for images and ‘style’ for css + js. To call an image, for example, we enter the url ‘ http://localhost:80/resources/assets/1.jpeg’ . 
+This url is one of an attribute called ‘imageUrl’ in ‘Work’ table.
 ```
 
 ### 3. Deployment of presentation project and web services project from a war file
@@ -72,7 +73,10 @@ Technologies used in general to develop this application are :
 - You need the Tomcat installed in your machine. Let the default port to 8080
 ```
 ```
-- Download from OC the file library-webapp.war and put them to the directory <YOUR_TOMCAT_DIRECTORY>/webapps
+- Download from OC the file library-webapp.war and library-webservice.war. 
+```
+```
+- Put them to the directory <YOUR_TOMCAT_DIRECTORY>/webapps
 ```
 ```
 - Start your tomcat
@@ -81,10 +85,13 @@ Technologies used in general to develop this application are :
 - Go to your database citylibrary and execute the script library-data-test.sql
 ```
 ```
-- access to the app: http://localhost:8080/library-webapp
+- Access to the app: http://localhost:8080/library-webapp
 ```
 ```
-- use the following user informations to login:
+- Access to the webservice wsdl http://localhost:8080/library-webapp/ws/ws/workWs
+```
+```
+- Use the following user informations to login:
 username georgelulu / password 1234lulu
 
 ```
@@ -122,7 +129,7 @@ In http://localhost:8080/library-webapp the application will appear (same url fo
 •	In Linux and MacOs
 
 ```
-i.	Put the jar file and script shell at the $HOME (example /Users/<currentusername>) 
+i.	Put the jar file library-batch-1.0-SNAPSHOT-jar-with-dependencies.jar and script shell at the $HOME (example /Users/<currentusername>) 
 ```
 ```
 ii.	Run the send.sh file in terminal ./send.sh
@@ -131,7 +138,7 @@ ii.	Run the send.sh file in terminal ./send.sh
 •	In Windows
 
 ```
-i.	Put the jar file at the %homepath% (example \Users\<currentusername>)
+i.	Put the jar file library-batch-1.0-SNAPSHOT-jar-with-dependencies.jar at the %homepath% (example \Users\<currentusername>)
 ```
 ```
 ii.	Run the send.bat 

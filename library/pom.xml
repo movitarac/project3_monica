@@ -25,6 +25,7 @@
         <module>library-consumer</module>
         <module>library-model</module>
         <module>library-client</module>
+    <module>library-webservice</module>
   </modules>
 
     <!-- ==DEPENDENCIES MANAGEMENT== -->

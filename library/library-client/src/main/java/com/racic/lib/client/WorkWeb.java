@@ -30,7 +30,7 @@ public class WorkWeb
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8080/library-webapp/ws/workWs?wsdl");
+            url = new URL("http://localhost:8080/library-webapp/ws/ws/workWs?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
