@@ -64,7 +64,7 @@ Technologies used in general to develop this application are :
 - Download  the resources folder to get all images, css and js from https://github.com/movitarac/project3_resource   
 ```
 ```
-- •	Put the ‘resources’ folder in Apache server - Document Root, this folder contains 2 folders, ‘assets’ for images and ‘style’ for css + js. To call an image, for example, we enter the url ‘ http://localhost:80/resources/assets/1.jpeg’ . 
+- Put the ‘resources’ folder in Apache server - Document Root, this folder contains 2 folders, ‘assets’ for images and ‘style’ for css + js. To call an image, for example, we enter the url ‘ http://localhost:80/resources/assets/1.jpeg’ . 
 This url is one of an attribute called ‘imageUrl’ in ‘Work’ table.
 ```
 
