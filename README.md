@@ -88,7 +88,7 @@ This url is one of an attribute called ‘imageUrl’ in ‘Work’ table.
 - Access to the app: http://localhost:8080/library-webapp
 ```
 ```
-- Access to the webservice wsdl http://localhost:8080/library-webapp/ws/ws/workWs
+- Access to the webservice wsdl http://localhost:8080/library-webservice/ws/workWs
 ```
 ```
 - Use the following user informations to login:
@@ -183,4 +183,4 @@ All the web methods found in this package call all methods found in library-busi
 It means the application web does not directly call the library-business.
 
 
-WSDL files can be accessed after deploying the library-webapp.war in Tomcat http://localhost:8080/library-webapp/ws/workWs
+WSDL files can be accessed after deploying the library-webapp.war in Tomcat http://localhost:8080/library-webservice/ws/workWs

@@ -50,10 +50,10 @@
 					<configuration>
 						<sourceDestDir>${project.basedir}/src/main/java/wsclient-generated/</sourceDestDir>
 						<wsdlUrls>
-							<wsdlUrl>http://localhost:8080/library-webapp/ws/ws/workWs?wsdl</wsdlUrl>
-							<wsdlUrl>http://localhost:8080/library-webapp/ws/ws/borrowingWs?wsdl</wsdlUrl>
-							<wsdlUrl>http://localhost:8080/library-webapp/ws/ws/bookWs?wsdl</wsdlUrl>
-							<wsdlUrl>http://localhost:8080/library-webapp/ws/ws/memberWs?wsdl</wsdlUrl>
+							<wsdlUrl>http://localhost:8080/library-webservice/ws/workWs?wsdl</wsdlUrl>
+							<wsdlUrl>http://localhost:8080/library-webservice/ws/borrowingWs?wsdl</wsdlUrl>
+							<wsdlUrl>http://localhost:8080/library-webservice/ws/bookWs?wsdl</wsdlUrl>
+							<wsdlUrl>http://localhost:8080/library-webservice/ws/memberWs?wsdl</wsdlUrl>
 						</wsdlUrls>
 						</configuration>
 				</execution>
