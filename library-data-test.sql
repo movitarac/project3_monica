@@ -52,12 +52,12 @@ INSERT INTO `citylibrary`.`User` ( `iduser`,`password`, `username`) VALUES (5,'1
 INSERT INTO `citylibrary`.`User` ( `iduser`,`password`, `username`) VALUES (6,'1234will', 'willcam');
 
 
-INSERT INTO `citylibrary`.`Member` (`address`, `email`, `firstName`, `lastName`, `iduser`) VALUES ('151 rue carnot Saint Herblain', 'georgelulu@yahoo.com', 'George', 'Lukas', 1);
-INSERT INTO `citylibrary`.`Member` (`address`, `email`, `firstName`, `lastName`, `iduser`) VALUES ('152 rue mayenne Saint Herblain', 'charlottecam@yahoo.co.uk', 'Charlotte', 'Cambridge', 2);
-INSERT INTO `citylibrary`.`Member` (`address`, `email`, `firstName`, `lastName`, `iduser`) VALUES ('2 rue cotherie Saint Herblain', 'charleswales@yahoo.fr', 'Charles', 'Wales', 3);
-INSERT INTO `citylibrary`.`Member` (`address`, `email`, `firstName`, `lastName`, `iduser`) VALUES ('70 rue palaise Saint Herblain', 'louiscam@yahoo.fr', 'Louis', 'Cambridge', 4);
-INSERT INTO `citylibrary`.`Member` (`address`, `email`, `firstName`, `lastName`, `iduser`) VALUES ('15 rue cremerie Saint Herblain', 'cathcam@gmail.com', 'Catherine', 'Cambridge', 5);
-INSERT INTO `citylibrary`.`Member` (`address`, `email`, `firstName`, `lastName`, `iduser`) VALUES ('1 rue nazaire Saint Herblain', 'willcam@gmail.com', 'William', 'Cambridge', 6);
+INSERT INTO `citylibrary`.`Member` (`address`, `email`, `firstName`, `lastName`, `iduser`) VALUES ('151 rue carnot Saint Herblain', 'georgelulu.georgelulu@gmail.com', 'George', 'Lukas', 1);
+INSERT INTO `citylibrary`.`Member` (`address`, `email`, `firstName`, `lastName`, `iduser`) VALUES ('152 rue mayenne Saint Herblain', 'charlottecamcam@gmail.com', 'Charlotte', 'Cambridge', 2);
+INSERT INTO `citylibrary`.`Member` (`address`, `email`, `firstName`, `lastName`, `iduser`) VALUES ('2 rue cotherie Saint Herblain', 'charleswaleswales@gmail.com', 'Charles', 'Wales', 3);
+INSERT INTO `citylibrary`.`Member` (`address`, `email`, `firstName`, `lastName`, `iduser`) VALUES ('70 rue palaise Saint Herblain', 'louiscam.louiscam@yahoo.com', 'Louis', 'Cambridge', 4);
+INSERT INTO `citylibrary`.`Member` (`address`, `email`, `firstName`, `lastName`, `iduser`) VALUES ('15 rue cremerie Saint Herblain', 'cathcam.cathcam@yahoo.com', 'Catherine', 'Cambridge', 5);
+INSERT INTO `citylibrary`.`Member` (`address`, `email`, `firstName`, `lastName`, `iduser`) VALUES ('1 rue nazaire Saint Herblain', 'willcam.willcam@yahoo.com', 'William', 'Cambridge', 6);
 
 
 
