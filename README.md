@@ -17,7 +17,11 @@ Technologies used in general to develop this application are :
 
 •   Apache Tomcat 9
 
+•   Apache Server
+
 •   MySQL 8.0.13
+
+•   JPA
 
 •   Spring Core Framework 
 
@@ -25,7 +29,7 @@ Technologies used in general to develop this application are :
 
 •   Spring MVC 
 
-•   JPA 
+• 	Quartz Scheduler
 
 
 ## Maven project into multiple modules
